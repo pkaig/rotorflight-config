@@ -219,10 +219,10 @@ servo 2 1500 -500 500 500 -50 0
 servo 3 1500 -500 500 -500 -60 0
 
 # mixer input
-mixer input SR -1000 1000 800
-mixer input SP -1000 1000 800
+mixer input SR -1000 1000 1000
+mixer input SP -1000 1000 1000
 mixer input SY -1000 1000 1000
-mixer input SC -1000 1000 900
+mixer input SC -1000 1000 1000
 mixer input ST 0 1000 1000
 
 # mixer rule
@@ -232,21 +232,13 @@ mixer rule 2 add SC S3 -700 0
 # Roll Servo
 mixer rule 3 add SR S2 877 0 
 mixer rule 4 add SR S3 -877 0 
-# Roll to pitch Mix
-mixer rule 5 add SR S1 50 0 #200 0 
-mixer rule 6 add SR S2 25 0 #100 0 
-mixer rule 7 add SR S3 25 0 #100 0 
 # Pitch Servos
-mixer rule 8 add SP S1 -1000 0 
-mixer rule 9 add SP S2 -500 0 
-mixer rule 10 add SP S3 -500 0
-# Pitch to roll Mix
-mixer rule 11 add SP S2 87 0 # 175 0 
-mixer rule 12 add SP S3 87 0 # -175 0
+mixer rule 5 add SP S1 -1000 0 
+mixer rule 6 add SP S2 -500 0 
+mixer rule 7 add SP S3 -500 0
 # Motors
-mixer rule 13 set ST M1 1000 0 
-mixer rule 14 set SY M2 1000 0
-
+mixer rule 8 set ST M1 1000 0 
+mixer rule 9 set SY M2 1000 0
 
 # beeper
 beeper GYRO_CALIBRATED
@@ -441,12 +433,12 @@ rxfail 17 h
 
 # master
 set gyro_hardware_lpf = NORMAL
-set gyro_lowpass_type = BIQUAD
-set gyro_lowpass_hz = 125
-set gyro_lowpass2_type = BIQUAD
-set gyro_lowpass2_hz = 200
-set gyro_notch1_hz = 0
-set gyro_notch1_cutoff = 0
+set gyro_lowpass_type = PT1
+set gyro_lowpass_hz = 0
+set gyro_lowpass2_type = PT1
+set gyro_lowpass2_hz = 0
+set gyro_notch1_hz = 66
+set gyro_notch1_cutoff = 15
 set gyro_notch2_hz = 0
 set gyro_notch2_cutoff = 0
 set gyro_calib_duration = 125
@@ -456,10 +448,10 @@ set gyro_overflow_detect = ALL
 set gyro_to_use = FIRST
 set gyro_dyn_lpf_min_hz = 0
 set gyro_dyn_lpf_max_hz = 0
-set dterm_dyn_lpf_min_hz = 25
-set dterm_dyn_lpf_max_hz = 150
-set dterm_lowpass_type = PT1
-set dterm_lowpass_hz = 100
+set dterm_dyn_lpf_min_hz = 0
+set dterm_dyn_lpf_max_hz = 0
+set dterm_lowpass_type = BIQUAD
+set dterm_lowpass_hz = 93
 set dterm_lowpass2_type = PT1
 set dterm_lowpass2_hz = 0
 set dterm_notch_hz = 0
@@ -499,7 +491,7 @@ set rssi_offset = 0
 set rssi_invert = OFF
 set rssi_src_frame_lpf_period = 30
 set rc_interp = AUTO
-set rc_interp_ch = RPYTC
+set rc_interp_ch = RPYC
 set rc_interp_int = 19
 set rc_smoothing_type = FILTER
 set rc_smoothing_input_hz = 0
@@ -533,7 +525,7 @@ set min_throttle = 1070
 set max_throttle = 2000
 set min_command = 1000
 set dshot_idle_value = 550
-set dshot_burst = ON
+set dshot_burst = OFF
 set dshot_bidir = ON
 set dshot_bitbang = AUTO
 set dshot_bitbang_timer = AUTO
@@ -583,9 +575,9 @@ set beeper_frequency = 0
 set beeper_dshot_beacon_tone = 1
 set main_rotor_dir = CW
 set tail_rotor_mode = MOTORIZED
-set tail_motor_idle = 0
+set tail_motor_idle = 15
 set gov_mode = MODE2
-set gov_max_headspeed = 6000
+set gov_max_headspeed = 4500
 set gov_gear_ratio = 8000
 set gov_pwr_filter = 10
 set gov_rpm_filter = 10
@@ -768,30 +760,30 @@ profile 0
 # profile 0
 set profile_name = -
 set iterm_rotation = ON
-set iterm_relax = RP_INC
+set iterm_relax = RP
 set iterm_relax_type = SETPOINT
-set iterm_relax_cutoff = 10
+set iterm_relax_cutoff = 20
 set iterm_limit = 400
 set iterm_decay = 20
 set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_debug_axis = ROLL
 set acro_trainer_gain = 75
-set p_pitch = 85
-set i_pitch = 80
-set d_pitch = 145
-set f_pitch = 110
-set p_roll = 40
-set i_roll = 80
-set d_roll = 60
-set f_roll = 95
-set p_yaw = 70
-set i_yaw = 50
-set d_yaw = 50
-set f_yaw = 30
-set pitch_lpf = 0
-set roll_lpf = 0
-set yaw_lpf = 0
+set p_pitch = 90
+set i_pitch = 164
+set d_pitch = 25
+set f_pitch = 70
+set p_roll = 80
+set i_roll = 135
+set d_roll = 15
+set f_roll = 70
+set p_yaw = 25
+set i_yaw = 8
+set d_yaw = 20
+set f_yaw = 0
+set pitch_error_filter = 0
+set roll_error_filter = 0
+set yaw_error_filter = 0						
 set rate_normalization = ABSOLUTE
 set angle_level_strength = 50
 set angle_level_limit = 55
@@ -801,7 +793,7 @@ set horizon_tilt_effect = 75
 set horizon_tilt_expert_mode = OFF
 set rescue_collective = 800
 set abs_control = OFF
-set abs_control_gain = 3
+set abs_control_gain = 30
 set abs_control_limit = 120
 set abs_control_error_limit = 45
 set abs_control_cutoff = 11
@@ -821,15 +813,15 @@ rateprofile 0
 # rateprofile 0
 set rateprofile_name = -
 set rates_type = BETAFLIGHT
-set roll_rc_rate = 100
-set pitch_rc_rate = 100
-set yaw_rc_rate = 100
-set roll_expo = 10
-set pitch_expo = 10
-set yaw_expo = 0
-set roll_srate = 50
-set pitch_srate = 50
-set yaw_srate = 50
+set roll_rc_rate = 160
+set pitch_rc_rate = 160
+set yaw_rc_rate = 204
+set roll_expo = 30
+set pitch_expo = 30
+set yaw_expo = 50
+set roll_srate = 0
+set pitch_srate = 0
+set yaw_srate = 0
 set throttle_limit_type = OFF
 set throttle_limit_percent = 100
 set roll_rate_limit = 1998
