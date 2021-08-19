@@ -224,18 +224,18 @@ mixer input SY -1000 1000 1000
 mixer input SC -1000 1000 1000
 mixer input ST 0 1000 1000
 
-# mixer rule
+# mixer rule ------------------
 mixer rule 0 add SC S1 700 0 
 mixer rule 1 add SC S2 -700 0 
 mixer rule 2 add SC S3 -700 0 
-# Roll Servo
+# Roll Servo ------------------
 mixer rule 3 add SR S2 877 0 
 mixer rule 4 add SR S3 -877 0 
-# Pitch Servos
+# Pitch Servos ----------------
 mixer rule 5 add SP S1 -1000 0 
 mixer rule 6 add SP S2 -500 0 
 mixer rule 7 add SP S3 -500 0
-# Motors
+# Motors ----------------------
 mixer rule 8 set ST M1 1000 0 
 mixer rule 9 set SY M2 1000 0
 
@@ -590,6 +590,7 @@ set beeper_dshot_beacon_tone = 1
 set main_rotor_dir = CW
 set tail_rotor_mode = MOTORIZED
 set tail_motor_idle = 15
+set swash_ring = 100				  
 set gov_mode = MODE2
 set gov_max_headspeed = 4500
 set gov_gear_ratio = 8000
