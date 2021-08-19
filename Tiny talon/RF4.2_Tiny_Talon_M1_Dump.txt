@@ -2,6 +2,7 @@
 # Versions
 # V1    - Rescue mode added roll to upright
 # V1.1  - Added Rescue mode boost and yaw enable 
+# V2	- RF snapshot-20210822
 ###########################
 
 # version
@@ -234,7 +235,7 @@ feature RPM_FILTER
 # servo
 servo 1 1428 -500 500 500 100 0
 servo 2 1428 -500 500 500 -50 0
-servo 3 1428 -500 500 -500 -60 0
+servo 3 1428 -500 500 -500 -50 0
 
 # mixer input
 mixer input SR -1000 1000 600
@@ -244,25 +245,25 @@ mixer input SC -1000 1000 600
 mixer input ST 0 1000 1000
 
 # mixer rule
-## Collective to Servos ##
+## Collective to Servos -------
 mixer rule 0 add SC S1 700 0 
 mixer rule 1 add SC S2 700 0 
 mixer rule 2 add SC S3 -700 0 
-## Roll to Servos ##
-#mixer rule 3 add SR S2 877 0 
-#mixer rule 4 add SR S3 877 0 
-## Pitch to Servos ##
-#mixer rule 5 add SP S1 1000 0 
-#mixer rule 6 add SP S2 -500 0 
-#mixer rule 7 add SP S3 500 0 
-## Motors ##
+## Roll to Servos -------------
+mixer rule 3 add SR S2 877 0 
+mixer rule 4 add SR S3 877 0 
+## Pitch to Servos ------------
+mixer rule 5 add SP S1 1000 0 
+mixer rule 6 add SP S2 -500 0 
+mixer rule 7 add SP S3 500 0 
+## Motors ---------------------
 mixer rule 8 set ST M1 1000 0 
 mixer rule 9 set SY M2 1000 0
-## Roll to Pitch interaction ##
+## Roll to Pitch interaction --
 #mixer rule 10 add SP S1 1000 0 
 #mixer rule 11 add SP S2 -500 0 
 #mixer rule 12 add SP S3 500 0
-# Pitch to Roll interaction ##
+# Pitch to Roll interaction ---
 #mixer rule 13 add SR S2 877 0 
 #mixer rule 14 add SR S3 877 0 
 
@@ -406,37 +407,39 @@ aux 17 0 0 900 900 0 0
 aux 18 0 0 900 900 0 0
 aux 19 0 0 900 900 0 0
 
-# adjrange
-adjrange 0 0 0 900 900 0 0 0 0
-adjrange 1 0 0 900 900 0 0 0 0
-adjrange 2 0 0 900 900 0 0 0 0
-adjrange 3 0 0 900 900 0 0 0 0
-adjrange 4 0 0 900 900 0 0 0 0
-adjrange 5 0 0 900 900 0 0 0 0
-adjrange 6 0 0 900 900 0 0 0 0
-adjrange 7 0 0 900 900 0 0 0 0
-adjrange 8 0 0 900 900 0 0 0 0
-adjrange 9 0 0 900 900 0 0 0 0
-adjrange 10 0 0 900 900 0 0 0 0
-adjrange 11 0 0 900 900 0 0 0 0
-adjrange 12 0 0 900 900 0 0 0 0
-adjrange 13 0 0 900 900 0 0 0 0
-adjrange 14 0 0 900 900 0 0 0 0
-adjrange 15 0 0 900 900 0 0 0 0
-adjrange 16 0 0 900 900 0 0 0 0
-adjrange 17 0 0 900 900 0 0 0 0
-adjrange 18 0 0 900 900 0 0 0 0
-adjrange 19 0 0 900 900 0 0 0 0
-adjrange 20 0 0 900 900 0 0 0 0
-adjrange 21 0 0 900 900 0 0 0 0
-adjrange 22 0 0 900 900 0 0 0 0
-adjrange 23 0 0 900 900 0 0 0 0
-adjrange 24 0 0 900 900 0 0 0 0
-adjrange 25 0 0 900 900 0 0 0 0
-adjrange 26 0 0 900 900 0 0 0 0
-adjrange 27 0 0 900 900 0 0 0 0
-adjrange 28 0 0 900 900 0 0 0 0
-adjrange 29 0 0 900 900 0 0 0 0
+# adjfunc
+adjfunc 0 0 900 900 0 0 0 0 0
+adjfunc 1 0 900 900 0 0 0 0 0
+adjfunc 2 0 900 900 0 0 0 0 0
+adjfunc 3 0 900 900 0 0 0 0 0
+adjfunc 4 0 900 900 0 0 0 0 0
+adjfunc 5 0 900 900 0 0 0 0 0
+adjfunc 6 0 900 900 0 0 0 0 0
+adjfunc 7 0 900 900 0 0 0 0 0
+adjfunc 8 0 900 900 0 0 0 0 0
+adjfunc 9 0 900 900 0 0 0 0 0
+adjfunc 10 0 900 900 0 0 0 0 0
+adjfunc 11 0 900 900 0 0 0 0 0
+adjfunc 12 0 900 900 0 0 0 0 0
+adjfunc 13 0 900 900 0 0 0 0 0
+adjfunc 14 0 900 900 0 0 0 0 0
+adjfunc 15 0 900 900 0 0 0 0 0
+adjfunc 16 0 900 900 0 0 0 0 0
+adjfunc 17 0 900 900 0 0 0 0 0
+adjfunc 18 0 900 900 0 0 0 0 0
+adjfunc 19 0 900 900 0 0 0 0 0
+adjfunc 20 0 900 900 0 0 0 0 0
+adjfunc 21 0 900 900 0 0 0 0 0
+adjfunc 22 0 900 900 0 0 0 0 0
+adjfunc 23 0 900 900 0 0 0 0 0
+adjfunc 24 0 900 900 0 0 0 0 0
+adjfunc 25 0 900 900 0 0 0 0 0
+adjfunc 26 0 900 900 0 0 0 0 0
+adjfunc 27 0 900 900 0 0 0 0 0
+adjfunc 28 0 900 900 0 0 0 0 0
+adjfunc 29 0 900 900 0 0 0 0 0
+adjfunc 30 0 900 900 0 0 0 0 0
+adjfunc 31 0 900 900 0 0 0 0 0
 
 # rxrange
 rxrange 0 1000 2000
@@ -610,6 +613,7 @@ set beeper_dshot_beacon_tone = 1
 set main_rotor_dir = CW
 set tail_rotor_mode = MOTORIZED
 set tail_motor_idle = 15
+set swash_ring = 0				  
 set gov_mode = MODE2
 set gov_max_headspeed = 6500					#Gov Max 6500RPM
 set gov_gear_ratio = 1000					    #Direct
