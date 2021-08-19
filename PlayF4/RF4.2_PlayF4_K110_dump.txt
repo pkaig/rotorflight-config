@@ -2,6 +2,7 @@
 ######
 # Versions
 # V1 	- snapshot-20210707
+# V2	- snapshot-20210822
 ###########################
 
 # Rotorflight / STM32F411 (S411) 4.2.9 Jul  7 2021 / 12:33:15 (02ea72e) MSP API: 1.43
@@ -179,10 +180,8 @@ dma UART_RX 5 NONE
 dma UART_RX 6 NONE
 dma UART_RX 7 NONE
 dma UART_RX 8 NONE
-dma pin B10 0
-# pin B10: DMA1 Stream 1 Channel 3
-dma pin A01 0
-# pin A01: DMA1 Stream 4 Channel 6
+dma pin B10 NONE
+dma pin A01 NONE
 dma pin A07 NONE
 dma pin B08 NONE
 dma pin B01 NONE
@@ -216,7 +215,7 @@ feature RPM_FILTER
 # servo
 servo 1 1500 -500 500 500 100 0
 servo 2 1500 -500 500 500 -50 0
-servo 3 1500 -500 500 -500 -60 0
+servo 3 1500 -500 500 -500 -50 0
 
 # mixer input
 mixer input SR -1000 1000 1000
@@ -370,39 +369,54 @@ aux 1 3 1 1550 1625 0 0				# Rescue
 aux 2 26 1 1500 2100 0 0			# Logger
 aux 3 0 0 900 900 0 0
 aux 4 0 0 900 900 0 0
-
-
-# adjrange
-adjrange 0 0 0 900 900 0 0 0 0
-adjrange 1 0 0 900 900 0 0 0 0
-adjrange 2 0 0 900 900 0 0 0 0
-adjrange 3 0 0 900 900 0 0 0 0
-adjrange 4 0 0 900 900 0 0 0 0
-adjrange 5 0 0 900 900 0 0 0 0
-adjrange 6 0 0 900 900 0 0 0 0
-adjrange 7 0 0 900 900 0 0 0 0
-adjrange 8 0 0 900 900 0 0 0 0
-adjrange 9 0 0 900 900 0 0 0 0
-adjrange 10 0 0 900 900 0 0 0 0
-adjrange 11 0 0 900 900 0 0 0 0
-adjrange 12 0 0 900 900 0 0 0 0
-adjrange 13 0 0 900 900 0 0 0 0
-adjrange 14 0 0 900 900 0 0 0 0
-adjrange 15 0 0 900 900 0 0 0 0
-adjrange 16 0 0 900 900 0 0 0 0
-adjrange 17 0 0 900 900 0 0 0 0
-adjrange 18 0 0 900 900 0 0 0 0
-adjrange 19 0 0 900 900 0 0 0 0
-adjrange 20 0 0 900 900 0 0 0 0
-adjrange 21 0 0 900 900 0 0 0 0
-adjrange 22 0 0 900 900 0 0 0 0
-adjrange 23 0 0 900 900 0 0 0 0
-adjrange 24 0 0 900 900 0 0 0 0
-adjrange 25 0 0 900 900 0 0 0 0
-adjrange 26 0 0 900 900 0 0 0 0
-adjrange 27 0 0 900 900 0 0 0 0
-adjrange 28 0 0 900 900 0 0 0 0
-adjrange 29 0 0 900 900 0 0 0 0
+aux 5 0 0 900 900 0 0
+aux 6 0 0 900 900 0 0
+aux 7 0 0 900 900 0 0
+aux 8 0 0 900 900 0 0
+aux 9 0 0 900 900 0 0
+aux 10 0 0 900 900 0 0
+aux 11 0 0 900 900 0 0
+aux 12 0 0 900 900 0 0
+aux 13 0 0 900 900 0 0
+aux 14 0 0 900 900 0 0
+aux 15 0 0 900 900 0 0
+aux 16 0 0 900 900 0 0
+aux 17 0 0 900 900 0 0
+aux 18 0 0 900 900 0 0
+aux 19 0 0 900 900 0 0
+# adjfunc
+adjfunc 0 0 900 900 0 0 0 0 0
+adjfunc 1 0 900 900 0 0 0 0 0
+adjfunc 2 0 900 900 0 0 0 0 0
+adjfunc 3 0 900 900 0 0 0 0 0
+adjfunc 4 0 900 900 0 0 0 0 0
+adjfunc 5 0 900 900 0 0 0 0 0
+adjfunc 6 0 900 900 0 0 0 0 0
+adjfunc 7 0 900 900 0 0 0 0 0
+adjfunc 8 0 900 900 0 0 0 0 0
+adjfunc 9 0 900 900 0 0 0 0 0
+adjfunc 10 0 900 900 0 0 0 0 0
+adjfunc 11 0 900 900 0 0 0 0 0
+adjfunc 12 0 900 900 0 0 0 0 0
+adjfunc 13 0 900 900 0 0 0 0 0
+adjfunc 14 0 900 900 0 0 0 0 0
+adjfunc 15 0 900 900 0 0 0 0 0
+adjfunc 16 0 900 900 0 0 0 0 0
+adjfunc 17 0 900 900 0 0 0 0 0
+adjfunc 18 0 900 900 0 0 0 0 0
+adjfunc 19 0 900 900 0 0 0 0 0
+adjfunc 20 0 900 900 0 0 0 0 0
+adjfunc 21 0 900 900 0 0 0 0 0
+adjfunc 22 0 900 900 0 0 0 0 0
+adjfunc 23 0 900 900 0 0 0 0 0
+adjfunc 24 0 900 900 0 0 0 0 0
+adjfunc 25 0 900 900 0 0 0 0 0
+adjfunc 26 0 900 900 0 0 0 0 0
+adjfunc 27 0 900 900 0 0 0 0 0
+adjfunc 28 0 900 900 0 0 0 0 0
+adjfunc 29 0 900 900 0 0 0 0 0
+adjfunc 30 0 900 900 0 0 0 0 0
+adjfunc 31 0 900 900 0 0 0 0 0
 
 # rxrange
 rxrange 0 1000 2000
@@ -783,7 +797,7 @@ set d_yaw = 20
 set f_yaw = 0
 set pitch_error_filter = 0
 set roll_error_filter = 0
-set yaw_error_filter = 0						
+set yaw_error_filter = 0
 set rate_normalization = ABSOLUTE
 set angle_level_strength = 50
 set angle_level_limit = 55
