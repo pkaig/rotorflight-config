@@ -52,7 +52,7 @@ resource SERIAL_TX 9 NONE
 resource SERIAL_TX 10 NONE
 resource SERIAL_TX 11 NONE
 resource SERIAL_TX 12 NONE
-resource SERIAL_RX 1 NONE			
+resource SERIAL_RX 1 NONE
 resource SERIAL_RX 2 A03
 resource SERIAL_RX 3 NONE
 resource SERIAL_RX 4 A01
@@ -167,7 +167,7 @@ dma SPI_RX 2 NONE
 dma SPI_RX 3 NONE
 dma SPI_RX 4 NONE
 dma ADC 1 1
-# ADC 1: DMA2 Stream 4 Channel 0		
+# ADC 1: DMA2 Stream 4 Channel 0
 dma ADC 2 NONE
 dma ADC 3 NONE
 dma UART_TX 1 NONE
@@ -244,27 +244,27 @@ mixer input SC -1000 1000 600
 mixer input ST 0 1000 1000
 
 # mixer rule
-# Collective to Servos
+## Collective to Servos ##
 mixer rule 0 add SC S1 700 0 
 mixer rule 1 add SC S2 700 0 
 mixer rule 2 add SC S3 -700 0 
-# Roll to Servos
+## Roll to Servos ##
 #mixer rule 3 add SR S2 877 0 
 #mixer rule 4 add SR S3 877 0 
-# Pitch to Servos
+## Pitch to Servos ##
 #mixer rule 5 add SP S1 1000 0 
 #mixer rule 6 add SP S2 -500 0 
 #mixer rule 7 add SP S3 500 0 
-# Motors
+## Motors ##
 mixer rule 8 set ST M1 1000 0 
 mixer rule 9 set SY M2 1000 0
-# Roll to Pitch interaction
-mixer rule 10 add SP S1 1000 0 
-mixer rule 11 add SP S2 -500 0 
-mixer rule 12 add SP S3 500 0
-# Pitch to Roll interaction
-mixer rule 13 add SR S2 877 0 
-mixer rule 14 add SR S3 877 0 
+## Roll to Pitch interaction ##
+#mixer rule 10 add SP S1 1000 0 
+#mixer rule 11 add SP S2 -500 0 
+#mixer rule 12 add SP S3 500 0
+# Pitch to Roll interaction ##
+#mixer rule 13 add SR S2 877 0 
+#mixer rule 14 add SR S3 877 0 
 
 # beeper
 beeper GYRO_CALIBRATED
