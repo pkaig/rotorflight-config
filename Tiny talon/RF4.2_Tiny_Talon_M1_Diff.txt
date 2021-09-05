@@ -1,0 +1,275 @@
+batch start
+
+board_name CLRACINGF7
+manufacturer_id CLRA
+
+# name: M1 Rotorflight
+
+# resources
+resource BEEPER 1 B04
+resource MOTOR 1 B07
+resource MOTOR 2 B06
+resource SERVO 1 B10
+resource SERVO 2 A09
+resource SERVO 3 B01
+resource SERIAL_TX 2 A02
+resource SERIAL_TX 4 A00
+resource SERIAL_TX 5 C12
+resource SERIAL_TX 6 C06
+resource SERIAL_RX 2 A03
+resource SERIAL_RX 4 A01
+resource SERIAL_RX 5 D02
+resource SERIAL_RX 6 C07
+resource LED 1 B00
+resource SPI_SCK 1 A05
+resource SPI_SCK 2 B13
+resource SPI_SCK 3 C10
+resource SPI_MISO 1 A06
+resource SPI_MISO 2 B14
+resource SPI_MISO 3 C11
+resource SPI_MOSI 1 A07
+resource SPI_MOSI 2 B15
+resource SPI_MOSI 3 B05
+resource ADC_BATT 1 C02
+resource ADC_RSSI 1 C03
+resource ADC_CURR 1 C01
+resource SDCARD_CS 1 B12
+resource SDCARD_DETECT 1 C03
+resource PINIO 1 A14
+resource FLASH_CS 1 B12
+resource GYRO_EXTI 1 C04
+resource GYRO_EXTI 2 C14
+resource GYRO_CS 1 A04
+resource GYRO_CS 2 C13
+resource USB_DETECT 1 C05
+
+# timer
+timer A03 AF3
+# pin A03: TIM9 CH2 (AF3)
+timer B00 AF2
+# pin B00: TIM3 CH3 (AF2)
+timer B01 AF1
+# pin B01: TIM1 CH3N (AF1)
+timer A00 AF2
+# pin A00: TIM5 CH1 (AF2)
+timer C06 AF2
+# pin C06: TIM3 CH1 (AF2)
+timer C07 AF3
+# pin C07: TIM8 CH2 (AF3)
+timer B05 AF2
+# pin B05: TIM3 CH2 (AF2)
+timer B09 AF2
+# pin B09: TIM4 CH4 (AF2)
+timer B03 AF1
+# pin B03: TIM2 CH2 (AF1)
+timer B06 AF2
+# pin B06: TIM4 CH1 (AF2)
+timer B07 AF2
+# pin B07: TIM4 CH2 (AF2)
+timer C09 AF3
+# pin C09: TIM8 CH4 (AF3)
+timer A10 AF1
+# pin A10: TIM1 CH3 (AF1)
+timer A09 AF1
+# pin A09: TIM1 CH2 (AF1)
+timer B10 AF1
+# pin B10: TIM2 CH3 (AF1)
+
+# dma
+dma ADC 1 1
+# ADC 1: DMA2 Stream 4 Channel 0
+dma pin B01 0
+# pin B01: DMA2 Stream 6 Channel 0
+dma pin A00 0
+# pin A00: DMA1 Stream 2 Channel 6
+dma pin C06 0
+# pin C06: DMA1 Stream 4 Channel 5
+dma pin C07 0
+# pin C07: DMA2 Stream 2 Channel 0
+dma pin B05 0
+# pin B05: DMA1 Stream 5 Channel 5
+dma pin B03 0
+# pin B03: DMA1 Stream 6 Channel 3
+dma pin B06 0
+# pin B06: DMA1 Stream 0 Channel 2
+dma pin B07 0
+# pin B07: DMA1 Stream 3 Channel 2
+dma pin C09 0
+# pin C09: DMA2 Stream 7 Channel 7
+
+# feature
+feature RX_SERIAL
+feature GOVERNOR
+feature RPM_FILTER
+
+# mixer input
+mixer input SR -1000 1000 800
+mixer input SP -1000 1000 800
+mixer input SY -1000 1000 800
+mixer input SC -1000 1000 800
+mixer input ST 0 1000 1000
+
+# mixer rule
+mixer rule 0 add SC S1 500 0 
+mixer rule 1 add SC S2 500 0 
+mixer rule 2 add SC S3 500 0 
+mixer rule 3 add SR S2 866 0 
+mixer rule 4 add SR S3 -866 0 
+mixer rule 5 add SP S1 1000 0 
+mixer rule 6 add SP S2 -500 0 
+mixer rule 7 add SP S3 -500 0 
+mixer rule 8 add SR S1 0 0 
+mixer rule 9 add SR S2 0 0 
+mixer rule 10 add SR S3 0 0 
+mixer rule 11 add SP S1 0 0 
+mixer rule 12 add SP S2 0 0 
+mixer rule 13 set ST M1 1000 0 
+mixer rule 14 set SY M2 1000 0 
+
+# map
+map AETR1C23
+
+# serial
+serial 1 128 115200 57600 0 2000000
+serial 4 64 115200 57600 0 115200
+
+# mode_color
+mode_color 1 0 5
+mode_color 1 2 3
+mode_color 2 0 10
+mode_color 3 0 8
+mode_color 3 1 11
+mode_color 3 2 4
+mode_color 3 3 13
+mode_color 3 4 10
+mode_color 3 5 3
+
+# aux
+aux 0 0 1 1700 1800 0 0
+aux 1 1 0 1925 2050 0 0
+aux 2 2 0 1450 1575 0 0
+aux 3 3 1 1750 1800 0 0
+
+# rxfail
+rxfail 4 h
+
+# master
+set gyro_lowpass_hz = 0
+set gyro_lowpass2_hz = 0
+set gyro_dyn_lpf_min_hz = 0
+set gyro_dyn_lpf_max_hz = 0
+set dterm_dyn_lpf_min_hz = 25
+set dterm_dyn_lpf_max_hz = 150
+set dterm_lowpass_hz = 100
+set dterm_lowpass2_hz = 0
+set acc_calibration = -121,21,-90,1
+set mag_bustype = NONE
+set mag_i2c_device = 2
+set baro_bustype = NONE
+set baro_i2c_device = 1
+set max_check = 1950
+set rc_smoothing_derivative_type = BIQUAD
+set rc_smoothing_auto_smoothness = 12
+set serialrx_provider = SBUS
+set blackbox_p_ratio = 64
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT600
+set motor_poles = 14,8,0,0
+set motor_rpm_lpf = 10,10,10,10
+set align_board_roll = 180
+set align_board_pitch = 180
+set bat_capacity = 1
+set vbat_min_cell_voltage = 310
+set current_meter = ADC
+set battery_meter = ADC
+set force_battery_cell_count = 2
+set vbat_duration_for_warning = 10
+set vbat_duration_for_critical = 21
+set vbat_scale = 162
+set ibata_scale = 250
+set beeper_inversion = ON
+set beeper_od = OFF
+set tail_rotor_mode = MOTORIZED
+set tail_motor_idle = 15
+set swash_ring = 100
+set gov_mode = MODE4
+set gov_max_headspeed = 6500
+set gov_gain = 50
+set gov_p_gain = 40
+set gov_i_gain = 60
+set gov_f_gain = 15
+set gov_tracking_time = 40
+set gov_recovery_time = 40
+set gov_lost_headspeed_timeout = 30
+set gps_sbas_mode = AUTO
+set gps_auto_config = OFF
+set deadband = 2
+set yaw_deadband = 2
+set pid_process_denom = 2
+set telemetry_disabled_acc_x = ON
+set telemetry_disabled_acc_y = ON
+set telemetry_disabled_acc_z = ON
+set telemetry_disabled_pitch = ON
+set telemetry_disabled_roll = ON
+set telemetry_disabled_heading = ON
+set telemetry_disabled_altitude = ON
+set telemetry_disabled_vario = ON
+set telemetry_disabled_lat_long = ON
+set telemetry_disabled_ground_speed = ON
+set telemetry_disabled_distance = ON
+set sdcard_detect_inverted = ON
+set sdcard_spi_bus = 2
+set debug_mode = GYRO_SCALED
+set pinio_box = 40,255,255,255
+set flash_spi_bus = 2
+set gyro_1_bustype = SPI
+set gyro_1_spibus = 1
+set gyro_1_sensor_align = CW90
+set gyro_1_align_yaw = 900
+set gyro_2_spibus = 1
+set gyro_2_sensor_align = CW90
+set gyro_2_align_yaw = 900
+set mco2_on_pc9 = ON
+set gyro_rpm_filter_bank_motor_index = 1,1,1,1,1,1,1,2,2,2,0,0,0,0,0,0
+set gyro_rpm_filter_bank_gear_ratio = 995,1005,498,503,333,250,200,1000,500,333,0,0,0,0,0,0
+set gyro_rpm_filter_bank_notch_q = 200,200,200,200,200,200,200,200,200,200,0,0,0,0,0,0
+set gyro_rpm_filter_bank_min_hz = 50,50,100,100,150,200,250,25,33,38,0,0,0,0,0,0
+set name = M1 Rotorflight
+
+profile 0
+
+# profile 0
+set iterm_relax_cutoff = 20
+set iterm_limit = 400
+set iterm_decay = 20
+set p_pitch = 40
+set i_pitch = 65
+set f_pitch = 110
+set p_roll = 50
+set i_roll = 65
+set f_roll = 105
+set p_yaw = 45
+set i_yaw = 20
+set rate_normalization = LINEAR
+set angle_level_strength = 75
+set rescue_collective = 700
+set abs_control_gain = 30
+set abs_control_cutoff = 11
+set yaw_cyclic_ff_gain = 40
+set yaw_collective_ff_impulse_gain = 10
+
+rateprofile 0
+
+# rateprofile 0
+set roll_rc_rate = 150
+set pitch_rc_rate = 150
+set yaw_rc_rate = 170
+set roll_expo = 30
+set pitch_expo = 30
+set yaw_expo = 50
+set roll_srate = 0
+set pitch_srate = 0
+set yaw_srate = 0
+
+# end the command batch
+batch end
