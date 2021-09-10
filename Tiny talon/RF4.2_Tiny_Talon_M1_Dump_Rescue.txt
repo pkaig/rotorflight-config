@@ -389,10 +389,10 @@ mode_color 3 4 10
 mode_color 3 5 3
 
 # aux
-aux 0 0 1 1700 1800 0 0			# ARM
-aux 1 1 0 1650 2000 0 0			# Rescue
-aux 2 2 0 1300 1650 0 0			# Horizon
-aux 3 3 1 1750 1800 0 0			# Angle
+aux 0 0 0 2025 2100 0 0			# ARM
+aux 1 1 4 2025 2100 0 0			# Angle
+aux 2 2 3 2025 2100 0 0			# Horizon
+aux 3 3 1 2025 2100 0 0			# Rescue
 aux 4 0 0 900 900 0 0
 aux 5 0 0 900 900 0 0
 aux 6 0 0 900 900 0 0
@@ -823,15 +823,15 @@ set pitch_error_filter = 0
 set roll_error_filter = 0
 set yaw_error_filter = 0
 set rate_normalization = LINEAR
-set angle_level_strength = 50				# How aggresive the heli will move to level during rescue mode
-set angle_level_limit = 55				
-set horizon_level_strength = 50
+set angle_level_strength = 30				# How aggresive the heli will move to level during rescue mode
+set angle_level_limit = 35				
+set horizon_level_strength = 30
 set horizon_transition = 75
-set horizon_tilt_effect = 75
+set horizon_tilt_effect = 30
 set horizon_tilt_expert_mode = OFF
-set rescue_delay = 8					# seconds*10 so 1.5s before non inverted rescue roll
-set rescue_collective = 570				# How strong the Heli will collective up during rescue mode
-set rescue_boost = 300					# Boost collective applied until rescue delay expires
+set rescue_delay = 10					# seconds*10 so 1.5s before non inverted rescue roll
+set rescue_collective = 320				# How strong the Heli will collective up during rescue mode
+set rescue_boost = 330					# Boost collective applied until rescue delay expires
 set abs_control = OFF
 set abs_control_gain = 30
 set abs_control_limit = 120

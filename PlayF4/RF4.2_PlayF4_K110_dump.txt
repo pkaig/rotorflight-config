@@ -3,6 +3,7 @@
 # Versions
 # V1 	- snapshot-20210707
 # V2	- snapshot-20210822
+# V2	- pre-release
 ###########################
 
 # Rotorflight / STM32F411 (S411) 4.2.9 Jul  7 2021 / 12:33:15 (02ea72e) MSP API: 1.43
@@ -274,7 +275,7 @@ map AETR1C23		# FUTABA
 
 # serial
 serial 20 1 115200 57600 0 115200
-serial 0 128 19200 57600 115200 250000	  
+serial 0 128 19200 57600 115200 250000
 serial 1 64 115200 57600 0 115200
 
 # led
@@ -590,7 +591,7 @@ set beeper_dshot_beacon_tone = 1
 set main_rotor_dir = CW
 set tail_rotor_mode = MOTORIZED
 set tail_motor_idle = 15
-set swash_ring = 100				  
+set swash_ring = 100
 set gov_mode = MODE2
 set gov_max_headspeed = 4500
 set gov_gear_ratio = 8000
@@ -613,6 +614,8 @@ set gov_lost_throttle_timeout = 30
 set gov_lost_headspeed_timeout = 30
 set gov_vbat_offset = 0
 set gov_ff_exponent = 150
+set gov_tta_gain = 20
+set gov_tta_limit = 20
 set servo_pwm_rate = 280
 set reboot_character = 82
 set serial_update_rate_hz = 100
@@ -806,7 +809,9 @@ set horizon_level_strength = 50
 set horizon_transition = 75
 set horizon_tilt_effect = 75
 set horizon_tilt_expert_mode = OFF
-set rescue_collective = 800
+set rescue_delay = 20
+set rescue_collective = 400
+set rescue_boost = 200
 set abs_control = OFF
 set abs_control_gain = 30
 set abs_control_limit = 120
