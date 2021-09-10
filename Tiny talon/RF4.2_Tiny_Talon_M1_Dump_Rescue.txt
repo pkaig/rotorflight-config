@@ -4,6 +4,7 @@
 # V1.1  - Added Rescue mode boost and yaw enable 
 # V2	- RF snapshot-20210822
 # V2.2  - TTA testing
+# V3	- pre-release
 ###########################
 
 # version
@@ -234,15 +235,15 @@ feature -DYNAMIC_FILTER
 feature RPM_FILTER
 
 # servo
-servo 1 1500 -500 500 500 0 0
-servo 2 1500 -500 500 500 0 0
-servo 3 1500 -500 500 500 0 0
+servo 1 1450 -500 500 500 0 0
+servo 2 1450 -500 500 500 0 0
+servo 3 1450 -500 500 500 0 0
 
 # mixer input
 mixer input SR -1000 1000 800
 mixer input SP -1000 1000 800
 mixer input SY -1000 1000 1000
-mixer input SC -1000 1000 800
+mixer input SC -1000 1000 1000
 mixer input ST 0 1000 1000
 
 # rules    i  OP SRC DST WEIGHT OFFSET MODES						
@@ -253,11 +254,11 @@ mixer rule 	1	 add 	SC	 S2 	500	 0
 mixer rule 	2	 add 	SC	 S3 	500	 0
 # Roll ------------------------------						
 mixer rule 	3	 add	 SR	 S2 	866	 0
-mixer rule 	4	 add	 SR	 S3 	-866	 0
+mixer rule 	4	 add	 SR	 S3 	-866 0
 # Pitch -----------------------------						
-mixer rule 	5	 add	 SP	 S1 	1000	 0
-mixer rule 	6	 add	 SP	 S2 	-500	 0
-mixer rule 	7	 add	 SP	 S3 	-500	 0
+mixer rule 	5	 add	 SP	 S1 	1000 0
+mixer rule 	6	 add	 SP	 S2 	-500 0
+mixer rule 	7	 add	 SP	 S3 	-500 0
 # Roll to Pitch interaction ---------						
 mixer rule 	8	 add	 SR	 S1 	0	 0
 mixer rule 	9	 add	 SR	 S2 	0	 0
@@ -265,7 +266,6 @@ mixer rule 	10	 add	 SR	 S3 	0	 0
 # Pitch to Roll interaction ---------						
 mixer rule 	11	 add	 SP	 S1 	0	 0
 mixer rule 	12	 add	 SP	 S2 	0	 0
-
 ## Motors ---------------------
 mixer rule 13 set ST M1 1000 0 
 mixer rule 14 set SY M2 1000 0
@@ -305,7 +305,7 @@ map AETR1C23		# FUTABA
 
 # serial
 serial 20 1 115200 57600 0 115200
-serial 1 128 115200 57600 0 250000
+serial 1 128 115200 57600 0 2000000
 serial 3 0 115200 57600 0 115200
 serial 4 64 115200 57600 0 115200
 serial 5 0 115200 57600 0 115200
@@ -390,8 +390,8 @@ mode_color 3 5 3
 
 # aux
 aux 0 0 1 1700 1800 0 0			# ARM
-aux 1 3 1 1750 1800 0 0			# Rescue
-aux 2 2 0 1450 1575 0 0			# Horizon
+aux 1 1 0 1650 2000 0 0			# Rescue
+aux 2 2 0 1300 1650 0 0			# Horizon
 aux 3 3 1 1750 1800 0 0			# Angle
 aux 4 0 0 900 900 0 0
 aux 5 0 0 900 900 0 0
@@ -474,7 +474,7 @@ rxfail 17 h
 # master
 set gyro_hardware_lpf = NORMAL
 set gyro_lowpass_type = PT1
-set gyro_lowpass_hz = 0
+set gyro_lowpass_hz = 95
 set gyro_lowpass2_type = PT1
 set gyro_lowpass2_hz = 0
 set gyro_notch1_hz = 0
@@ -617,7 +617,7 @@ set main_rotor_dir = CW
 set tail_rotor_mode = MOTORIZED
 set tail_motor_idle = 15
 set swash_ring = 100
-set gov_mode = MODE4
+set gov_mode = MODE2
 set gov_max_headspeed = 6500					#Gov Max 6500RPM
 set gov_gear_ratio = 1000					    #Direct
 set gov_pwr_filter = 5
@@ -639,7 +639,7 @@ set gov_lost_throttle_timeout = 30
 set gov_lost_headspeed_timeout = 30
 set gov_vbat_offset = 0
 set gov_ff_exponent = 150
-set gov_tta_gain = 0
+set gov_tta_gain = 20
 set gov_tta_limit = 20
 set servo_pwm_rate = 333						# 330kHz
 set reboot_character = 82
@@ -807,17 +807,17 @@ set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_debug_axis = ROLL
 set acro_trainer_gain = 75
-set p_pitch = 40
-set i_pitch = 65
-set d_pitch = 0
+set p_pitch = 45
+set i_pitch = 80
+set d_pitch = 25
 set f_pitch = 110
 set p_roll = 50
-set i_roll = 65
-set d_roll = 0
+set i_roll = 80
+set d_roll = 24
 set f_roll = 105
 set p_yaw = 45
-set i_yaw = 20
-set d_yaw = 0
+set i_yaw = 17
+set d_yaw = 10
 set f_yaw = 0
 set pitch_error_filter = 0
 set roll_error_filter = 0
@@ -829,9 +829,9 @@ set horizon_level_strength = 50
 set horizon_transition = 75
 set horizon_tilt_effect = 75
 set horizon_tilt_expert_mode = OFF
-set rescue_collective = 600				# How strong the Heli will collective up during rescue mode
-set rescue_boost = 400# Boost collective applied until rescue delay expires
-set rescue_delay = 10					# seconds*10 so 1.5s before non inverted rescue roll
+set rescue_delay = 8					# seconds*10 so 1.5s before non inverted rescue roll
+set rescue_collective = 570				# How strong the Heli will collective up during rescue mode
+set rescue_boost = 300					# Boost collective applied until rescue delay expires
 set abs_control = OFF
 set abs_control_gain = 30
 set abs_control_limit = 120
