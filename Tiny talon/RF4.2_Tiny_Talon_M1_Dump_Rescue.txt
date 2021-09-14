@@ -5,10 +5,10 @@
 # V2	- RF snapshot-20210822
 # V2.2  - TTA testing
 # V3	- pre-release
+# V4.2.9
 ###########################
 
 # version
-# Betaflight / STM32F7X2 (S7X2) 4.2.0 Mar 28 2021 / 21:43:59 (2296a2f8d) MSP API: 1.43
 # manufacturer_id: CLRA   board_name: CLRACINGF7   custom defaults: YES
 
 # start the command batch
@@ -243,7 +243,7 @@ servo 3 1450 -500 500 500 0 0
 mixer input SR -1000 1000 800
 mixer input SP -1000 1000 800
 mixer input SY -1000 1000 1000
-mixer input SC -1000 1000 1000
+mixer input SC -1000 1000 800
 mixer input ST 0 1000 1000
 
 # rules    i  OP SRC DST WEIGHT OFFSET MODES						
@@ -822,16 +822,17 @@ set f_yaw = 0
 set pitch_error_filter = 0
 set roll_error_filter = 0
 set yaw_error_filter = 0
-set rate_normalization = LINEAR
+set cyclic_normalization = ABSOLUTE
+set collective_normalization = NATURAL
 set angle_level_strength = 30				# How aggresive the heli will move to level during rescue mode
 set angle_level_limit = 35				
 set horizon_level_strength = 30
 set horizon_transition = 75
 set horizon_tilt_effect = 30
 set horizon_tilt_expert_mode = OFF
-set rescue_delay = 10					# seconds*10 so 1.5s before non inverted rescue roll
 set rescue_collective = 320				# How strong the Heli will collective up during rescue mode
 set rescue_boost = 330					# Boost collective applied until rescue delay expires
+set rescue_delay = 10					# seconds*10 so 1.5s before non inverted rescue roll
 set abs_control = OFF
 set abs_control_gain = 30
 set abs_control_limit = 120
