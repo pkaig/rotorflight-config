@@ -130,8 +130,7 @@ timer A03 AF3
 # pin A03: TIM9 CH2 (AF3)
 timer B00 AF2
 # pin B00: TIM3 CH3 (AF2)
-timer B01 AF1						#allocate to Servo 3 (T1 C3N)
-# pin B01: TIM1 CH3N (AF1)			#
+			#
 timer A00 AF2
 # pin A00: TIM5 CH1 (AF2)
 timer C06 AF2
@@ -144,18 +143,14 @@ timer B09 AF2
 # pin B09: TIM4 CH4 (AF2)
 timer B03 AF1
 # pin B03: TIM2 CH2 (AF1)
-timer B06 AF2						#allocate to Tail Motor (T4 C1)
-# pin B06: TIM4 CH1 (AF2)			#
-timer B07 AF2						# Re-assigned to Motor 1
-# pin B07: TIM4 CH2 (AF2)			#
+
+
 timer C09 AF3
 # pin C09: TIM8 CH4 (AF3)
 timer A10 AF1						#allocate to Servo 1 (T1 C3)
 # pin A10: TIM1 CH3 (AF1)			#
-timer A09 AF1						#allocate to Servo 2 (T1 C2)
-# pin A09: TIM1 CH2 (AF1)			#
-timer B10 AF1
-# pin B10: TIM2 CH3 (AF1)
+			#
+
 timer A01 NONE
 timer B08 NONE
 timer C08 NONE					#WAS allocate to Main Motor (T3 C3) %Borken ESC pad.... 			  
@@ -191,8 +186,7 @@ dma UART_RX 7 NONE
 dma UART_RX 8 NONE
 dma pin A03 NONE
 dma pin B00 NONE
-dma pin B01 0
-# pin B01: DMA2 Stream 6 Channel 0
+
 dma pin A00 0
 # pin A00: DMA1 Stream 2 Channel 6
 dma pin C06 0
@@ -204,10 +198,8 @@ dma pin B05 0
 dma pin B09 NONE
 dma pin B03 0
 # pin B03: DMA1 Stream 6 Channel 3
-dma pin B06 0
-# pin B06: DMA1 Stream 0 Channel 2
-dma pin B07 0
-# pin B07: DMA1 Stream 3 Channel 2
+
+
 dma pin C09 0
 # pin C09: DMA2 Stream 7 Channel 7
 dma pin A10 NONE
@@ -411,7 +403,7 @@ aux 18 0 0 900 900 0 0
 aux 19 0 0 900 900 0 0
 
 # adjfunc
-adjfunc 0 2 900 2100 26 2 0 300 400
+adjfunc 0 0 900 900 0 0 0 0 0
 adjfunc 1 0 900 900 0 0 0 0 0
 adjfunc 2 0 900 900 0 0 0 0 0
 adjfunc 3 0 900 900 0 0 0 0 0
@@ -557,7 +549,7 @@ set adc_vrefint_calibration = 0
 set adc_tempsensor_calibration30 = 0
 set adc_tempsensor_calibration110 = 0
 set input_filtering_mode = OFF
-set blackbox_p_ratio = 16
+set blackbox_p_ratio = 64
 set blackbox_device = SERIAL
 set blackbox_record_acc = ON
 set blackbox_mode = NORMAL
@@ -682,7 +674,7 @@ set gps_rescue_allow_arming_without_fix = OFF
 set gps_rescue_alt_mode = MAX_ALT
 set gps_rescue_use_mag = ON
 set deadband = 2
-set yaw_deadband = 3
+set yaw_deadband = 2
 set yaw_control_reversed = OFF
 set pid_process_denom = 2
 set tlm_inverted = OFF
@@ -807,13 +799,13 @@ set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_debug_axis = ROLL
 set acro_trainer_gain = 75
-set p_pitch = 35
-set i_pitch = 90
-set d_pitch = 0
+set p_pitch = 45
+set i_pitch = 80
+set d_pitch = 25
 set f_pitch = 110
 set p_roll = 50
-set i_roll = 130
-set d_roll = 0
+set i_roll = 80
+set d_roll = 24
 set f_roll = 105
 set p_yaw = 45
 set i_yaw = 17

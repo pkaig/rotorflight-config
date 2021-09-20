@@ -1,16 +1,9 @@
-############################################################
-# Versions
-# V1    - Rescue mode added roll to upright
-# V1.1  - Added Rescue mode boost and yaw enable 
-# V2	- RF snapshot-20210822
-# V2.2  - TTA testing
-# V3	- pre-release
-# V4.2.9
-###########################
+# dump
+###WARNING: NO CUSTOM DEFAULTS FOUND###
 
 # version
-# manufacturer_id: CLRA   board_name: CLRACINGF7   custom defaults: YES
-
+# Rotorflight / STM32F7X2 (S7X2) 4.2.9 Sep 15 2021 / 22:35:48 (norevision) MSP API: 1.43
+###ERROR: dump: NO CONFIG FOUND###
 # start the command batch
 batch start
 
@@ -21,11 +14,13 @@ manufacturer_id CLRA
 
 # resources
 resource BEEPER 1 B04
-resource MOTOR 1 B07				# Main Motor - #2 on ESC. 
-resource MOTOR 2 B06				# Tail Motor - #1 on ESC
-resource SERVO 1 B10				# TX1 - Elevator Servo
-resource SERVO 2 A09				# LEDS - Aileron - Left
-resource SERVO 3 B01				# TX3 - Aileron - Right
+resource MOTOR 1 B07
+resource MOTOR 2 B06
+resource MOTOR 3 NONE
+resource MOTOR 4 NONE
+resource SERVO 1 B10
+resource SERVO 2 A09
+resource SERVO 3 B01
 resource SERVO 4 NONE
 resource SERVO 5 NONE
 resource SERVO 6 NONE
@@ -42,10 +37,10 @@ resource PWM 7 NONE
 resource PWM 8 NONE
 resource SONAR_TRIGGER 1 NONE
 resource SONAR_ECHO 1 NONE
-resource LED_STRIP 1 NONE			#Remove B01 for Servo 2
-resource SERIAL_TX 1 NONE			#Remove A09 for Servo 1
+resource LED_STRIP 1 NONE
+resource SERIAL_TX 1 NONE
 resource SERIAL_TX 2 A02
-resource SERIAL_TX 3 NONE			#Remove B10 for Servo 3
+resource SERIAL_TX 3 NONE
 resource SERIAL_TX 4 A00
 resource SERIAL_TX 5 C12
 resource SERIAL_TX 6 C06
@@ -130,8 +125,8 @@ timer A03 AF3
 # pin A03: TIM9 CH2 (AF3)
 timer B00 AF2
 # pin B00: TIM3 CH3 (AF2)
-timer B01 AF1						#allocate to Servo 3 (T1 C3N)
-# pin B01: TIM1 CH3N (AF1)			#
+timer B01 AF1
+# pin B01: TIM1 CH3N (AF1)
 timer A00 AF2
 # pin A00: TIM5 CH1 (AF2)
 timer C06 AF2
@@ -144,21 +139,18 @@ timer B09 AF2
 # pin B09: TIM4 CH4 (AF2)
 timer B03 AF1
 # pin B03: TIM2 CH2 (AF1)
-timer B06 AF2						#allocate to Tail Motor (T4 C1)
-# pin B06: TIM4 CH1 (AF2)			#
-timer B07 AF2						# Re-assigned to Motor 1
-# pin B07: TIM4 CH2 (AF2)			#
+timer B06 AF2
+# pin B06: TIM4 CH1 (AF2)
+timer B07 AF2
+# pin B07: TIM4 CH2 (AF2)
 timer C09 AF3
 # pin C09: TIM8 CH4 (AF3)
-timer A10 AF1						#allocate to Servo 1 (T1 C3)
-# pin A10: TIM1 CH3 (AF1)			#
-timer A09 AF1						#allocate to Servo 2 (T1 C2)
-# pin A09: TIM1 CH2 (AF1)			#
+timer A10 AF1
+# pin A10: TIM1 CH3 (AF1)
+timer A09 AF1
+# pin A09: TIM1 CH2 (AF1)
 timer B10 AF1
 # pin B10: TIM2 CH3 (AF1)
-timer A01 NONE
-timer B08 NONE
-timer C08 NONE					#WAS allocate to Main Motor (T3 C3) %Borken ESC pad.... 			  
 
 # dma
 dma SPI_TX 1 NONE
@@ -213,10 +205,11 @@ dma pin C09 0
 dma pin A10 NONE
 dma pin A09 NONE
 dma pin B10 NONE
+
 # feature
 feature -RX_PPM
 feature -INFLIGHT_ACC_CAL
-feature RX_SERIAL
+feature -RX_SERIAL
 feature -SOFTSERIAL
 feature -GPS
 feature -RANGEFINDER
@@ -228,10 +221,13 @@ feature -LED_STRIP
 feature -DISPLAY
 feature -OSD
 feature -RX_SPI
-feature GOVERNOR
+feature -GOVERNOR
 feature -ESC_SENSOR
 feature -FREQ_SENSOR
 feature -DYNAMIC_FILTER
+feature -RPM_FILTER
+feature RX_SERIAL
+feature GOVERNOR
 feature RPM_FILTER
 
 # servo
@@ -246,29 +242,22 @@ mixer input SY -1000 1000 1000
 mixer input SC -1000 1000 800
 mixer input ST 0 1000 1000
 
-# rules    i  OP SRC DST WEIGHT OFFSET MODES						
-#-----------------------------------------						
-# Collective ------------------------						
-mixer rule  0 add SC S1   500 0						
-mixer rule  1 add SC S2   500 0						
-mixer rule  2 add SC S3   500 0						
-# Roll ------------------------------						
-mixer rule  3 add SR S2   863 0						
-mixer rule  4 add SR S3  -863 0						
-# Pitch -----------------------------						
-mixer rule  5 add SP S1   996 0						
-mixer rule  6 add SP S2  -498 0						
-mixer rule  7 add SP S3  -498 0						
-# Roll to Pitch interaction ---------						
-mixer rule  8 add SR S1   -87 0						
-mixer rule  9 add SR S2    44 0						
-mixer rule 10 add SR S3    44 0						
-# Pitch to Roll interaction ---------						
-mixer rule 11 add SP S2   -75 0						
-mixer rule 12 add SP S3    75 0													
-# Motors ----------------------------
-mixer rule 13 set ST M1  1000 0 
-mixer rule 14 set SY M2  1000 0
+# mixer rule
+mixer rule 0 add SC S1 500 0 
+mixer rule 1 add SC S2 500 0 
+mixer rule 2 add SC S3 500 0 
+mixer rule 3 add SR S2 858 0 
+mixer rule 4 add SR S3 -858 0 
+mixer rule 5 add SP S1 990 0 
+mixer rule 6 add SP S2 -495 0 
+mixer rule 7 add SP S3 -495 0 
+mixer rule 8 add SR S1 -139 0 
+mixer rule 9 add SR S2 70 0 
+mixer rule 10 add SR S3 70 0 
+mixer rule 11 add SP S2 -121 0 
+mixer rule 12 add SP S3 121 0 
+mixer rule 13 set ST M1 1000 0 
+mixer rule 14 set SY M2 1000 0 
 
 # beeper
 beeper GYRO_CALIBRATED
@@ -301,11 +290,11 @@ beacon -RX_LOST
 beacon -RX_SET
 
 # map
-map AETR1C23		# FUTABA
+map AETR1C23
 
 # serial
 serial 20 1 115200 57600 0 115200
-serial 1 128 115200 57600 0 2000000
+serial 1 128 19200 57600 0 250000
 serial 3 0 115200 57600 0 115200
 serial 4 64 115200 57600 0 115200
 serial 5 0 115200 57600 0 115200
@@ -387,12 +376,18 @@ mode_color 3 2 4
 mode_color 3 3 13
 mode_color 3 4 10
 mode_color 3 5 3
+mode_color 3 6 3
+mode_color 3 7 6
+mode_color 3 8 0
+mode_color 3 9 0
+mode_color 3 10 0
+mode_color 4 0 3
 
 # aux
-aux 0 0 0 2025 2100 0 0			# ARM
-aux 1 1 4 2025 2100 0 0			# Angle
-aux 2 2 3 2025 2100 0 0			# Horizon
-aux 3 3 1 2025 2100 0 0			# Rescue
+aux 0 0 0 2025 2100 0 0
+aux 1 1 4 2025 2100 0 0
+aux 2 2 3 2025 2100 0 0
+aux 3 3 1 2025 2100 0 0
 aux 4 0 0 900 900 0 0
 aux 5 0 0 900 900 0 0
 aux 6 0 0 900 900 0 0
@@ -573,7 +568,7 @@ set use_unsynced_pwm = OFF
 set motor_pwm_protocol = DSHOT600
 set motor_pwm_rate = 480
 set motor_pwm_inversion = OFF
-set motor_poles = 14,8,0,0						# 14 magnet poles Main Motor, 8 magnet poles tail   
+set motor_poles = 14,8,0,0
 set motor_rpm_lpf = 10,10,10,10
 set failsafe_delay = 4
 set failsafe_off_delay = 10
@@ -618,8 +613,8 @@ set tail_rotor_mode = MOTORIZED
 set tail_motor_idle = 15
 set swash_ring = 100
 set gov_mode = MODE2
-set gov_max_headspeed = 6500					#Gov Max 6500RPM
-set gov_gear_ratio = 1000					    #Direct
+set gov_max_headspeed = 6500
+set gov_gear_ratio = 1000
 set gov_pwr_filter = 5
 set gov_rpm_filter = 5
 set gov_gain = 40
@@ -641,7 +636,7 @@ set gov_vbat_offset = 0
 set gov_ff_exponent = 150
 set gov_tta_gain = 20
 set gov_tta_limit = 20
-set servo_pwm_rate = 333						# 330kHz
+set servo_pwm_rate = 333
 set reboot_character = 82
 set serial_update_rate_hz = 100
 set imu_dcm_kp = 2500
@@ -792,6 +787,10 @@ set stats_total_time_s = 0
 set stats_total_dist_m = 0
 set name = M1 Rotorflight
 set position_alt_source = DEFAULT
+set box_user_1_name = -
+set box_user_2_name = -
+set box_user_3_name = -
+set box_user_4_name = -
 
 profile 0
 
@@ -824,15 +823,15 @@ set roll_error_filter = 0
 set yaw_error_filter = 0
 set cyclic_normalization = ABSOLUTE
 set collective_normalization = NATURAL
-set angle_level_strength = 25				
-set angle_level_limit = 45				
+set angle_level_strength = 25
+set angle_level_limit = 45
 set horizon_level_strength = 20
 set horizon_transition = 75
 set horizon_tilt_effect = 20
 set horizon_tilt_expert_mode = OFF
-set rescue_collective = 320				# How strong the Heli will collective up during rescue mode
-set rescue_boost = 330					# Boost collective applied until rescue delay expires
-set rescue_delay = 10					# seconds*10 so 1.5s before non inverted rescue roll
+set rescue_collective = 300
+set rescue_boost = 330
+set rescue_delay = 10
 set abs_control = OFF
 set abs_control_gain = 30
 set abs_control_limit = 120
