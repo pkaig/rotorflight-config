@@ -1,0 +1,193 @@
+#==================================
+# Pins
+timer A03 list
+timer B00 list
+timer B01 list #label S3
+timer A00 list
+timer C06 list
+timer C07 list
+timer B05 list
+timer B09 list
+timer B03 list
+timer B06 list #label M2
+timer B07 list #label M1
+timer C09 list
+timer A10 list
+timer A09 list #label S2
+timer B10 list #label S1
+timer B08 list
+timer A01 list		
+timer C08 list
+
+#==================================
+# Options
+# timer A03 list
+# AF1: TIM2 CH4
+# AF2: TIM5 CH4
+# AF3: TIM9 CH2
+
+# timer B00 list
+# AF1: TIM1 CH2N
+# AF2: TIM3 CH3
+# AF3: TIM8 CH2N
+
+# timer B01 list #label S3
+# AF1: TIM1 CH3N
+# AF2: TIM3 CH4
+# AF3: TIM8 CH3N
+
+# timer A00 list
+# AF1: TIM2 CH1
+# AF2: TIM5 CH1
+
+# timer C06 list
+# AF2: TIM3 CH1
+# AF3: TIM8 CH1
+
+# timer C07 list
+# AF2: TIM3 CH2
+# AF3: TIM8 CH2
+
+# timer B05 list
+# AF2: TIM3 CH2
+
+# timer B09 list
+# AF2: TIM4 CH4
+# AF3: TIM11 CH1
+
+# timer B03 list
+# AF1: TIM2 CH2
+
+# timer B06 list #label M2
+# AF2: TIM4 CH1
+
+# timer B07 list #label M1
+# AF2: TIM4 CH2
+
+# timer C09 list
+# AF2: TIM3 CH4
+# AF3: TIM8 CH4
+
+# timer A10 list
+# AF1: TIM1 CH3
+
+# timer A09 list #label S2
+# AF1: TIM1 CH2
+
+# timer B10 list #label S1
+# AF1: TIM2 CH3
+
+# timer B08 list
+# AF2: TIM4 CH3
+# AF3: TIM10 CH1
+
+# timer A01 list
+# AF1: TIM2 CH2
+# AF2: TIM5 CH2
+
+# timer C08 list
+# AF2: TIM3 CH3
+# AF3: TIM8 CH3
+
+
+#==================================
+# Configured timers
+
+# timer
+# motor timers
+
+
+# servo timers
+
+
+#==================================
+# DMA
+# Pins
+dma pin A03 list
+dma pin B00 list
+dma pin B01 list #label S3
+dma pin A00 list
+dma pin C06 list
+dma pin C07 list
+dma pin B05 list
+dma pin B09 list
+dma pin B03 list
+dma pin B06 list #label M2
+dma pin B07 list #label M1
+dma pin C09 list
+dma pin A10 list
+dma pin A09 list #label S2
+dma pin B10 list #label S1
+dma pin B08 list
+dma pin A01 list		
+dma pin C08 list
+
+#==================================
+# dma pin A03 list
+
+# dma pin B00 list
+# 0: DMA1 Stream 7 Channel 5
+
+# dma pin B01 list #label S3
+# 0: DMA2 Stream 6 Channel 0
+# 1: DMA2 Stream 6 Channel 6
+
+# dma pin A00 list
+# 0: DMA1 Stream 2 Channel 6
+
+# dma pin C06 list
+# 0: DMA1 Stream 4 Channel 5
+
+# dma pin C07 list
+# 0: DMA2 Stream 2 Channel 0
+# 1: DMA2 Stream 3 Channel 7
+
+# dma pin B05 list
+# 0: DMA1 Stream 5 Channel 5
+
+# dma pin B09 list
+
+# dma pin B03 list
+# 0: DMA1 Stream 6 Channel 3
+
+# dma pin B06 list #label M2
+# 0: DMA1 Stream 0 Channel 2
+
+# dma pin B07 list #label M1
+# 0: DMA1 Stream 3 Channel 2
+
+# dma pin C09 list
+# 0: DMA2 Stream 7 Channel 7
+
+# dma pin A10 list
+# 0: DMA2 Stream 6 Channel 0
+# 1: DMA2 Stream 6 Channel 6
+
+# dma pin A09 list #label S2
+# 0: DMA2 Stream 6 Channel 0
+# 1: DMA2 Stream 2 Channel 6
+
+# dma pin B10 list #label S1
+# 0: DMA1 Stream 1 Channel 3
+
+# dma pin B08 list
+# 0: DMA1 Stream 7 Channel 2
+
+# dma pin A01 list
+# 0: DMA1 Stream 4 Channel 6
+
+# dma pin C08 list
+# 0: DMA2 Stream 2 Channel 0
+# 1: DMA2 Stream 4 Channel 7
+
+#==================================
+# Configured DMA
+
+# DMA
+# motor DMA
+
+
+# servo DMA
+
+
+#==================================
