@@ -1,0 +1,96 @@
+#timers
+timer B06 list	#M1
+timer B07 list	#M2
+timer B08 list	#M3
+timer C08 list	#M4
+timer C01 list	#Current
+timer B01 list	#LED_STRIP  
+timer A09 list	#TX1
+timer A02 list	#TX2
+timer B10 list	#TX3
+timer C12 list	#TX5
+timer A10 list	#RX1
+
+#dma
+dma pin B06 list	#M1
+dma pin B07 list	#M2
+dma pin B08 list	#M3
+dma pin C08 list	#M4
+dma pin B01 list	#LED_STRIP
+dma pin A09 list	#TX1
+dma pin A02 list	#TX2
+dma pin B10 list	#TX3
+dma pin C12 list	#TX5
+dma pin A10 list	#RX1
+dma pin C01 list	#Current
+
+# #timers
+
+# timer B06 list				#M1
+# AF2: TIM4 CH1
+
+# timer B07 list				#M2
+# AF2: TIM4 CH2
+
+# timer B08 list				#M3
+# AF2: TIM4 CH3
+# AF3: TIM10 CH1
+
+# timer C08 list				#M4
+# AF2: TIM3 CH3
+# AF3: TIM8 CH3
+
+# timer B01 list				#LED_STRIP
+# AF1: TIM1 CH3N
+# AF2: TIM3 CH4
+# AF3: TIM8 CH3N
+
+# timer A09 list				#TX1
+# AF1: TIM1 CH2
+
+# timer A02 list				#TX2
+# AF1: TIM2 CH3
+# AF2: TIM5 CH3
+# AF3: TIM9 CH1
+
+# timer B10 list				#TX3
+# AF1: TIM2 CH3
+
+# timer C12 list				#TX5
+
+# timer A10 list				#RX1
+# AF1: TIM1 CH3
+
+# #dma
+
+# dma pin B06 list				#M1
+# 0: DMA1 Stream 0 Channel 2
+
+# dma pin B07 list				#M2
+# 0: DMA1 Stream 3 Channel 2
+
+# dma pin B08 list				#M3
+# 0: DMA1 Stream 7 Channel 2
+
+# dma pin C08 list				#M4
+# 0: DMA2 Stream 2 Channel 0
+# 1: DMA2 Stream 4 Channel 7
+
+# dma pin B01 list				#LED_STRIP
+# 0: DMA2 Stream 6 Channel 0
+# 1: DMA2 Stream 6 Channel 6
+
+# dma pin A09 list				#TX1
+# 0: DMA2 Stream 6 Channel 0
+# 1: DMA2 Stream 2 Channel 6
+
+# dma pin A02 list				#TX2
+
+# dma pin B10 list				#TX3
+# 0: DMA1 Stream 1 Channel 3
+
+# dma pin C12 list				#TX5
+
+# dma pin A10 list				#RX1
+# 0: DMA2 Stream 6 Channel 0
+# 1: DMA2 Stream 6 Channel 6

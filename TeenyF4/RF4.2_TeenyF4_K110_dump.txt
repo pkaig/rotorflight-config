@@ -21,12 +21,12 @@ manufacturer_id AIRB
 resource BEEPER 1 B04
 resource MOTOR 1 B06		# Main motor - On LED_STRIP
 														  
-# resource MOTOR 2 A02		# Tail Motor - On PWM4 - (not used)
-resource MOTOR 2 NONE
+resource MOTOR 2 A02		# Tail Motor - On PWM4 - (not used)
+#resource MOTOR 2 NONE
 resource SERVO 1 B00		# Front - On PWM1
 resource SERVO 2 B01		# Left Rear - on PWM2
 resource SERVO 3 A03		# right Rear - on PWM3
-resource SERVO 4 A02		# Tail Servo - in PWM4
+#resource SERVO 4 A02		# Tail Servo - in PWM4
 resource SERVO 5 NONE
 resource SERVO 6 NONE
 resource SERVO 7 NONE
@@ -541,7 +541,7 @@ set min_command = 1000
 set dshot_idle_value = 550
 set dshot_burst = ON
 set dshot_bidir = ON
-set dshot_bitbang = AUTO
+set dshot_bitbang = ON
 set dshot_bitbang_timer = AUTO
 set use_unsynced_pwm = OFF
 set motor_pwm_protocol = DSHOT600

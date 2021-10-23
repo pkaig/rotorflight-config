@@ -1,0 +1,58 @@
+timer B04 list		#M1
+timer B05 list		#M2
+timer B06 list		#M3
+timer B07 list		#M4
+timer A08 list		#S1
+timer B08 list		#S2
+timer B09 list		#S3
+
+dma pin B04 list	#M1
+dma pin B05 list	#M2
+dma pin B06 list	#M3
+dma pin B07 list	#M4
+dma pin A08 list	#S1
+dma pin B08 list	#S2
+dma pin B09 list	#S3
+
+# timer B04 list	#M1
+# AF2: TIM3 CH1
+
+# timer B05 list	#M2
+# AF2: TIM3 CH2
+
+# timer B06 list	#M3
+# AF2: TIM4 CH1
+
+# timer B07 list	#M4
+# AF2: TIM4 CH2
+
+# timer A08 list
+# AF1: TIM1 CH1		#S1
+
+# timer B08 list
+# AF2: TIM4 CH3
+# AF3: TIM10 CH1	#S2	
+
+# timer B09 list
+# AF2: TIM4 CH4
+# AF3: TIM11 CH1	#S3
+
+# dma pin B04 list	#M1
+# 0: DMA1 Stream 4 Channel 5
+
+# dma pin B05 list	#M2
+# 0: DMA1 Stream 5 Channel 5
+
+# dma pin B06 list
+
+# dma pin B07 list
+
+# dma pin A08 list
+# 0: DMA2 Stream 6 Channel 0
+# 1: DMA2 Stream 1 Channel 6
+# 2: DMA2 Stream 3 Channel 6
+
+# dma pin B08 list
+# 0: DMA1 Stream 7 Channel 2
+
+# dma pin B09 list

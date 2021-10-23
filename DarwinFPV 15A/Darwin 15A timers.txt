@@ -1,0 +1,62 @@
+timer B04 list	# Label: M1
+timer B05 list	# Label: M2
+timer B06 list	# Label: M3
+timer B07 list	# Label: M4
+timer A08 list 	# Label: LED_STRIP
+timer A03 list	# Label: RX2 
+timer A02 list	# Label: TX2
+
+dma pin B04 list	# Label: M1
+dma pin B05 list	# Label: M2
+dma pin B06 list	# Label: M3
+dma pin B07 list	# Label: M4
+dma pin A08 list 	# Label: LED_STRIP
+dma pin A03 list	# Label: RX2 
+dma pin A02 list	# Label: TX2
+
+# timer B04 list		# Label: M1
+# AF2: TIM3 CH1
+
+# timer B05 list		# Label: M2
+# AF2: TIM3 CH2
+
+# timer B06 list		# Label: M3
+# AF2: TIM4 CH1
+
+# timer B07 list		# Label: M4
+# AF2: TIM4 CH2
+
+# timer A08 list 		# Label: LED_STRIP
+# AF1: TIM1 CH1
+
+# timer A03 list		# Label: RX2
+# AF1: TIM2 CH4
+# AF2: TIM5 CH4
+# AF3: TIM9 CH2
+
+# timer A02 list		# Label: TX2
+# AF1: TIM2 CH3
+# AF2: TIM5 CH3
+# AF3: TIM9 CH1
+
+# dma pin B04 list		# Label: M1
+# 0: DMA1 Stream 4 Channel 5
+
+# dma pin B05 list		# Label: M2
+# 0: DMA1 Stream 5 Channel 5
+
+# dma pin B06 list		# Label: M3
+# 0: DMA1 Stream 0 Channel 2
+
+# dma pin B07 list		# Label: M4
+# 0: DMA1 Stream 3 Channel 2
+
+# dma pin A08 list 		# Label: LED_STRIP
+# 0: DMA2 Stream 6 Channel 0
+# 1: DMA2 Stream 1 Channel 6
+# 2: DMA2 Stream 3 Channel 6
+
+# dma pin A03 list		# Label: RX2
+
+# dma pin A02 list		# Label: TX2
+# 0: DMA1 Stream 0 Channel 6
