@@ -1,194 +1,16 @@
 ############################################################
 # Versions
-# V1    - Rescue mode added roll to upright
-# V1.1  - Added Rescue mode boost and yaw enable 
-# V2	- RF snapshot-20210822
-# V2.2  - TTA testing
-# V3	- pre-release
-# V4.2.9
+# V1      - Rescue mode added roll to upright
+# V1.1    - Added Rescue mode boost and yaw enable 
+# V2	  - RF snapshot-20210822
+# V2.2    - TTA testing
+# V3	  - pre-release
+# V4.2.9  - Updates
+# V4.2.10 - Updates - Diff Created   
 ###########################
 
 # start the command batch
 batch start
-
-#board_name TALONF7V2
-manufacturer_id HENA
-
-# name: M1 Rotorflight
-
-# resources
-resource BEEPER 1 B04
-resource MOTOR 1 B07				# Main Motor - #2 on ESC. 
-resource MOTOR 2 B06				# Tail Motor - #1 on ESC
-resource SERVO 1 B10				# TX1 - Elevator Servo
-resource SERVO 2 A09				# LEDS - Aileron - Left
-resource SERVO 3 B01				# TX3 - Aileron - Right
-resource SERVO 4 NONE
-resource SERVO 5 NONE
-resource SERVO 6 NONE
-resource SERVO 7 NONE
-resource SERVO 8 NONE
-resource PPM 1 NONE
-resource PWM 1 NONE
-resource PWM 2 NONE
-resource PWM 3 NONE
-resource PWM 4 NONE
-resource PWM 5 NONE
-resource PWM 6 NONE
-resource PWM 7 NONE
-resource PWM 8 NONE
-resource SONAR_TRIGGER 1 NONE
-resource SONAR_ECHO 1 NONE
-resource LED_STRIP 1 NONE			#Remove B01 for Servo 2
-resource SERIAL_TX 1 NONE			#Remove A09 for Servo 1
-resource SERIAL_TX 2 A02
-resource SERIAL_TX 3 NONE			#Remove B10 for Servo 3
-resource SERIAL_TX 4 A00
-resource SERIAL_TX 5 C12
-resource SERIAL_TX 6 C06
-resource SERIAL_TX 7 NONE
-resource SERIAL_TX 8 NONE
-resource SERIAL_TX 9 NONE
-resource SERIAL_TX 10 NONE
-resource SERIAL_TX 11 NONE
-resource SERIAL_TX 12 NONE
-resource SERIAL_RX 1 A10
-resource SERIAL_RX 2 A03
-resource SERIAL_RX 3 B11
-resource SERIAL_RX 4 A01
-resource SERIAL_RX 5 D02
-resource SERIAL_RX 6 C07
-resource SERIAL_RX 7 NONE
-resource SERIAL_RX 8 NONE
-resource SERIAL_RX 9 NONE
-resource SERIAL_RX 10 NONE
-resource SERIAL_RX 11 NONE
-resource SERIAL_RX 12 NONE
-resource I2C_SCL 1 NONE
-resource I2C_SCL 2 NONE
-resource I2C_SCL 3 NONE
-resource I2C_SCL 4 NONE
-resource I2C_SDA 1 NONE
-resource I2C_SDA 2 NONE
-resource I2C_SDA 3 NONE
-resource I2C_SDA 4 NONE
-resource LED 1 B00
-resource LED 2 NONE
-resource LED 3 NONE
-resource RX_BIND 1 B02
-resource RX_BIND_PLUG 1 NONE
-resource SPI_SCK 1 A05
-resource SPI_SCK 2 B13
-resource SPI_SCK 3 C10
-resource SPI_SCK 4 NONE
-resource SPI_MISO 1 A06
-resource SPI_MISO 2 B14
-resource SPI_MISO 3 C11
-resource SPI_MISO 4 NONE
-resource SPI_MOSI 1 A07
-resource SPI_MOSI 2 B15
-resource SPI_MOSI 3 B05
-resource SPI_MOSI 4 NONE
-resource ADC_BATT 1 C02
-resource ADC_RSSI 1 C03
-resource ADC_CURR 1 C01
-resource ADC_EXT 1 NONE
-resource BARO_CS 1 NONE
-resource BARO_EOC 1 NONE
-resource BARO_XCLR 1 NONE
-resource COMPASS_CS 1 NONE
-resource COMPASS_EXTI 1 NONE
-resource SDCARD_CS 1 B12
-resource SDCARD_DETECT 1 C03
-resource PINIO 1 A14
-resource PINIO 2 NONE
-resource PINIO 3 NONE
-resource PINIO 4 NONE
-resource USB_MSC_PIN 1 NONE
-resource FLASH_CS 1 B12
-resource GYRO_EXTI 1 C04
-resource GYRO_EXTI 2 C14
-resource GYRO_CS 1 A04
-resource GYRO_CS 2 C13
-resource USB_DETECT 1 C05
-resource PULLUP 1 NONE
-resource PULLUP 2 NONE
-resource PULLUP 3 NONE
-resource PULLUP 4 NONE
-resource PULLDOWN 1 NONE
-resource PULLDOWN 2 NONE
-resource PULLDOWN 3 NONE
-resource PULLDOWN 4 NONE
-resource FREQ 1 NONE
-resource FREQ 2 NONE
-
-# timer
-timer A03 AF3			# pin A03: TIM9 CH2 (AF3)
-timer B00 AF2			# pin B00: TIM3 CH3 (AF2)
-timer B01 AF1			# pin B01: TIM1 CH3N (AF1)
-timer A00 AF2			# pin A00: TIM5 CH1 (AF2)
-timer C06 AF2			# pin C06: TIM3 CH1 (AF2)
-timer C07 AF3			# pin C07: TIM8 CH2 (AF3)
-timer B05 AF2			# pin B05: TIM3 CH2 (AF2)
-timer B09 AF2			# pin B09: TIM4 CH4 (AF2)
-timer B03 AF1			# pin B03: TIM2 CH2 (AF1)
-timer B06 AF2			# pin B06: TIM4 CH1 (AF2)
-timer B07 AF2			# pin B07: TIM4 CH2 (AF2)
-timer C09 AF3			# pin C09: TIM8 CH4 (AF3)
-timer A10 AF1			# pin A10: TIM1 CH3 (AF1)
-timer A09 AF1			# pin A09: TIM1 CH2 (AF1)
-timer B10 AF1			# pin B10: TIM2 CH3 (AF1)
-timer B08 AF2			# pin B08: TIM4 CH3 (AF2)
-timer A01 AF2			# pin A01: TIM5 CH2 (AF2)
-timer C08 AF3			# pin C08: TIM8 CH3 (AF3)
-
-# dma
-dma SPI_TX 1 NONE
-dma SPI_TX 2 NONE
-dma SPI_TX 3 NONE
-dma SPI_TX 4 NONE
-dma SPI_RX 1 NONE
-dma SPI_RX 2 NONE
-dma SPI_RX 3 NONE
-dma SPI_RX 4 NONE
-dma ADC 1 1
- ADC 1: DMA2 Stream 4 Channel 0
-dma ADC 2 NONE
-dma ADC 3 NONE
-dma UART_TX 1 NONE
-dma UART_TX 2 NONE
-dma UART_TX 3 NONE
-dma UART_TX 4 NONE
-dma UART_TX 5 NONE
-dma UART_TX 6 NONE
-dma UART_TX 7 NONE
-dma UART_TX 8 NONE
-dma UART_RX 1 NONE
-dma UART_RX 2 NONE
-dma UART_RX 3 NONE
-dma UART_RX 4 NONE
-dma UART_RX 5 NONE
-dma UART_RX 6 NONE
-dma UART_RX 7 NONE
-dma UART_RX 8 NONE
-dma pin A03 NONE
-dma pin B00 NONE
-dma pin B01 0		# pin B01: DMA2 Stream 6 Channel 0							  
-dma pin A00 0		# pin A00: DMA1 Stream 2 Channel 6
-dma pin C06 0		# pin C06: DMA1 Stream 4 Channel 5
-dma pin C07 0		# pin C07: DMA2 Stream 2 Channel 0
-dma pin B05 0		# pin B05: DMA1 Stream 5 Channel 5
-dma pin B09 NONE
-dma pin B03 0		# pin B03: DMA1 Stream 6 Channel 3
-dma pin B06 0		# pin B06: DMA1 Stream 0 Channel 2
-dma pin B07 0		# pin B07: DMA1 Stream 3 Channel 2
-dma pin C09 0		# pin C09: DMA2 Stream 7 Channel 7
-dma pin A10 NONE
-dma pin A09 1		# pin A09: DMA2 Stream 2 Channel 6
-dma pin B10 0		# pin B10: DMA1 Stream 1 Channel 3
-dma pin B08 0		# pin B08: DMA1 Stream 7 Channel 2
-dma pin A01 0		# pin A01: DMA1 Stream 4 Channel 6
-dma pin C08 0		# pin C08: DMA2 Stream 2 Channel 0
 
 # feature
 feature -RX_PPM
@@ -464,7 +286,6 @@ set gyro_calib_duration = 125
 set gyro_calib_noise_limit = 48
 set gyro_offset_yaw = 0
 set gyro_overflow_detect = ALL
-set gyro_to_use = FIRST
 set gyro_dyn_lpf_min_hz = 0
 set gyro_dyn_lpf_max_hz = 0
 set dterm_dyn_lpf_min_hz = 25
@@ -481,21 +302,9 @@ set acc_lpf_hz = 10
 set acc_trim_pitch = 0
 set acc_trim_roll = 0
 set acc_calibration = -121,21,-90,1
-set align_mag = DEFAULT
-set mag_align_roll = 0
-set mag_align_pitch = 0
-set mag_align_yaw = 0
-set mag_bustype = NONE
-set mag_i2c_device = 2
-set mag_i2c_address = 0
-set mag_spi_device = 0
 set mag_hardware = NONE
 set mag_declination = 0
 set mag_calibration = 0,0,0
-set baro_bustype = NONE
-set baro_spi_device = 0
-set baro_i2c_device = 1
-set baro_i2c_address = 0
 set baro_hardware = NONE
 set baro_tab_size = 21
 set baro_noise_lpf = 600
@@ -531,23 +340,18 @@ set crsf_use_rx_snr = OFF
 set rx_min_usec = 885
 set rx_max_usec = 2115
 set serialrx_halfduplex = OFF
-set adc_device = 1
 set adc_vrefint_calibration = 0
 set adc_tempsensor_calibration30 = 0
 set adc_tempsensor_calibration110 = 0
 set input_filtering_mode = OFF
 set blackbox_p_ratio = 64
-set blackbox_device = SERIAL
 set blackbox_record_acc = ON
 set blackbox_mode = NORMAL
 set min_throttle = 1070
 set max_throttle = 2000
 set min_command = 1000
 set dshot_idle_value = 550
-set dshot_burst = ON
 set dshot_bidir = ON
-set dshot_bitbang = AUTO
-set dshot_bitbang_timer = AUTO
 set use_unsynced_pwm = OFF
 set motor_pwm_protocol = DSHOT600
 set motor_pwm_rate = 480
@@ -571,8 +375,6 @@ set vbat_full_cell_voltage = 410
 set vbat_min_cell_voltage = 310
 set vbat_warning_cell_voltage = 350
 set vbat_hysteresis = 1
-set current_meter = ADC
-set battery_meter = ADC
 set vbat_detect_cell_voltage = 300
 set use_vbat_alerts = ON
 set use_cbat_alerts = OFF
@@ -586,11 +388,7 @@ set vbat_duration_for_critical = 21
 set vbat_scale = 162
 set vbat_divider = 10
 set vbat_multiplier = 1
-set ibata_scale = 250
 set ibata_offset = 0
-set beeper_inversion = ON
-set beeper_od = OFF
-set beeper_frequency = 0
 set beeper_dshot_beacon_tone = 1
 set main_rotor_dir = CW
 set tail_rotor_mode = MOTORIZED
@@ -695,13 +493,7 @@ set ledstrip_beacon_color = WHITE
 set ledstrip_beacon_period_ms = 500
 set ledstrip_beacon_percent = 50
 set ledstrip_beacon_armed_only = OFF
-set sdcard_detect_inverted = ON
-set sdcard_mode = OFF
 set sdcard_dma = OFF
-set sdcard_spi_bus = 2
-set sdio_clk_bypass = OFF
-set sdio_use_cache = OFF
-set sdio_use_4bit_width = OFF
 set task_statistics = ON
 set debug_mode = GYRO_SCALED
 set rate_6pos_switch = OFF
@@ -719,36 +511,10 @@ set displayport_msp_attrs = 0,0,0,0
 set displayport_msp_use_device_blink = OFF
 set esc_sensor_halfduplex = OFF
 set esc_sensor_current_offset = 0
-set led_inversion = 0
 set rangefinder_hardware = NONE
 set pinio_config = 1,1,1,1
 set pinio_box = 40,255,255,255
 set usb_hid_cdc = OFF
-set usb_msc_pin_pullup = ON
-set flash_spi_bus = 2
-set gyro_1_bustype = SPI
-set gyro_1_spibus = 1
-set gyro_1_i2cBus = 0
-set gyro_1_i2c_address = 0
-set gyro_1_sensor_align = CW90
-set gyro_1_align_roll = 0
-set gyro_1_align_pitch = 0
-set gyro_1_align_yaw = 900
-set gyro_2_bustype = SPI
-set gyro_2_spibus = 1
-set gyro_2_i2cBus = 0
-set gyro_2_i2c_address = 0
-set gyro_2_sensor_align = CW90
-set gyro_2_align_roll = 0
-set gyro_2_align_pitch = 0
-set gyro_2_align_yaw = 900
-set i2c1_pullup = OFF
-set i2c1_overclock = ON
-set i2c2_pullup = OFF
-set i2c2_overclock = ON
-set i2c3_pullup = OFF
-set i2c3_overclock = ON
-set mco2_on_pc9 = ON
 set timezone_offset_minutes = 0
 set gyro_rpm_filter_bank_motor_index = 1,1,1,1,1,1,1,2,2,2,0,0,0,0,0,0
 set gyro_rpm_filter_bank_gear_ratio = 995,1005,498,503,333,250,200,1000,500,333,0,0,0,0,0,0
@@ -815,9 +581,9 @@ set ff_boost = 15
 set yaw_center_offset = 0
 set yaw_cyclic_ff_gain = 40
 set yaw_collective_ff_gain = 180
-set yaw_collective_ff_impulse_gain = 150
+set yaw_collective_ff_impulse_gain = 90
 set yaw_collective_ff_impulse_freq = 100
-set gov_headspeed = 7000					#Gov Max 7000RPM
+set gov_headspeed = 6500					#Gov Max 6500RPM
 set gov_gain = 40
 set gov_p_gain = 35
 set gov_i_gain = 25
@@ -844,3 +610,6 @@ set yaw_srate = 0
 set roll_rate_limit = 1998
 set pitch_rate_limit = 1998
 set yaw_rate_limit = 1998
+
+# end the command batch
+batch end
