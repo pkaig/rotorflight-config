@@ -1,0 +1,51 @@
+# dma pin A0 list
+# 0: DMA1 Stream 5 Channel 3
+
+# dma pin A1 list
+# 0: DMA1 Stream 6 Channel 3
+
+# dma pin A2 list
+# 0: DMA1 Stream 1 Channel 3
+
+# dma pin A3 list
+# 0: DMA1 Stream 7 Channel 3
+# 1: DMA1 Stream 6 Channel 3
+
+# dma pin A4 list
+
+# dma pin A5 list
+# 0: DMA1 Stream 5 Channel 3
+
+# dma pin A6 list
+
+# dma pin A7 list
+# 0: DMA2 Stream 6 Channel 0
+# 1: DMA2 Stream 1 Channel 6
+# 2: DMA2 Stream 3 Channel 6
+
+# dma pin A8 list
+# 0: DMA2 Stream 6 Channel 0
+# 1: DMA2 Stream 1 Channel 6
+# 2: DMA2 Stream 3 Channel 6
+
+# dma pin A9 list
+# 0: DMA2 Stream 6 Channel 0
+# 1: DMA2 Stream 2 Channel 6
+
+# dma pin A10 list
+# 0: DMA2 Stream 6 Channel 0
+# 1: DMA2 Stream 6 Channel 6
+
+# dma pin A11 list
+# 0: DMA2 Stream 6 Channel 0
+# 1: DMA2 Stream 1 Channel 6
+# 2: DMA2 Stream 3 Channel 6
+
+# dma pin A12 list
+
+# dma pin A13 list
+
+# dma pin A14 list
+
+# dma pin A15 list
+# 0: DMA1 Stream 5 Channel 3
