@@ -222,6 +222,8 @@ feature -FREQ_SENSOR
 feature -DYNAMIC_FILTER
 feature -RPM_FILTER
 feature RX_SERIAL
+feature TELEMETRY
+feature RSSI_ADC
 feature GOVERNOR
 feature RPM_FILTER
 
@@ -255,8 +257,8 @@ mixer rule 13 set ST M1 1000 0
 mixer rule 14 set SY M2 1000 0 
 
 # beeper
-beeper -GYRO_CALIBRATED
-beeper -RX_LOST
+beeper GYRO_CALIBRATED
+beeper RX_LOST
 beeper -RX_LOST_LANDING
 beeper -DISARMING
 beeper -ARMING
@@ -272,7 +274,7 @@ beeper -READY_BEEP
 beeper MULTI_BEEPS
 beeper -DISARM_REPEAT
 beeper -ARMED
-beeper -SYSTEM_INIT
+beeper SYSTEM_INIT
 beeper -ON_USB
 beeper -BLACKBOX_ERASE
 beeper -CRASH_FLIP
@@ -285,7 +287,7 @@ beacon -RX_LOST
 beacon -RX_SET
 
 # map
-map AETR1C23
+map AECRT123
 
 # serial
 serial 20 1 115200 57600 0 115200
@@ -378,10 +380,10 @@ mode_color 3 10 0
 mode_color 4 0 3
 
 # aux
-aux 0 0 0 1925 2000 0 0
-aux 1 3 1 2000 2100 0 0
-aux 2 0 0 900 900 0 0
-aux 3 0 0 900 900 0 0
+aux 0 0 2 1925 2050 0 0
+aux 1 1 0 1700 2100 0 0
+aux 2 2 0 1300 1700 0 0
+aux 3 3 1 1950 2050 0 0
 aux 4 0 0 900 900 0 0
 aux 5 0 0 900 900 0 0
 aux 6 0 0 900 900 0 0
@@ -530,7 +532,7 @@ set rc_smoothing_input_type = BIQUAD
 set rc_smoothing_derivative_type = AUTO
 set rc_smoothing_auto_smoothness = 30
 set max_aux_channels = 13
-set serialrx_provider = SBUS
+set serialrx_provider = CRSF
 set serialrx_inverted = OFF
 set spektrum_sat_bind = 0
 set spektrum_sat_bind_autoreset = ON
@@ -814,7 +816,7 @@ set horizon_transition = 75
 set horizon_tilt_effect = 75
 set horizon_tilt_expert_mode = OFF
 set rescue_collective = 190
-set rescue_boost = 150
+set rescue_boost = 90
 set rescue_delay = 8
 set abs_control = OFF
 set abs_control_gain = 30
@@ -840,7 +842,7 @@ set gov_i_gain = 25
 set gov_d_gain = 0
 set gov_f_gain = 15
 set gov_cyclic_ff_weight = 40
-set gov_collective_ff_weight = 100
+set gov_collective_ff_weight = 60
 set gov_tta_gain = 50
 set gov_tta_limit = 25
 
