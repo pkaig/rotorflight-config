@@ -1,6 +1,7 @@
 # version
-# Rotorflight / STM32F405 (S405) 4.2.11 Nov 22 2021 / 09:41:00 (e4d397c) MSP API: 11.1
-###ERROR: dump: NO CONFIG FOUND###
+# Rotorflight / STM32F405 (S405) 4.2.12-20211212 Dec 12 2021 / 15:30:36 (ac08f84) MSP API: 11.1
+# config: manufacturer_id: FPVM, board_name: BETAFLIGHTF4, version: f92ddc38, date: 2020-04-28T07:37:21Z
+
 # start the command batch
 batch start
 
@@ -287,7 +288,7 @@ beacon -RX_LOST
 beacon -RX_SET
 
 # map
-map AECRT123
+map AECR1T23
 
 # serial
 serial 20 1 115200 57600 0 115200
@@ -792,9 +793,9 @@ set iterm_decay = 20
 set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_gain = 75
-set p_pitch = 68
-set i_pitch = 75
-set d_pitch = 20
+set p_pitch = 61
+set i_pitch = 69
+set d_pitch = 14
 set f_pitch = 98
 set p_roll = 82
 set i_roll = 75
