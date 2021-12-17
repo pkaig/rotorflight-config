@@ -1,0 +1,191 @@
+############################################################
+# Versions
+# 
+# RF4.2.12 - snapshot 20211212
+#
+###########################
+# Diff
+
+# version
+# Rotorflight / STM32F405 (S405) 4.2.12-20211212 Dec 12 2021 / 15:30:36 (ac08f84) MSP API: 11.1
+# config: manufacturer_id: FPVM, board_name: BETAFLIGHTF4, version: f92ddc38, date: 2020-04-28T07:37:21Z
+
+# start the command batch
+batch start
+
+board_name BETAFLIGHTF4
+manufacturer_id FPVM
+
+# name: E180
+
+# resources
+resource MOTOR 1 B01
+resource MOTOR 2 C08
+resource MOTOR 3 NONE
+resource MOTOR 4 NONE
+resource SERVO 1 B11
+resource SERVO 2 B10
+resource SERVO 3 B06
+resource PWM 1 B08
+resource LED_STRIP 1 NONE
+resource SERIAL_TX 3 NONE
+resource SERIAL_RX 3 NONE
+
+# timer
+timer B01 AF3
+# pin B01: TIM8 CH3N (AF3)
+
+# dma
+dma pin B01 0
+# pin B01: DMA2 Stream 2 Channel 0
+
+# feature
+feature RX_SERIAL
+feature TELEMETRY
+feature RSSI_ADC
+feature GOVERNOR
+feature RPM_FILTER
+
+# servo
+servo 1 1500 -500 600 600 -80 0
+servo 2 1500 -500 600 600 -29 0
+servo 3 1500 -500 600 -600 -26 0
+
+# mixer input
+mixer input ST 0 1000 1000
+
+# mixer rule
+mixer rule 0 add SC S1 500 0 
+mixer rule 1 add SC S2 500 0 
+mixer rule 2 add SC S3 500 0 
+mixer rule 3 add SR S2 866 0 
+mixer rule 4 add SR S3 -866 0 
+mixer rule 5 add SP S1 1000 0 
+mixer rule 6 add SP S2 -500 0 
+mixer rule 7 add SP S3 -500 0 
+mixer rule 8 add SR S1 0 0 
+mixer rule 9 add SR S2 0 0 
+mixer rule 10 add SR S3 0 0 
+mixer rule 11 add SP S2 0 0 
+mixer rule 12 add SP S3 0 0 
+mixer rule 13 set ST M1 1000 0 
+mixer rule 14 set SY M2 1000 0 
+
+# beeper
+beeper -RX_LOST_LANDING
+beeper -DISARMING
+beeper -ARMING
+beeper -ARMING_GPS_FIX
+beeper -GPS_STATUS
+beeper -RX_SET
+beeper -ACC_CALIBRATION
+beeper -ACC_CALIBRATION_FAIL
+beeper -READY_BEEP
+beeper -DISARM_REPEAT
+beeper -ARMED
+beeper -ON_USB
+beeper -BLACKBOX_ERASE
+beeper -CRASH_FLIP
+beeper -CAM_CONNECTION_OPEN
+beeper -CAM_CONNECTION_CLOSE
+beeper -RC_SMOOTHING_INIT_FAIL
+
+# map
+map AECR1T23
+
+# serial
+serial 5 64 115200 57600 0 115200
+
+# aux
+aux 0 0 2 1925 2050 0 0
+aux 1 1 0 1700 2100 0 0
+aux 2 2 0 1300 1700 0 0
+aux 3 3 1 1950 2050 0 0
+
+# master
+set acc_calibration = 0,65,-249,1
+set mag_hardware = NONE
+set baro_hardware = NONE
+set min_check = 1025
+set max_check = 2000
+set rc_interp_ch = RPYTC
+set serialrx_provider = CRSF
+set blackbox_p_ratio = 16
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT600
+set motor_poles = 24,12,6,6
+set motor_rpm_lpf = 5,10,50,50
+set vbat_hysteresis = 20
+set current_meter = ADC
+set battery_meter = ADC
+set tail_rotor_mode = MOTORIZED
+set tail_motor_idle = 15
+set swash_ring = 100
+set gov_mode = MODE2
+set gov_pwr_filter = 10
+set gov_rpm_filter = 10
+set gov_tracking_time = 40
+set gov_recovery_time = 40
+set gov_lost_headspeed_timeout = 30
+set servo_pwm_rate = 200
+set gps_sbas_mode = AUTO
+set gps_auto_config = OFF
+set deadband = 1
+set yaw_deadband = 1
+set pid_process_denom = 2
+set debug_mode = GYRO_SCALED
+set gyro_1_sensor_align = CW270
+set gyro_1_align_yaw = 2700
+set gyro_rpm_filter_bank_motor_index = 1,1,1,2,1,1,1,1,2,1,1,1,1,1,1,0
+set gyro_rpm_filter_bank_gear_ratio = 1005,1000,1000,1000,995,503,500,500,500,498,335,333,332,250,200,0
+set gyro_rpm_filter_bank_notch_q = 200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,0
+set gyro_rpm_filter_bank_min_hz = 20,20,20,20,20,33,33,33,33,33,50,50,50,67,83,0
+set gyro_rpm_filter_bank_max_hz = 117,117,117,933,117,233,233,233,1867,233,350,350,350,467,583,0
+set name = E180
+
+profile 0
+
+# profile 0
+set iterm_relax = RPY
+set iterm_relax_cutoff = 20,20,20
+set iterm_limit = 400,400,400
+set iterm_decay = 20
+set p_pitch = 61
+set i_pitch = 69
+set d_pitch = 14
+set f_pitch = 98
+set p_roll = 82
+set i_roll = 75
+set d_roll = 13
+set f_roll = 96
+set p_yaw = 20
+set i_yaw = 15
+set rescue_collective = 190
+set rescue_boost = 160
+set rescue_delay = 8
+set abs_control_gain = 30
+set abs_control_cutoff = 11
+set yaw_center_offset = 60
+set yaw_cyclic_ff_gain = 40
+set yaw_collective_ff_gain = 200
+set yaw_collective_ff_impulse_gain = 121
+set gov_headspeed = 6500
+set gov_gain = 40
+set gov_p_gain = 35
+set gov_i_gain = 25
+set gov_collective_ff_weight = 60
+set gov_tta_gain = 50
+set gov_tta_limit = 25
+
+rateprofile 0
+
+# rateprofile 0
+set roll_rc_rate = 150
+set pitch_rc_rate = 150
+set yaw_rc_rate = 170
+set roll_expo = 30
+set pitch_expo = 30
+set yaw_expo = 50
+set roll_srate = 0
+set pitch_srate = 0
+set yaw_srate = 0
