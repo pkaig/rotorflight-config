@@ -248,8 +248,8 @@ servo 2 1470 -500 500 500 0 0
 servo 3 1470 -500 500 500 0 0
 
 # mixer input
-mixer input SR -1000 1000 1000
-mixer input SP -1000 1000 1000
+mixer input SR -1000 1000 800
+mixer input SP -1000 1000 800
 mixer input SY -1000 1000 1000
 mixer input SC -1000 1000 1000
 mixer input ST 0 1000 1000
@@ -314,7 +314,7 @@ map AECR1T23
 
 # serial
 serial 20 1 115200 57600 0 115200
-serial 1 128 115200 57600 0 250000
+serial 1 128 115200 57600 0 2000000
 serial 3 0 115200 57600 0 115200
 serial 4 64 115200 57600 0 115200
 serial 5 0 115200 57600 0 115200
@@ -398,9 +398,9 @@ mode_color 3 4 10
 mode_color 3 5 3
 
 # aux
-aux 0 0 2 1850 1950 0 0
-aux 1 1 0 1700 2100 0 0
-aux 2 2 0 1300 1700 0 0
+aux 0 0 0 1900 2075 0 0
+aux 1 1 2 1700 2100 0 0
+aux 2 2 2 1300 1700 0 0
 aux 3 3 1 1950 2050 0 0
 aux 4 0 0 900 900 0 0
 aux 5 0 0 900 900 0 0
@@ -800,21 +800,21 @@ set iterm_rotation = ON
 set iterm_relax = RPY
 set iterm_relax_type = SETPOINT
 set iterm_relax_cutoff = 10,10,10
-set iterm_limit = 400,400,400
+set iterm_limit = 500,500,500
 set iterm_decay = 25
 set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_gain = 75
-set p_pitch = 72
-set i_pitch = 104
+set p_pitch = 53
+set i_pitch = 86
 set d_pitch = 15
 set f_pitch = 110
-set p_roll = 80
-set i_roll = 104
+set p_roll = 49
+set i_roll = 69
 set d_roll = 15
 set f_roll = 105
 set p_yaw = 45
-set i_yaw = 50
+set i_yaw = 51
 set d_yaw = 0
 set f_yaw = 0
 set pitch_error_filter = 0
@@ -828,8 +828,8 @@ set horizon_level_strength = 50
 set horizon_transition = 75
 set horizon_tilt_effect = 75
 set horizon_tilt_expert_mode = OFF
-set rescue_collective = 380					# How strong the Heli will collective up during rescue mode
-set rescue_boost = 180						# Boost collective applied until rescue delay expires		
+set rescue_collective = 450					# How strong the Heli will collective up during rescue mode
+set rescue_boost = 200						# Boost collective applied until rescue delay expires		
 set rescue_delay = 10						# seconds*10 so 1.5s before roll to upright
 set abs_control = OFF
 set abs_control_gain = 30
@@ -848,31 +848,31 @@ set yaw_cyclic_ff_gain = 50
 set yaw_collective_ff_gain = 100
 set yaw_collective_ff_impulse_gain = 20
 set yaw_collective_ff_impulse_freq = 100
-set gov_headspeed = 7000					#Gov Max 7000RPM
+set gov_headspeed = 6500					#Gov Max 6500RPM
 set gov_gain = 40
 set gov_p_gain = 35
 set gov_i_gain = 25
 set gov_d_gain = 0
 set gov_f_gain = 15
 set gov_cyclic_ff_weight = 40
-set gov_collective_ff_weight = 100
-set gov_tta_gain = 20
-set gov_tta_limit = 20
+set gov_collective_ff_weight = 114
+set gov_tta_gain = 30
+set gov_tta_limit = 50
 
-rateprofile 0
+rateprofile 1
 
-# rateprofile 0
+# rateprofile 1
 set rateprofile_name = -
 set rates_type = BETAFLIGHT
-set roll_rc_rate = 150
-set pitch_rc_rate = 150
-set yaw_rc_rate = 170
-set roll_expo = 30
-set pitch_expo = 30
-set yaw_expo = 50
-set roll_srate = 0
-set pitch_srate = 0
-set yaw_srate = 0
+set roll_rc_rate = 100
+set pitch_rc_rate = 100
+set yaw_rc_rate = 150
+set roll_expo = 0
+set pitch_expo = 0
+set yaw_expo = 0
+set roll_srate = 70
+set pitch_srate = 70
+set yaw_srate = 70
 set roll_rate_limit = 1998
 set pitch_rate_limit = 1998
 set yaw_rate_limit = 1998
