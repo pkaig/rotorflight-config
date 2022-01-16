@@ -2,7 +2,7 @@
 # Versions
 # 
 # RF4.2.12 - snapshot 20211212
-#
+#	
 ###########################
 # Dump
 
@@ -133,10 +133,14 @@ timer B06 AF2						#allocate to Tail Motor (T4 C1)
 # pin B06: TIM4 CH1 (AF2)			#
 timer B07 AF2						# Re-assigned to Motor 1
 # pin B07: TIM4 CH2 (AF2)			#
-timer B11 AF1
-# pin B11: TIM2 CH4 (AF1)
+timer B08 AF2
+# pin B08: TIM4 CH3 (AF2)
 timer B09 AF2
 # pin B09: TIM4 CH4 (AF2)
+timer A01 AF2
+# pin A01: TIM5 CH2 (AF2)
+timer C08 AF3
+# pin C08: TIM8 CH3 (AF3)					 
 timer C09 AF3
 # pin C09: TIM8 CH4 (AF3)
 timer B01 AF1						#allocate to Servo 3 (T1 C3N)
@@ -159,9 +163,10 @@ timer A09 AF1						#allocate to Servo 2 (T1 C2)
 # pin A09: TIM1 CH2 (AF1)			#
 timer B10 AF1
 # pin B10: TIM2 CH3 (AF1)
-timer B08 NONE
-timer A01 NONE
-timer C08 NONE					#WAS allocate to Main Motor (T3 C3) %Borken ESC pad.... 			  
+timer A10 AF1
+# pin A10: TIM1 CH3 (AF1)
+timer A09 AF1
+# pin A09: TIM1 CH2 (AF1)		 
 
 # dma
 dma SPI_TX 1 NONE
@@ -198,9 +203,13 @@ dma pin B06 0
 # pin B06: DMA1 Stream 0 Channel 2
 dma pin B07 0
 # pin B07: DMA1 Stream 3 Channel 2
-dma pin B11 0
-# pin B11: DMA1 Stream 7 Channel 3
+dma pin B08 0
+# pin B08: DMA1 Stream 7 Channel 2
 dma pin B09 NONE
+dma pin A01 0
+# pin A01: DMA1 Stream 4 Channel 6
+dma pin C08 0
+# pin C08: DMA2 Stream 2 Channel 0				  
 dma pin C09 0
 # pin C09: DMA2 Stream 7 Channel 7
 dma pin B01 0
@@ -314,7 +323,9 @@ map AECR1T23
 
 # serial
 serial 20 1 115200 57600 0 115200
+serial 0 0 115200 57600 0 115200
 serial 1 128 115200 57600 0 2000000
+serial 2 0 115200 57600 0 115200
 serial 3 0 115200 57600 0 115200
 serial 4 64 115200 57600 0 115200
 serial 5 0 115200 57600 0 115200
@@ -398,11 +409,11 @@ mode_color 3 4 10
 mode_color 3 5 3
 
 # aux
-aux 0 0 0 1900 2075 0 0
+aux 0 0 0 1800 2075 0 0
 aux 1 1 2 1700 2100 0 0
 aux 2 2 2 1300 1700 0 0
 aux 3 3 1 1950 2050 0 0
-aux 4 0 0 900 900 0 0
+aux 4 26 0 1800 2100 0 0
 aux 5 0 0 900 900 0 0
 aux 6 0 0 900 900 0 0
 aux 7 0 0 900 900 0 0
@@ -468,7 +479,7 @@ rxfail 3 a
 rxfail 4 h
 rxfail 5 h
 rxfail 6 h
-rxfail 7 h
+rxfail 7 s 1800
 rxfail 8 h
 rxfail 9 h
 rxfail 10 h
@@ -805,13 +816,13 @@ set iterm_decay = 25
 set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_gain = 75
-set p_pitch = 53
-set i_pitch = 86
-set d_pitch = 15
+set p_pitch = 48
+set i_pitch = 83
+set d_pitch = 0
 set f_pitch = 110
-set p_roll = 49
-set i_roll = 69
-set d_roll = 15
+set p_roll = 43
+set i_roll = 77
+set d_roll = 0
 set f_roll = 105
 set p_yaw = 45
 set i_yaw = 51
@@ -820,8 +831,8 @@ set f_yaw = 0
 set pitch_error_filter = 0
 set roll_error_filter = 0
 set yaw_error_filter = 0
-set cyclic_normalization = ABSOLUTE
-set collective_normalization = NATURAL
+set cyclic_normalization = LINEAR
+set collective_normalization = LINEAR
 set angle_level_strength = 50				# How aggresive the heli will move to level during rescue mode
 set angle_level_limit = 55				
 set horizon_level_strength = 50
