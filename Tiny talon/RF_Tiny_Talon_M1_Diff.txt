@@ -28,9 +28,9 @@ resource SERVO 2 A09
 resource SERVO 3 B01
 resource LED_STRIP 1 NONE
 resource SERIAL_TX 1 NONE
-resource SERIAL_TX 3 NONE
+resource SERIAL_TX 3 B10
 resource SERIAL_RX 1 NONE
-resource SERIAL_RX 3 NONE
+resource SERIAL_RX 3 B11
 resource RX_BIND 1 NONE
 resource SDCARD_CS 1 B12
 resource SDCARD_DETECT 1 C03
@@ -122,7 +122,7 @@ mixer rule 14 set SY M2 1000 0
 map AECR1T23
 
 # serial
-serial 1 128 115200 57600 0 250000
+serial 1 128 115200 57600 0 2000000
 serial 4 64 115200 57600 0 115200
 
 # mode_color
