@@ -2,6 +2,8 @@
 # Versions
 # 
 # RF4.2.12 - snapshot 20211212
+# RF4.2.12 - snapshot 20220117 (Gov updates)
+# RF4.2.12 - snapshot 20220207 
 #
 ###########################
 # Dump
@@ -569,7 +571,7 @@ set dshot_bidir = ON
 set dshot_bitbang = AUTO
 set dshot_bitbang_timer = AUTO
 set use_unsynced_pwm = OFF
-set motor_pwm_protocol = DSHOT600
+set motor_pwm_protocol = DSHOT300
 set motor_pwm_rate = 480
 set motor_pwm_inversion = OFF
 set motor_poles = 24,12,6,6

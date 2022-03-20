@@ -2,6 +2,7 @@
 # Versions
 # 
 # RF4.2.12 - snapshot 20211212
+# RF4.2.12 - snapshot 20210117
 #	
 ###########################
 # Dump
@@ -20,13 +21,13 @@ manufacturer_id HENA
 
 # resources
 resource BEEPER 1 B04
-resource MOTOR 1 B07				# Main Motor - #2 on ESC. 
-resource MOTOR 2 B06				# Tail Motor - #1 on ESC
+resource MOTOR 1 B01
+resource MOTOR 2 C08
 resource MOTOR 3 NONE
-resource MOTOR 4 NONE 
-resource SERVO 1 B10				# TX1 - Elevator Servo
-resource SERVO 2 A09				# LEDS - Aileron - Left
-resource SERVO 3 B01				# TX3 - Aileron - Right
+resource MOTOR 4 NONE
+resource SERVO 1 B06
+resource SERVO 2 B07
+resource SERVO 3 B08
 resource SERVO 4 NONE
 resource SERVO 5 NONE
 resource SERVO 6 NONE
@@ -43,10 +44,10 @@ resource PWM 7 NONE
 resource PWM 8 NONE
 resource SONAR_TRIGGER 1 NONE
 resource SONAR_ECHO 1 NONE
-resource LED_STRIP 1 NONE			#Remove B01 for Servo 2
-resource SERIAL_TX 1 NONE			#Remove A09 for Servo 1
+resource LED_STRIP 1 NONE
+resource SERIAL_TX 1 A09
 resource SERIAL_TX 2 A02
-resource SERIAL_TX 3 NONE			#Remove B10 for Servo 3
+resource SERIAL_TX 3 B10
 resource SERIAL_TX 4 A00
 resource SERIAL_TX 5 C12
 resource SERIAL_TX 6 C06
@@ -56,9 +57,9 @@ resource SERIAL_TX 9 NONE
 resource SERIAL_TX 10 NONE
 resource SERIAL_TX 11 NONE
 resource SERIAL_TX 12 NONE
-resource SERIAL_RX 1 NONE
+resource SERIAL_RX 1 A10
 resource SERIAL_RX 2 A03
-resource SERIAL_RX 3 NONE
+resource SERIAL_RX 3 B11
 resource SERIAL_RX 4 A01
 resource SERIAL_RX 5 D02
 resource SERIAL_RX 6 C07
@@ -79,7 +80,7 @@ resource I2C_SDA 4 NONE
 resource LED 1 B00
 resource LED 2 NONE
 resource LED 3 NONE
-resource RX_BIND 1 NONE
+resource RX_BIND 1 B02
 resource RX_BIND_PLUG 1 NONE
 resource SPI_SCK 1 A05
 resource SPI_SCK 2 B13
@@ -102,19 +103,19 @@ resource BARO_EOC 1 NONE
 resource BARO_XCLR 1 NONE
 resource COMPASS_CS 1 NONE
 resource COMPASS_EXTI 1 NONE
-resource SDCARD_CS 1 B12
-resource SDCARD_DETECT 1 C03
-resource PINIO 1 A14
+resource SDCARD_CS 1 NONE
+resource SDCARD_DETECT 1 NONE
+resource PINIO 1 NONE
 resource PINIO 2 NONE
 resource PINIO 3 NONE
 resource PINIO 4 NONE
 resource USB_MSC_PIN 1 NONE
 resource FLASH_CS 1 B12
 resource GYRO_EXTI 1 C04
-resource GYRO_EXTI 2 C14
+resource GYRO_EXTI 2 NONE
 resource GYRO_CS 1 A04
-resource GYRO_CS 2 C13
-resource USB_DETECT 1 C05
+resource GYRO_CS 2 NONE
+resource USB_DETECT 1 NONE
 resource PULLUP 1 NONE
 resource PULLUP 2 NONE
 resource PULLUP 3 NONE
@@ -129,44 +130,28 @@ resource FREQ 2 NONE
 # timer
 timer B03 AF1
 # pin B03: TIM2 CH2 (AF1)
-timer B06 AF2						#allocate to Tail Motor (T4 C1)
-# pin B06: TIM4 CH1 (AF2)			#
-timer B07 AF2						# Re-assigned to Motor 1
-# pin B07: TIM4 CH2 (AF2)			#
+timer B06 AF2
+# pin B06: TIM4 CH1 (AF2)
+timer B07 AF2
+# pin B07: TIM4 CH2 (AF2)
 timer B08 AF2
 # pin B08: TIM4 CH3 (AF2)
 timer B09 AF2
 # pin B09: TIM4 CH4 (AF2)
 timer A01 AF2
 # pin A01: TIM5 CH2 (AF2)
-timer C08 AF3
-# pin C08: TIM8 CH3 (AF3)					 
+timer C08 AF2
+# pin C08: TIM3 CH3 (AF2)
 timer C09 AF3
 # pin C09: TIM8 CH4 (AF3)
-timer B01 AF1						#allocate to Servo 3 (T1 C3N)
-# pin B01: TIM1 CH3N (AF1)			#						 
-timer A03 AF3
-# pin A03: TIM9 CH2 (AF3)
-timer B00 AF2
-# pin B00: TIM3 CH3 (AF2)
-timer A00 AF2
-# pin A00: TIM5 CH1 (AF2)
-timer C06 AF2
-# pin C06: TIM3 CH1 (AF2)
-timer C07 AF3
-# pin C07: TIM8 CH2 (AF3)
-timer B05 AF2
-# pin B05: TIM3 CH2 (AF2)
-timer A10 AF1						#allocate to Servo 1 (T1 C3)
-# pin A10: TIM1 CH3 (AF1)			#
-timer A09 AF1						#allocate to Servo 2 (T1 C2)
-# pin A09: TIM1 CH2 (AF1)			#
+timer B01 AF2
+# pin B01: TIM3 CH4 (AF2)
 timer B10 AF1
 # pin B10: TIM2 CH3 (AF1)
 timer A10 AF1
 # pin A10: TIM1 CH3 (AF1)
 timer A09 AF1
-# pin A09: TIM1 CH2 (AF1)		 
+# pin A09: TIM1 CH2 (AF1)
 
 # dma
 dma SPI_TX 1 NONE
@@ -209,27 +194,18 @@ dma pin B09 NONE
 dma pin A01 0
 # pin A01: DMA1 Stream 4 Channel 6
 dma pin C08 0
-# pin C08: DMA2 Stream 2 Channel 0				  
+# pin C08: DMA1 Stream 7 Channel 5
 dma pin C09 0
 # pin C09: DMA2 Stream 7 Channel 7
 dma pin B01 0
-# pin B01: DMA2 Stream 6 Channel 0
-dma pin A03 NONE
-dma pin B00 NONE
-dma pin A00 0
-# pin A00: DMA1 Stream 2 Channel 6
-dma pin C06 0
-# pin C06: DMA1 Stream 4 Channel 5
-dma pin C07 0
-# pin C07: DMA2 Stream 2 Channel 0
-dma pin B05 0
-# pin B05: DMA1 Stream 5 Channel 5
-dma pin A10 NONE
-dma pin A09 NONE
-dma pin B10 NONE
-dma pin B08 NONE
-dma pin A01 NONE
-dma pin C08 NONE
+# pin B01: DMA1 Stream 2 Channel 5
+dma pin B10 0
+# pin B10: DMA1 Stream 1 Channel 3
+dma pin A10 0
+# pin A10: DMA2 Stream 6 Channel 0
+dma pin A09 0
+# pin A09: DMA2 Stream 6 Channel 0
+
 # feature
 feature -RX_PPM
 feature -INFLIGHT_ACC_CAL
@@ -252,15 +228,15 @@ feature -DYNAMIC_FILTER
 feature RPM_FILTER
 
 # servo
-servo 1 1470 -500 500 500 0 0
-servo 2 1470 -500 500 500 0 0
-servo 3 1470 -500 500 500 0 0
+servo 1 1519 -500 500 500 0 0
+servo 2 1400 -500 500 500 0 0
+servo 3 1425 -500 500 500 0 0
 
 # mixer input
-mixer input SR -1000 1000 800
-mixer input SP -1000 1000 800
+mixer input SR -1000 1000 1040
+mixer input SP -1000 1000 880
 mixer input SY -1000 1000 1000
-mixer input SC -1000 1000 1000
+mixer input SC -1000 1000 830
 mixer input ST 0 1000 1000
 
 # rules    i  OP SRC DST WEIGHT OFFSET MODES						
@@ -324,8 +300,8 @@ map AECR1T23
 # serial
 serial 20 1 115200 57600 0 115200
 serial 0 0 115200 57600 0 115200
-serial 1 128 115200 57600 0 2000000
-serial 2 0 115200 57600 0 115200
+serial 1 0 115200 57600 0 115200
+serial 2 128 115200 57600 0 2000000
 serial 3 0 115200 57600 0 115200
 serial 4 64 115200 57600 0 115200
 serial 5 0 115200 57600 0 115200
@@ -407,6 +383,12 @@ mode_color 3 2 4
 mode_color 3 3 13
 mode_color 3 4 10
 mode_color 3 5 3
+mode_color 3 6 3
+mode_color 3 7 6
+mode_color 3 8 0
+mode_color 3 9 0
+mode_color 3 10 0
+mode_color 4 0 3
 
 # aux
 aux 0 0 0 1800 2075 0 0
@@ -593,7 +575,7 @@ set use_unsynced_pwm = OFF
 set motor_pwm_protocol = DSHOT600
 set motor_pwm_rate = 480
 set motor_pwm_inversion = OFF
-set motor_poles = 14,8,0,0						# 14 magnet poles Main Motor, 8 magnet poles tail   
+set motor_poles = 14,8,0,0
 set motor_rpm_lpf = 10,10,10,10
 set failsafe_delay = 4
 set failsafe_off_delay = 10
@@ -638,7 +620,7 @@ set tail_rotor_mode = MOTORIZED
 set tail_motor_idle = 15
 set swash_ring = 100
 set gov_mode = MODE2
-set gov_gear_ratio = 1000					    #Direct Drive
+set gov_gear_ratio = 1000
 set gov_pwr_filter = 10
 set gov_rpm_filter = 10
 set gov_spoolup_time = 100
@@ -651,7 +633,7 @@ set gov_lost_throttle_timeout = 30
 set gov_lost_headspeed_timeout = 30
 set gov_vbat_offset = 0
 set gov_ff_exponent = 150
-set servo_pwm_rate = 333						# 330kHz
+set servo_pwm_rate = 333
 set reboot_character = 82
 set serial_update_rate_hz = 100
 set imu_dcm_kp = 2500
@@ -744,7 +726,7 @@ set sdio_clk_bypass = OFF
 set sdio_use_cache = OFF
 set sdio_use_4bit_width = OFF
 set task_statistics = ON
-set debug_mode = GYRO_SCALED
+set debug_mode = RPM_FILTER
 set cpu_overclock = OFF
 set pwr_on_arm_grace = 5
 set scheduler_optimize_rate = AUTO
@@ -801,12 +783,16 @@ set stats_total_time_s = 0
 set stats_total_dist_m = 0
 set name = M1 Rotorflight
 set position_alt_source = DEFAULT
+set box_user_1_name = -
+set box_user_2_name = -
+set box_user_3_name = -
+set box_user_4_name = -
 
 profile 0
 
 # profile 0
 set profile_name = -
-set pid_debug_axis = ROLL 
+set pid_debug_axis = ROLL
 set iterm_rotation = ON
 set iterm_relax = RPY
 set iterm_relax_type = SETPOINT
@@ -815,13 +801,13 @@ set iterm_limit = 500,500,500
 set iterm_decay = 25
 set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
-set acro_trainer_gain = 75
-set p_pitch = 48
-set i_pitch = 83
+set acro_trainer_gain = 62
+set p_pitch = 25
+set i_pitch = 79
 set d_pitch = 0
 set f_pitch = 110
-set p_roll = 43
-set i_roll = 77
+set p_roll = 20
+set i_roll = 74
 set d_roll = 0
 set f_roll = 105
 set p_yaw = 45
@@ -831,17 +817,17 @@ set f_yaw = 0
 set pitch_error_filter = 0
 set roll_error_filter = 0
 set yaw_error_filter = 0
-set cyclic_normalization = LINEAR
-set collective_normalization = LINEAR
-set angle_level_strength = 50				# How aggresive the heli will move to level during rescue mode
-set angle_level_limit = 55				
+set cyclic_normalization = ABSOLUTE
+set collective_normalization = ABSOLUTE
+set angle_level_strength = 50
+set angle_level_limit = 55
 set horizon_level_strength = 50
 set horizon_transition = 75
 set horizon_tilt_effect = 75
 set horizon_tilt_expert_mode = OFF
-set rescue_collective = 450					# How strong the Heli will collective up during rescue mode
-set rescue_boost = 200						# Boost collective applied until rescue delay expires		
-set rescue_delay = 10						# seconds*10 so 1.5s before roll to upright
+set rescue_collective = 423
+set rescue_boost = 120
+set rescue_delay = 10
 set abs_control = OFF
 set abs_control_gain = 30
 set abs_control_limit = 120
@@ -859,7 +845,7 @@ set yaw_cyclic_ff_gain = 50
 set yaw_collective_ff_gain = 100
 set yaw_collective_ff_impulse_gain = 20
 set yaw_collective_ff_impulse_freq = 100
-set gov_headspeed = 6500					#Gov Max 6500RPM
+set gov_headspeed = 6500
 set gov_gain = 40
 set gov_p_gain = 35
 set gov_i_gain = 25
