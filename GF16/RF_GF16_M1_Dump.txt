@@ -1,7 +1,8 @@
 ############################################################
 # Versions
 # 
-# RF4.2.12 - snapshot 20220419 - original
+# RF4.2.12 	- snapshot 20220419 - original
+# 			- New Tuning process
 #
 ###########################
 
@@ -247,13 +248,13 @@ feature GOVERNOR
 feature RPM_FILTER
 
 # servo
-servo 1 1519 -500 500 500 0 0
-servo 2 1400 -500 500 500 0 0
-servo 3 1425 -500 500 500 0 0
+servo 1 1480 -600 600 600 0 0
+servo 2 1450 -600 600 600 0 0
+servo 3 1450 -600 600 600 0 0
 
 # mixer input
-mixer input SR -1000 1000 1040
-mixer input SP -1000 1000 880
+mixer input SR -750 750 1250
+mixer input SP -750 750 1180
 mixer input SY -1000 1000 1000
 mixer input SC -1000 1000 830
 mixer input ST 0 1000 1000
@@ -405,7 +406,7 @@ aux 0 0 0 1800 2075 0 0
 aux 1 1 2 1700 2100 0 0
 aux 2 2 2 1300 1700 0 0
 aux 3 3 1 1950 2050 0 0
-aux 4 26 0 1800 2100 0 0
+aux 4 26 3 1400 1600 0 0
 aux 5 0 0 900 900 0 0
 aux 6 0 0 900 900 0 0
 aux 7 0 0 900 900 0 0
@@ -828,16 +829,16 @@ set iterm_decay = 25
 set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_gain = 42
-set p_pitch = 25
-set i_pitch = 79
+set p_pitch = 38
+set i_pitch = 180
 set d_pitch = 0
-set f_pitch = 45
-set p_roll = 20
-set i_roll = 74
+set f_pitch = 40
+set p_roll = 49
+set i_roll = 332
 set d_roll = 0
-set f_roll = 45
-set p_yaw = 45
-set i_yaw = 51
+set f_roll = 44
+set p_yaw = 48
+set i_yaw = 52
 set d_yaw = 0
 set f_yaw = 0
 set pitch_error_filter = 0
@@ -845,14 +846,15 @@ set roll_error_filter = 0
 set yaw_error_filter = 0
 set cyclic_normalization = ABSOLUTE
 set collective_normalization = ABSOLUTE
+set normalization_min_ratio = 50
 set angle_level_strength = 50
 set angle_level_limit = 55
 set horizon_level_strength = 44
 set horizon_transition = 75
 set horizon_tilt_effect = 75
 set horizon_tilt_expert_mode = OFF
-set rescue_collective = 440
-set rescue_boost = 255
+set rescue_collective = 527
+set rescue_boost = 200
 set rescue_delay = 8
 set abs_control = OFF
 set abs_control_gain = 30
@@ -896,16 +898,16 @@ set iterm_decay = 25
 set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_gain = 62
-set p_pitch = 69
-set i_pitch = 347
-set d_pitch = 0
-set f_pitch = 25
-set p_roll = 79
-set i_roll = 379
-set d_roll = 0
-set f_roll = 48
-set p_yaw = 45
-set i_yaw = 51
+set p_pitch = 38
+set i_pitch = 319
+set d_pitch = 20
+set f_pitch = 40
+set p_roll = 49
+set i_roll = 332
+set d_roll = 20
+set f_roll = 44
+set p_yaw = 48
+set i_yaw = 52
 set d_yaw = 0
 set f_yaw = 0
 set pitch_error_filter = 0
@@ -913,6 +915,7 @@ set roll_error_filter = 0
 set yaw_error_filter = 0
 set cyclic_normalization = ABSOLUTE
 set collective_normalization = ABSOLUTE
+set normalization_min_ratio = 50
 set angle_level_strength = 50
 set angle_level_limit = 55
 set horizon_level_strength = 50
@@ -920,8 +923,8 @@ set horizon_transition = 75
 set horizon_tilt_effect = 75
 set horizon_tilt_expert_mode = OFF
 set rescue_collective = 423
-set rescue_boost = 120
-set rescue_delay = 10
+set rescue_boost = 250
+set rescue_delay = 8
 set abs_control = OFF
 set abs_control_gain = 30
 set abs_control_limit = 120
@@ -964,14 +967,14 @@ set iterm_decay = 25
 set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_gain = 62
-set p_pitch = 76
-set i_pitch = 448
+set p_pitch = 38
+set i_pitch = 306
 set d_pitch = 0
-set f_pitch = 28
-set p_roll = 138
-set i_roll = 466
+set f_pitch = 0
+set p_roll = 49
+set i_roll = 327
 set d_roll = 0
-set f_roll = 49
+set f_roll = 0
 set p_yaw = 45
 set i_yaw = 51
 set d_yaw = 0
@@ -981,6 +984,7 @@ set roll_error_filter = 0
 set yaw_error_filter = 0
 set cyclic_normalization = ABSOLUTE
 set collective_normalization = ABSOLUTE
+set normalization_min_ratio = 50
 set angle_level_strength = 50
 set angle_level_limit = 55
 set horizon_level_strength = 50
@@ -988,8 +992,8 @@ set horizon_transition = 75
 set horizon_tilt_effect = 75
 set horizon_tilt_expert_mode = OFF
 set rescue_collective = 423
-set rescue_boost = 120
-set rescue_delay = 10
+set rescue_boost = 220
+set rescue_delay = 8
 set abs_control = OFF
 set abs_control_gain = 30
 set abs_control_limit = 120
@@ -1049,6 +1053,7 @@ set roll_error_filter = 0
 set yaw_error_filter = 0
 set cyclic_normalization = ABSOLUTE
 set collective_normalization = NATURAL
+set normalization_min_ratio = 50
 set angle_level_strength = 50
 set angle_level_limit = 55
 set horizon_level_strength = 50
@@ -1117,6 +1122,7 @@ set roll_error_filter = 0
 set yaw_error_filter = 0
 set cyclic_normalization = ABSOLUTE
 set collective_normalization = NATURAL
+set normalization_min_ratio = 50
 set angle_level_strength = 50
 set angle_level_limit = 55
 set horizon_level_strength = 50
@@ -1185,6 +1191,7 @@ set roll_error_filter = 0
 set yaw_error_filter = 0
 set cyclic_normalization = ABSOLUTE
 set collective_normalization = NATURAL
+set normalization_min_ratio = 50
 set angle_level_strength = 50
 set angle_level_limit = 55
 set horizon_level_strength = 50
@@ -1223,7 +1230,7 @@ set gov_tta_gain = 0
 set gov_tta_limit = 0
 
 # restore original profile selection
-profile 1
+profile 2
 
 rateprofile 0
 
