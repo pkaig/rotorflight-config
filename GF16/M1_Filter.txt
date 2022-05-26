@@ -1,0 +1,9 @@
+
+# Original
+set gyro_rpm_filter_bank_motor_index = 1,1,1,2,1,1,1,1,2,1,1,1,1,1,1,0
+set gyro_rpm_filter_bank_gear_ratio = 1005,1000,1000,1000,995,503,500,500,500,498,335,333,332,250,200,0
+set gyro_rpm_filter_bank_notch_q = 200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,0
+set gyro_rpm_filter_bank_min_hz = 20,20,20,20,20,33,33,33,33,33,50,50,50,67,83,0
+set gyro_rpm_filter_bank_max_hz = 117,117,117,933,117,233,233,233,1867,233,350,350,350,467,583,0
+
+# New

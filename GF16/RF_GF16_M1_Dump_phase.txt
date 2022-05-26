@@ -3,8 +3,16 @@
 # 
 # RF4.2.12 	- snapshot 20220419 - original
 # 			- New Tuning process
+# 			- RC1
 #
 ###########################
+
+# version
+# Rotorflight / STM32F405 (S405) 4.2.12-RC1 May  4 2022 / 09:26:55 (1637cd4) MSP API: 11.1
+# config: manufacturer_id: JHEF, board_name: JHEF405, version: dfa09d94, date: 2021-03-06T10:55:26Z
+
+# start the command batch
+batch start
 
 board_name GF16
 manufacturer_id JHEF
@@ -248,33 +256,42 @@ feature GOVERNOR
 feature RPM_FILTER
 
 # servo
-servo 1 1480 -600 600 600 0 0
-servo 2 1450 -600 600 600 0 0
-servo 3 1450 -600 600 600 0 0
+servo 1 1484 -500 500 500 0 0
+servo 2 1400 -500 500 500 0 0
+servo 3 1400 -500 500 500 0 0
 
 # mixer input
-mixer input SR -750 750 1250
-mixer input SP -750 750 1180
+mixer input SR -750 750 830
+mixer input SP -750 750 980
 mixer input SY -1000 1000 1000
 mixer input SC -1000 1000 830
 mixer input ST 0 1000 1000
 
-# mixer rule
-mixer rule 0 add SC S1 500 0 
-mixer rule 1 add SC S2 500 0 
-mixer rule 2 add SC S3 500 0 
-mixer rule 3 add SR S2 866 0 
-mixer rule 4 add SR S3 -866 0 
-mixer rule 5 add SP S1 1000 0 
-mixer rule 6 add SP S2 -500 0 
-mixer rule 7 add SP S3 -500 0 
-mixer rule 8 add SR S1 0 0 
-mixer rule 9 add SR S2 0 0 
-mixer rule 10 add SR S3 0 0 
-mixer rule 11 add SP S1 0 0 
-mixer rule 12 add SP S2 0 0 
-mixer rule 13 set ST M1 1000 0 
+# Mixer
+# rules    i  OP SRC DST WEIGHT OFFSET MODES						
+#-----------------------------------------						
+# Collective ------------------------						
+mixer rule  0 add SC S1   500 0						
+mixer rule  1 add SC S2   500 0						
+mixer rule  2 add SC S3   500 0						
+# Roll ------------------------------						
+mixer rule  3 add SR S2   824 0						
+mixer rule  4 add SR S3  -824 0						
+# Pitch -----------------------------						
+mixer rule  5 add SP S1   951 0						
+mixer rule  6 add SP S2  -476 0						
+mixer rule  7 add SP S3  -476 0						
+# Roll to Pitch interaction ---------						
+mixer rule  8 add SR S1   309 0						
+mixer rule  9 add SR S2  -155 0						
+mixer rule 10 add SR S3  -155 0						
+# Pitch to Roll interaction ---------						
+mixer rule 11 add SP S2  -268 0						
+mixer rule 12 add SP S3   268 0														
+# Motors ----------------------------
+mixer rule 13 add ST M1 1000 0 
 mixer rule 14 set SY M2 1000 0 
+#------------------------------------
 
 # beeper
 beeper -GYRO_CALIBRATED
@@ -486,8 +503,8 @@ rxfail 17 h
 
 # master
 set gyro_hardware_lpf = NORMAL
-set gyro_lowpass_type = PT1
-set gyro_lowpass_hz = 200
+set gyro_lowpass_type = BIQUAD
+set gyro_lowpass_hz = 120
 set gyro_lowpass2_type = PT1
 set gyro_lowpass2_hz = 250
 set gyro_notch1_hz = 0
@@ -503,7 +520,7 @@ set gyro_dyn_lpf_min_hz = 200
 set gyro_dyn_lpf_max_hz = 500
 set dterm_dyn_lpf_min_hz = 25
 set dterm_dyn_lpf_max_hz = 150
-set dterm_lowpass_type = PT1
+set dterm_lowpass_type = BIQUAD
 set dterm_lowpass_hz = 100
 set dterm_lowpass2_type = PT1
 set dterm_lowpass2_hz = 0
@@ -512,9 +529,9 @@ set dterm_notch_cutoff = 0
 set gyro_filter_debug_axis = ROLL
 set acc_hardware = AUTO
 set acc_lpf_hz = 10
-set acc_trim_pitch = 8
-set acc_trim_roll = 38
-set acc_calibration = -47,33,42,1
+set acc_trim_pitch = 6
+set acc_trim_roll = 51
+set acc_calibration = -91,-18,176,1
 set align_mag = DEFAULT
 set mag_align_roll = 0
 set mag_align_pitch = 0
@@ -523,7 +540,7 @@ set mag_bustype = I2C
 set mag_i2c_device = 1
 set mag_i2c_address = 0
 set mag_spi_device = 0
-set mag_hardware = AUTO
+set mag_hardware = NONE
 set mag_declination = 0
 set mag_calibration = 0,0,0
 set baro_bustype = I2C
@@ -633,7 +650,7 @@ set beeper_frequency = 0
 set beeper_dshot_beacon_tone = 1
 set main_rotor_dir = CW
 set tail_rotor_mode = MOTORIZED
-set tail_motor_idle = 15
+set tail_motor_idle = 20
 set swash_ring = 0
 set gov_mode = MODE2
 set gov_pwr_filter = 5
@@ -797,11 +814,11 @@ set i2c3_pullup = OFF
 set i2c3_overclock = ON
 set mco2_on_pc9 = OFF
 set timezone_offset_minutes = 0
-set gyro_rpm_filter_bank_motor_index = 1,1,1,2,1,1,1,1,2,1,1,1,1,1,1,0
-set gyro_rpm_filter_bank_gear_ratio = 1005,1000,1000,1000,995,503,500,500,500,498,335,333,332,250,200,0
-set gyro_rpm_filter_bank_notch_q = 200,200,200,200,200,200,200,200,200,200,200,200,200,200,200,0
-set gyro_rpm_filter_bank_min_hz = 20,20,20,20,20,33,33,33,33,33,50,50,50,67,83,0
-set gyro_rpm_filter_bank_max_hz = 117,117,117,933,117,233,233,233,1867,233,350,350,350,467,583,0
+set gyro_rpm_filter_bank_motor_index = 10,11,11,12,12,13,14,15,16,21,21,22,22,23,0,0
+set gyro_rpm_filter_bank_gear_ratio = 10000,9950,10050,9950,10050,10000,10000,10000,10000,9950,10050,9950,10050,10000,0,0
+set gyro_rpm_filter_bank_notch_q = 200,200,200,200,200,200,200,200,200,200,200,200,200,200,0,0
+set gyro_rpm_filter_bank_min_hz = 500,500,500,500,500,500,500,500,500,1000,1000,1000,1000,1000,0,0
+set gyro_rpm_filter_bank_max_hz = 50000,50000,50000,50000,50000,50000,50000,50000,50000,50000,50000,50000,50000,50000,0,0
 set flysky_spi_tx_id = 0
 set flysky_spi_rf_channels = 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
 set stats = OFF
@@ -823,22 +840,22 @@ set pid_debug_axis = ROLL
 set iterm_rotation = ON
 set iterm_relax = RPY
 set iterm_relax_type = SETPOINT
-set iterm_relax_cutoff = 10,10,10
+set iterm_relax_cutoff = 9,9,9
 set iterm_limit = 500,500,500
 set iterm_decay = 25
 set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_gain = 42
-set p_pitch = 43
-set i_pitch = 285
-set d_pitch = 25
-set f_pitch = 40
-set p_roll = 66
-set i_roll = 332
-set d_roll = 25
-set f_roll = 44
-set p_yaw = 48
-set i_yaw = 52
+set p_pitch = 61
+set i_pitch = 70
+set d_pitch = 0
+set f_pitch = 88
+set p_roll = 100
+set i_roll = 70
+set d_roll = 0
+set f_roll = 94
+set p_yaw = 95
+set i_yaw = 62
 set d_yaw = 0
 set f_yaw = 0
 set pitch_error_filter = 0
@@ -853,9 +870,9 @@ set horizon_level_strength = 44
 set horizon_transition = 75
 set horizon_tilt_effect = 75
 set horizon_tilt_expert_mode = OFF
-set rescue_collective = 527
+set rescue_collective = 783
 set rescue_boost = 200
-set rescue_delay = 8
+set rescue_delay = 10
 set abs_control = OFF
 set abs_control_gain = 30
 set abs_control_limit = 120
@@ -881,8 +898,8 @@ set gov_d_gain = 0
 set gov_f_gain = 15
 set gov_cyclic_ff_weight = 40
 set gov_collective_ff_weight = 114
-set gov_tta_gain = 30
-set gov_tta_limit = 30
+set gov_tta_gain = 0
+set gov_tta_limit = 0
 
 profile 1
 
@@ -892,22 +909,22 @@ set pid_debug_axis = ROLL
 set iterm_rotation = ON
 set iterm_relax = RPY
 set iterm_relax_type = SETPOINT
-set iterm_relax_cutoff = 10,10,10
+set iterm_relax_cutoff = 6,6,6
 set iterm_limit = 500,500,500
 set iterm_decay = 25
 set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_gain = 62
-set p_pitch = 46
-set i_pitch = 319
-set d_pitch = 25
-set f_pitch = 40
+set p_pitch = 57
+set i_pitch = 70
+set d_pitch = 30
+set f_pitch = 88
 set p_roll = 83
-set i_roll = 332
-set d_roll = 25
-set f_roll = 44
-set p_yaw = 48
-set i_yaw = 52
+set i_roll = 70
+set d_roll = 40
+set f_roll = 94
+set p_yaw = 105
+set i_yaw = 66
 set d_yaw = 0
 set f_yaw = 0
 set pitch_error_filter = 0
@@ -922,9 +939,9 @@ set horizon_level_strength = 50
 set horizon_transition = 75
 set horizon_tilt_effect = 75
 set horizon_tilt_expert_mode = OFF
-set rescue_collective = 423
-set rescue_boost = 250
-set rescue_delay = 8
+set rescue_collective = 656
+set rescue_boost = 270
+set rescue_delay = 9
 set abs_control = OFF
 set abs_control_gain = 30
 set abs_control_limit = 120
@@ -939,9 +956,9 @@ set yaw_center_offset = 0
 set yaw_cw_stop_gain = 100
 set yaw_ccw_stop_gain = 100
 set yaw_cyclic_ff_gain = 50
-set yaw_collective_ff_gain = 100
+set yaw_collective_ff_gain = 204
 set yaw_collective_ff_impulse_gain = 20
-set yaw_collective_ff_impulse_freq = 100
+set yaw_collective_ff_impulse_freq = 70
 set gov_headspeed = 5200
 set gov_gain = 40
 set gov_p_gain = 35
@@ -950,8 +967,8 @@ set gov_d_gain = 0
 set gov_f_gain = 15
 set gov_cyclic_ff_weight = 40
 set gov_collective_ff_weight = 114
-set gov_tta_gain = 30
-set gov_tta_limit = 50
+set gov_tta_gain = 0
+set gov_tta_limit = 0
 
 profile 2
 
@@ -967,15 +984,15 @@ set iterm_decay = 25
 set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_gain = 62
-set p_pitch = 68
-set i_pitch = 306
-set d_pitch = 25
-set f_pitch = 40
-set p_roll = 96
-set i_roll = 327
-set d_roll = 25
-set f_roll = 44
-set p_yaw = 45
+set p_pitch = 50
+set i_pitch = 70
+set d_pitch = 0
+set f_pitch = 88
+set p_roll = 75
+set i_roll = 70
+set d_roll = 0
+set f_roll = 94
+set p_yaw = 105
 set i_yaw = 51
 set d_yaw = 0
 set f_yaw = 0
@@ -991,8 +1008,8 @@ set horizon_level_strength = 50
 set horizon_transition = 75
 set horizon_tilt_effect = 75
 set horizon_tilt_expert_mode = OFF
-set rescue_collective = 423
-set rescue_boost = 220
+set rescue_collective = 601
+set rescue_boost = 230
 set rescue_delay = 8
 set abs_control = OFF
 set abs_control_gain = 30
@@ -1019,8 +1036,8 @@ set gov_d_gain = 0
 set gov_f_gain = 15
 set gov_cyclic_ff_weight = 40
 set gov_collective_ff_weight = 114
-set gov_tta_gain = 30
-set gov_tta_limit = 50
+set gov_tta_gain = 0
+set gov_tta_limit = 0
 
 profile 3
 
@@ -1230,15 +1247,15 @@ set gov_tta_gain = 0
 set gov_tta_limit = 0
 
 # restore original profile selection
-profile 2
+profile 0
 
 rateprofile 0
 
 # rateprofile 0
 set rateprofile_name = -
 set rates_type = ACTUAL
-set roll_rc_rate = 40
-set pitch_rc_rate = 40
+set roll_rc_rate = 30
+set pitch_rc_rate = 30
 set yaw_rc_rate = 50
 set roll_expo = 65
 set pitch_expo = 66
@@ -1255,14 +1272,14 @@ rateprofile 1
 # rateprofile 1
 set rateprofile_name = -
 set rates_type = BETAFLIGHT
-set roll_rc_rate = 64
-set pitch_rc_rate = 64
+set roll_rc_rate = 49
+set pitch_rc_rate = 49
 set yaw_rc_rate = 87
 set roll_expo = 0
 set pitch_expo = 0
 set yaw_expo = 0
-set roll_srate = 66
-set pitch_srate = 66
+set roll_srate = 69
+set pitch_srate = 69
 set yaw_srate = 69
 set roll_rate_limit = 1998
 set pitch_rate_limit = 1998
@@ -1272,16 +1289,16 @@ rateprofile 2
 
 # rateprofile 2
 set rateprofile_name = -
-set rates_type = BETAFLIGHT
-set roll_rc_rate = 64
-set pitch_rc_rate = 64
-set yaw_rc_rate = 87
+set rates_type = ACTUAL
+set roll_rc_rate = 15
+set pitch_rc_rate = 15
+set yaw_rc_rate = 15
 set roll_expo = 0
 set pitch_expo = 0
 set yaw_expo = 0
-set roll_srate = 66
-set pitch_srate = 66
-set yaw_srate = 69
+set roll_srate = 36
+set pitch_srate = 36
+set yaw_srate = 36
 set roll_rate_limit = 1998
 set pitch_rate_limit = 1998
 set yaw_rate_limit = 1998
@@ -1341,4 +1358,4 @@ set pitch_rate_limit = 1998
 set yaw_rate_limit = 1998
 
 # restore original rateprofile selection
-rateprofile 1
+rateprofile 2
