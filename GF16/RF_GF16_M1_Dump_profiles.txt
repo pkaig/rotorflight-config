@@ -321,7 +321,7 @@ map AECR1T23
 # serial
 serial 20 1 115200 57600 0 115200
 serial 0 64 115200 57600 0 115200
-serial 1 0 115200 57600 0 115200
+serial 1 128 115200 57600 0 2000000
 serial 2 0 115200 57600 0 115200
 serial 3 0 115200 57600 0 115200
 serial 5 0 115200 57600 0 115200
@@ -433,7 +433,7 @@ aux 18 0 0 900 900 0 0
 aux 19 0 0 900 900 0 0
 
 # adjfunc
-adjfunc 0 3 900 2100 42 3 0 1 3
+adjfunc 0 0 900 900 0 0 0 0 0
 adjfunc 1 0 900 900 0 0 0 0 0
 adjfunc 2 0 900 900 0 0 0 0 0
 adjfunc 3 0 900 900 0 0 0 0 0
@@ -583,7 +583,7 @@ set adc_tempsensor_calibration30 = 0
 set adc_tempsensor_calibration110 = 0
 set input_filtering_mode = OFF
 set blackbox_p_ratio = 64
-set blackbox_device = SPIFLASH
+set blackbox_device = SERIAL
 set blackbox_record_acc = ON
 set blackbox_mode = NORMAL
 set min_throttle = 1070
@@ -643,7 +643,7 @@ set beeper_dshot_beacon_tone = 1
 set main_rotor_dir = CW
 set tail_rotor_mode = MOTORIZED
 set tail_motor_idle = 15
-set swash_ring = 0
+set swash_ring = 100
 set gov_mode = MODE2
 set gov_pwr_filter = 5
 set gov_rpm_filter = 5
@@ -832,22 +832,22 @@ set pid_debug_axis = ROLL
 set iterm_rotation = ON
 set iterm_relax = RPY
 set iterm_relax_type = SETPOINT
-set iterm_relax_cutoff = 10,10,10
+set iterm_relax_cutoff = 6,6,6
 set iterm_limit = 500,500,500
 set iterm_decay = 25
 set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_gain = 42
-set p_pitch = 34
-set i_pitch = 285
-set d_pitch = 25
+set p_pitch = 47
+set i_pitch = 332
+set d_pitch = 0
 set f_pitch = 45
-set p_roll = 59
-set i_roll = 332
-set d_roll = 25
+set p_roll = 57
+set i_roll = 375
+set d_roll = 0
 set f_roll = 40
-set p_yaw = 48
-set i_yaw = 52
+set p_yaw = 45
+set i_yaw = 43
 set d_yaw = 0
 set f_yaw = 0
 set pitch_error_filter = 0
@@ -879,7 +879,7 @@ set yaw_cyclic_ff_gain = 50
 set yaw_collective_ff_gain = 100
 set yaw_collective_ff_impulse_gain = 20
 set yaw_collective_ff_impulse_freq = 100
-set gov_headspeed = 4250
+set gov_headspeed = 6000
 set gov_gain = 40
 set gov_p_gain = 35
 set gov_i_gain = 25
@@ -1228,8 +1228,8 @@ rateprofile 0
 # rateprofile 0
 set rateprofile_name = -
 set rates_type = ACTUAL
-set roll_rc_rate = 40
-set pitch_rc_rate = 40
+set roll_rc_rate = 30
+set pitch_rc_rate = 30
 set yaw_rc_rate = 50
 set roll_expo = 65
 set pitch_expo = 66
@@ -1332,4 +1332,4 @@ set pitch_rate_limit = 1998
 set yaw_rate_limit = 1998
 
 # restore original rateprofile selection
-rateprofile 1
+rateprofile 0
