@@ -838,15 +838,15 @@ set iterm_decay = 25
 set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_gain = 42
-set p_pitch = 47
+set p_pitch = 65
 set i_pitch = 332
-set d_pitch = 0
+set d_pitch = 16
 set f_pitch = 45
-set p_roll = 57
+set p_roll = 58
 set i_roll = 375
-set d_roll = 0
+set d_roll = 18
 set f_roll = 40
-set p_yaw = 71
+set p_yaw = 72
 set i_yaw = 43
 set d_yaw = 20
 set f_yaw = 0
@@ -1333,5 +1333,3 @@ set yaw_rate_limit = 1998
 
 # restore original rateprofile selection
 rateprofile 0
-
-# save configuration
