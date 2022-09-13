@@ -7,6 +7,7 @@
 # RF4.2.12 - R1.0
 # RF4.2.12 - R2.0
 # RF4.2.13 - snapshot 20220813
+# RF4.2.13 - snapshot 20220813 - TTA tuning updates
 #
 ###########################
 # Dump
@@ -553,7 +554,7 @@ set sbus_baud_fast = OFF
 set crsf_use_rx_snr = OFF
 set rx_min_usec = 885
 set rx_max_usec = 2115
-set serialrx_halfduplex = ON
+set serialrx_halfduplex = OFF
 set rx_spi_protocol = V202_250K
 set rx_spi_bus = 0
 set rx_spi_led_inversion = OFF
@@ -844,24 +845,24 @@ set rescue_collective = 550
 set rescue_boost = 200
 set rescue_delay = 8
 set yaw_center_offset = 0
-set yaw_cw_stop_gain = 100
-set yaw_ccw_stop_gain = 100
+set yaw_cw_stop_gain = 150
+set yaw_ccw_stop_gain = 150
 set yaw_cyclic_ff_gain = 50
-set yaw_collective_ff_gain = 100
-set yaw_collective_ff_impulse_gain = 20
+set yaw_collective_ff_gain = 125
+set yaw_collective_ff_impulse_gain = 100
 set yaw_collective_ff_impulse_freq = 100
 set pitch_collective_ff_gain = 20
 set pitch_collective_ff_impulse_gain = 0
 set gov_headspeed = 5200
 set gov_gain = 50
-set gov_p_gain = 40
-set gov_i_gain = 50
+set gov_p_gain = 50
+set gov_i_gain = 70
 set gov_d_gain = 0
 set gov_f_gain = 15
 set gov_cyclic_ff_weight = 40
-set gov_collective_ff_weight = 100
-set gov_tta_gain = 0
-set gov_tta_limit = 0
+set gov_collective_ff_weight = 120
+set gov_tta_gain = 80
+set gov_tta_limit = 100
 
 profile 1
 
@@ -1163,13 +1164,13 @@ set rateprofile_name = -
 set rates_type = ACTUAL
 set roll_rc_rate = 18
 set pitch_rc_rate = 18
-set yaw_rc_rate = 36
+set yaw_rc_rate = 46
 set roll_expo = 0
 set pitch_expo = 0
 set yaw_expo = 0
 set roll_srate = 28
 set pitch_srate = 28
-set yaw_srate = 36
+set yaw_srate = 60
 set roll_rate_limit = 1998
 set pitch_rate_limit = 1998
 set yaw_rate_limit = 1998
@@ -1267,4 +1268,3 @@ set yaw_rate_limit = 1998
 # restore original rateprofile selection
 rateprofile 0
 
-# save configuration
