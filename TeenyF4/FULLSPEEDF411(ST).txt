@@ -1,0 +1,39 @@
+##################################
+# Remap for FULLSPEED411
+# M1 to S3
+# M2 to S4
+# M3 to S1
+# M4 to S2
+# LED_STRIP to M1
+##################################
+
+# remove resources											
+resource LED_STRIP 1 NONE											
+resource MOTOR 3 NONE											
+resource MOTOR 4 NONE											
+resource MOTOR 1 NONE											
+resource MOTOR 2 NONE											
+
+# resources											
+resource MOTOR 1     A08											
+resource MOTOR 2     NONE											
+resource SERVO 1     B06											
+resource SERVO 2     B07											
+resource SERVO 3     B04											
+resource SERVO 4     B05											
+
+set tail_rotor_mode = VARIABLE											
+
+# timers											
+timer  A08   AF1              # M1 - pin A08: TIM1 CH1 (AF1)  											
+timer  B05   AF2              # M2/S4 - pin B05: TIM3 CH2 (AF2)											
+timer  B06   AF2              # S1 - pin B06: TIM4 CH1 (AF2)  											
+timer  B07   AF2              # S2 - pin B07: TIM4 CH2 (AF2)  											
+timer  B04   AF2              # S3 - pin B04: TIM3 CH1 (AF2)  											
+
+# dma											
+dma pin A08 0                 # M1 - 0: DMA2 Stream 6 Channel 0											
+dma pin B05 0                 # M2/S4 -  0: DMA1 Stream 5 Channel 5											
+dma pin B06 0                 # S1 - 0: DMA1 Stream 0 Channel 2											
+dma pin B07 0                 # S2 - 0: DMA1 Stream 3 Channel 2											
+dma pin B04 0                 # S3 - 0: DMA1 Stream 4 Channel 5											

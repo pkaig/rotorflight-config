@@ -1,0 +1,517 @@
+dump
+
+# version
+# INAV/MATEKF411TE 5.1.0 Aug 19 2022 / 12:19:47 (76f22b25)
+# GCC-10.2.1 20201103 (release)
+
+# start the command batch
+batch start
+
+# feature
+feature -THR_VBAT_COMP
+feature -VBAT
+feature -TX_PROF_SEL
+feature -BAT_PROF_AUTOSWITCH
+feature -MOTOR_STOP
+feature -SOFTSERIAL
+feature -GPS
+feature -RPM_FILTERS
+feature -TELEMETRY
+feature -CURRENT_METER
+feature -REVERSIBLE_MOTORS
+feature -RSSI_ADC
+feature -LED_STRIP
+feature -DASHBOARD
+feature -BLACKBOX
+feature -TRANSPONDER
+feature -AIRMODE
+feature -SUPEREXPO
+feature -VTX
+feature -PWM_OUTPUT_ENABLE
+feature -OSD
+feature -FW_LAUNCH
+feature -FW_AUTOTRIM
+feature VBAT
+feature TX_PROF_SEL
+feature MOTOR_STOP
+feature SOFTSERIAL
+feature TELEMETRY
+feature CURRENT_METER
+feature AIRMODE
+feature OSD
+
+# serial
+serial 20 1 115200 115200 0 115200
+serial 0 1 115200 115200 0 115200
+serial 1 64 115200 115200 0 115200
+serial 30 0 115200 115200 0 115200
+serial 31 0 115200 115200 0 115200
+
+# master
+set looptime = 1000
+set gyro_hardware_lpf = 256HZ
+set gyro_anti_aliasing_lpf_hz = 250
+set gyro_anti_aliasing_lpf_type = PT1
+set moron_threshold = 32
+set gyro_main_lpf_hz = 25
+set gyro_main_lpf_type = BIQUAD
+set gyro_use_dyn_lpf = OFF
+set gyro_dyn_lpf_min_hz = 200
+set gyro_dyn_lpf_max_hz = 500
+set gyro_dyn_lpf_curve_expo = 5
+set dynamic_gyro_notch_enabled = ON
+set dynamic_gyro_notch_q = 250
+set dynamic_gyro_notch_min_hz = 30
+set setpoint_kalman_enabled = ON
+set setpoint_kalman_q = 100
+set init_gyro_cal = ON
+set gyro_zero_x = 0
+set gyro_zero_y = 1
+set gyro_zero_z = 0
+set ins_gravity_cmss =  989.616
+set vbat_adc_channel = 1
+set rssi_adc_channel = 3
+set current_adc_channel = 2
+set airspeed_adc_channel = 4
+set acc_notch_hz = 0
+set acc_notch_cutoff = 1
+set acc_hardware = BMI270
+set acc_lpf_hz = 15
+set acc_lpf_type = BIQUAD
+set acczero_x = 0
+set acczero_y = 0
+set acczero_z = 0
+set accgain_x = 4096
+set accgain_y = 4096
+set accgain_z = 4096
+set rangefinder_hardware = NONE
+set rangefinder_median_filter = OFF
+set opflow_hardware = NONE
+set opflow_scale =  10.500
+set align_opflow = CW0FLIP
+set imu2_hardware = NONE
+set imu2_use_for_osd_heading = OFF
+set imu2_use_for_osd_ahi = OFF
+set imu2_use_for_stabilized = OFF
+set imu2_align_roll = 0
+set imu2_align_pitch = 0
+set imu2_align_yaw = 0
+set imu2_gain_acc_x = 0
+set imu2_gain_acc_y = 0
+set imu2_gain_acc_z = 0
+set imu2_gain_mag_x = 0
+set imu2_gain_mag_y = 0
+set imu2_gain_mag_z = 0
+set imu2_radius_acc = 0
+set imu2_radius_mag = 0
+set align_mag = CW270FLIP
+set mag_hardware = NONE
+set mag_declination = 0
+set magzero_x = 0
+set magzero_y = 0
+set magzero_z = 0
+set maggain_x = 1024
+set maggain_y = 1024
+set maggain_z = 1024
+set mag_calibration_time = 30
+set align_mag_roll = 0
+set align_mag_pitch = 0
+set align_mag_yaw = 0
+set baro_hardware = SPL06
+set baro_median_filter = ON
+set baro_cal_tolerance = 150
+set pitot_hardware = NONE
+set pitot_lpf_milli_hz = 350
+set pitot_scale =  1.000
+set receiver_type = SERIAL
+set min_check = 1100
+set max_check = 1900
+set rssi_source = AUTO
+set rssi_channel = 0
+set rssi_min = 0
+set rssi_max = 100
+set sbus_sync_interval = 3000
+set rc_filter_frequency = 50
+set serialrx_provider = SBUS
+set serialrx_inverted = OFF
+set srxl2_unit_id = 1
+set srxl2_baud_fast = ON
+set rx_min_usec = 885
+set rx_max_usec = 2115
+set serialrx_halfduplex = AUTO
+set blackbox_rate_num = 1
+set blackbox_rate_denom = 1
+set blackbox_device = SERIAL
+set max_throttle = 1850
+set min_command = 1000
+set motor_pwm_rate = 16000
+set motor_pwm_protocol = STANDARD
+set motor_poles = 14
+set failsafe_delay = 5
+set failsafe_recovery_delay = 5
+set failsafe_off_delay = 200
+set failsafe_throttle_low_delay = 0
+set failsafe_procedure = LAND
+set failsafe_stick_threshold = 50
+set failsafe_fw_roll_angle = -200
+set failsafe_fw_pitch_angle = 100
+set failsafe_fw_yaw_rate = -45
+set failsafe_min_distance = 0
+set failsafe_min_distance_procedure = DROP
+set failsafe_mission = ON
+set align_board_roll = 0
+set align_board_pitch = 0
+set align_board_yaw = 0
+set vbat_meter_type = ADC
+set vbat_scale = 1100
+set current_meter_scale = 250
+set current_meter_offset = 0
+set current_meter_type = ADC
+set bat_voltage_src = RAW
+set cruise_power = 0
+set idle_power = 0
+set rth_energy_margin = 5
+set thr_comp_weight =  1.000
+set motor_direction_inverted = OFF
+set platform_type = AIRPLANE
+set has_flaps = OFF
+set model_preview_type = 14
+set output_mode = AUTO
+set 3d_deadband_low = 1406
+set 3d_deadband_high = 1514
+set 3d_neutral = 1460
+set servo_protocol = PWM
+set servo_center_pulse = 1500
+set servo_pwm_rate = 50
+set servo_lpf_hz = 20
+set flaperon_throw_offset = 200
+set tri_unarmed_servo = ON
+set servo_autotrim_rotation_limit = 15
+set reboot_character = 82
+set imu_dcm_kp = 1000
+set imu_dcm_ki = 0
+set imu_dcm_kp_mag = 5000
+set imu_dcm_ki_mag = 0
+set small_angle = 180
+set imu_acc_ignore_rate = 7
+set imu_acc_ignore_slope = 4
+set fixed_wing_auto_arm = OFF
+set disarm_kill_switch = ON
+set switch_disarm_delay = 250
+set prearm_timeout = 10000
+set applied_defaults = 3
+set rpm_gyro_filter_enabled = OFF
+set rpm_gyro_harmonics = 1
+set rpm_gyro_min_hz = 100
+set rpm_gyro_q = 500
+set gps_provider = UBLOX
+set gps_sbas_mode = NONE
+set gps_dyn_model = AIR_1G
+set gps_auto_config = ON
+set gps_auto_baud = ON
+set gps_ublox_use_galileo = OFF
+set gps_min_sats = 6
+set deadband = 5
+set yaw_deadband = 5
+set pos_hold_deadband = 10
+set control_deadband = 10
+set alt_hold_deadband = 50
+set 3d_deadband_throttle = 50
+set airmode_type = STICK_CENTER_ONCE
+set airmode_throttle_threshold = 1150
+set fw_autotune_min_stick = 50
+set fw_autotune_rate_adjustment = AUTO
+set fw_autotune_max_rate_deflection = 80
+set inav_auto_mag_decl = ON
+set inav_gravity_cal_tolerance = 5
+set inav_use_gps_velned = ON
+set inav_use_gps_no_baro = OFF
+set inav_allow_dead_reckoning = OFF
+set inav_reset_altitude = FIRST_ARM
+set inav_reset_home = FIRST_ARM
+set inav_max_surface_altitude = 200
+set inav_w_z_surface_p =  3.500
+set inav_w_z_surface_v =  6.100
+set inav_w_xy_flow_p =  1.000
+set inav_w_xy_flow_v =  2.000
+set inav_w_z_baro_p =  0.350
+set inav_w_z_gps_p =  0.200
+set inav_w_z_gps_v =  0.100
+set inav_w_xy_gps_p =  1.000
+set inav_w_xy_gps_v =  2.000
+set inav_w_z_res_v =  0.500
+set inav_w_xy_res_v =  0.500
+set inav_w_xyz_acc_p =  1.000
+set inav_w_acc_bias =  0.010
+set inav_max_eph_epv =  1000.000
+set inav_baro_epv =  100.000
+set nav_disarm_on_landing = OFF
+set nav_use_midthr_for_althold = OFF
+set nav_extra_arming_safety = ON
+set nav_user_control_mode = ATTI
+set nav_position_timeout = 5
+set nav_wp_load_on_boot = OFF
+set nav_wp_radius = 5000
+set nav_wp_enforce_altitude = OFF
+set nav_wp_safe_distance = 10000
+set nav_wp_mission_restart = RESUME
+set nav_wp_multi_mission_index = 1
+set nav_auto_speed = 300
+set nav_max_auto_speed = 1000
+set nav_auto_climb_rate = 500
+set nav_manual_speed = 500
+set nav_manual_climb_rate = 200
+set nav_land_minalt_vspd = 50
+set nav_land_maxalt_vspd = 200
+set nav_land_slowdown_minalt = 500
+set nav_land_slowdown_maxalt = 2000
+set nav_emerg_landing_speed = 500
+set nav_min_rth_distance = 500
+set nav_overrides_motor_stop = ALL_NAV
+set nav_fw_soaring_motor_stop = OFF
+set nav_fw_soaring_pitch_deadband = 5
+set nav_rth_climb_first = ON
+set nav_rth_climb_first_stage_mode = AT_LEAST
+set nav_rth_climb_first_stage_altitude = 0
+set nav_rth_climb_ignore_emerg = OFF
+set nav_rth_tail_first = OFF
+set nav_rth_allow_landing = FS_ONLY
+set nav_rth_alt_mode = AT_LEAST
+set nav_rth_alt_control_override = OFF
+set nav_rth_abort_threshold = 50000
+set nav_max_terrain_follow_alt = 100
+set nav_max_altitude = 0
+set nav_rth_altitude = 5000
+set nav_rth_home_altitude = 0
+set safehome_max_distance = 20000
+set safehome_usage_mode = RTH
+set nav_mission_planner_reset = ON
+set nav_mc_bank_angle = 30
+set nav_mc_auto_disarm_delay = 2000
+set nav_mc_braking_speed_threshold = 100
+set nav_mc_braking_disengage_speed = 75
+set nav_mc_braking_timeout = 2000
+set nav_mc_braking_boost_factor = 100
+set nav_mc_braking_boost_timeout = 750
+set nav_mc_braking_boost_speed_threshold = 150
+set nav_mc_braking_boost_disengage_speed = 100
+set nav_mc_braking_bank_angle = 40
+set nav_mc_pos_deceleration_time = 120
+set nav_mc_pos_expo = 10
+set nav_mc_wp_slowdown = ON
+set nav_fw_auto_disarm_delay = 2000
+set nav_fw_bank_angle = 35
+set nav_fw_climb_angle = 20
+set nav_fw_dive_angle = 15
+set nav_fw_pitch2thr_smoothing = 6
+set nav_fw_pitch2thr_threshold = 50
+set nav_fw_loiter_radius = 7500
+set nav_fw_cruise_speed = 0
+set nav_fw_control_smoothness = 2
+set nav_fw_land_dive_angle = 2
+set nav_fw_launch_velocity = 300
+set nav_fw_launch_accel = 1863
+set nav_fw_launch_max_angle = 45
+set nav_fw_launch_detect_time = 40
+set nav_fw_launch_idle_motor_delay = 0
+set nav_fw_launch_motor_delay = 100
+set nav_fw_launch_spinup_time = 100
+set nav_fw_launch_end_time = 3000
+set nav_fw_launch_min_time = 0
+set nav_fw_launch_timeout = 5000
+set nav_fw_launch_max_altitude = 5000
+set nav_fw_launch_climb_angle = 25
+set nav_fw_launch_abort_deadband = 100
+set nav_fw_cruise_yaw_rate = 20
+set nav_fw_allow_manual_thr_increase = OFF
+set nav_use_fw_yaw_control = OFF
+set nav_fw_yaw_deadband = 0
+set telemetry_switch = OFF
+set telemetry_inverted = OFF
+set frsky_default_latitude =  0.000
+set frsky_default_longitude =  0.000
+set frsky_coordinates_format = 0
+set frsky_unit = METRIC
+set frsky_vfas_precision = 0
+set frsky_pitch_roll = OFF
+set report_cell_voltage = OFF
+set hott_alarm_sound_interval = 5
+set telemetry_halfduplex = ON
+set smartport_fuel_unit = MAH
+set ibus_telemetry_type = 0
+set ltm_update_rate = NORMAL
+set sim_ground_station_number = 
+set sim_pin = 0000
+set sim_transmit_interval = 60
+set sim_transmit_flags = 2
+set acc_event_threshold_high = 0
+set acc_event_threshold_low = 0
+set acc_event_threshold_neg_x = 0
+set sim_low_altitude = -32767
+set mavlink_ext_status_rate = 2
+set mavlink_rc_chan_rate = 5
+set mavlink_pos_rate = 2
+set mavlink_extra1_rate = 10
+set mavlink_extra2_rate = 2
+set mavlink_extra3_rate = 1
+set mavlink_version = 2
+set ledstrip_visual_beeper = OFF
+set i2c_speed = 400KHZ
+set debug_mode = NONE
+set throttle_tilt_comp_str = 0
+set name = 
+set mode_range_logic_operator = OR
+set stats = OFF
+set stats_total_time = 0
+set stats_total_dist = 0
+set stats_total_energy = 0
+set tz_offset = 0
+set tz_automatic_dst = OFF
+set display_force_sw_blink = OFF
+set pinio_box1 = 47
+set pinio_box2 = 48
+set pinio_box3 = 255
+set pinio_box4 = 255
+set log_level = ERROR
+set log_topics = 0
+set esc_sensor_listen_only = OFF
+set smartport_master_halfduplex = ON
+set smartport_master_inverted = OFF
+set dji_workarounds = 1
+set dji_use_name_for_messages = ON
+set dji_esc_temp_source = ESC
+set dji_message_speed_source = 3D
+set dji_rssi_source = RSSI
+set dji_use_adjustments = OFF
+set dji_cn_alternating_duration = 30
+set dshot_beeper_enabled = ON
+set dshot_beeper_tone = 1
+set beeper_pwm_mode = OFF
+set limit_pi_p = 100
+set limit_pi_i = 100
+set limit_attn_filter_cutoff =  1.200
+
+# profile
+profile 1
+
+set mc_p_pitch = 40
+set mc_i_pitch = 30
+set mc_d_pitch = 23
+set mc_cd_pitch = 60
+set mc_p_roll = 40
+set mc_i_roll = 30
+set mc_d_roll = 23
+set mc_cd_roll = 60
+set mc_p_yaw = 85
+set mc_i_yaw = 45
+set mc_d_yaw = 0
+set mc_cd_yaw = 60
+set mc_p_level = 20
+set mc_i_level = 15
+set mc_d_level = 75
+set fw_p_pitch = 15
+set fw_i_pitch = 5
+set fw_d_pitch = 5
+set fw_ff_pitch = 80
+set fw_p_roll = 15
+set fw_i_roll = 3
+set fw_d_roll = 7
+set fw_ff_roll = 50
+set fw_p_yaw = 20
+set fw_i_yaw = 0
+set fw_d_yaw = 0
+set fw_ff_yaw = 100
+set fw_p_level = 20
+set fw_i_level = 5
+set fw_d_level = 75
+set max_angle_inclination_rll = 450
+set max_angle_inclination_pit = 300
+set dterm_lpf_hz = 10
+set dterm_lpf_type = PT2
+set dterm_lpf2_hz = 0
+set dterm_lpf2_type = PT1
+set yaw_lpf_hz = 0
+set fw_iterm_throw_limit = 165
+set fw_loiter_direction = RIGHT
+set fw_reference_airspeed =  1500.000
+set fw_turn_assist_yaw_gain =  1.000
+set fw_turn_assist_pitch_gain =  0.400
+set fw_iterm_limit_stick_position =  0.500
+set fw_yaw_iterm_freeze_bank_angle = 0
+set pidsum_limit = 500
+set pidsum_limit_yaw = 350
+set iterm_windup = 50
+set rate_accel_limit_roll_pitch = 0
+set rate_accel_limit_yaw = 10000
+set heading_hold_rate_limit = 90
+set nav_mc_pos_z_p = 50
+set nav_mc_vel_z_p = 100
+set nav_mc_vel_z_i = 50
+set nav_mc_vel_z_d = 10
+set nav_mc_pos_xy_p = 65
+set nav_mc_vel_xy_p = 40
+set nav_mc_vel_xy_i = 15
+set nav_mc_vel_xy_d = 100
+set nav_mc_vel_xy_ff = 40
+set nav_mc_heading_p = 60
+set nav_mc_vel_xy_dterm_lpf_hz =  2.000
+set nav_mc_vel_xy_dterm_attenuation = 90
+set nav_mc_vel_xy_dterm_attenuation_start = 10
+set nav_mc_vel_xy_dterm_attenuation_end = 60
+set nav_fw_pos_z_p = 25
+set nav_fw_pos_z_i = 5
+set nav_fw_pos_z_d = 8
+set nav_fw_pos_xy_p = 55
+set nav_fw_pos_xy_i = 5
+set nav_fw_pos_xy_d = 8
+set nav_fw_heading_p = 60
+set nav_fw_pos_hdg_p = 30
+set nav_fw_pos_hdg_i = 2
+set nav_fw_pos_hdg_d = 0
+set nav_fw_pos_hdg_pidsum_limit = 350
+set mc_iterm_relax = RP
+set mc_iterm_relax_cutoff = 15
+set d_boost_min =  1.000
+set d_boost_max =  1.000
+set d_boost_max_at_acceleration =  7500.000
+set d_boost_gyro_delta_lpf_hz = 80
+set antigravity_gain =  1.000
+set antigravity_accelerator =  1.000
+set antigravity_cutoff_lpf_hz = 15
+set pid_type = AUTO
+set mc_cd_lpf_hz = 30
+set fw_level_pitch_trim =  0.000
+set smith_predictor_strength =  0.500
+set smith_predictor_delay =  0.000
+set smith_predictor_lpf_hz = 50
+set fw_level_pitch_gain =  5.000
+set thr_mid = 50
+set thr_expo = 0
+set tpa_rate = 0
+set tpa_breakpoint = 1500
+set fw_tpa_time_constant = 1500
+set rc_expo = 30
+set rc_yaw_expo = 30
+set roll_rate = 18
+set pitch_rate = 9
+set yaw_rate = 3
+set manual_rc_expo = 35
+set manual_rc_yaw_expo = 20
+set manual_roll_rate = 100
+set manual_pitch_rate = 100
+set manual_yaw_rate = 100
+set fpv_mix_degrees = 0
+set rate_dynamics_center_sensitivity = 100
+set rate_dynamics_end_sensitivity = 100
+set rate_dynamics_center_correction = 10
+set rate_dynamics_end_correction = 10
+set rate_dynamics_center_weight = 0
+set rate_dynamics_end_weight = 0
+
+# save configuration
+save
+
+# end the command batch
+batch end
+
+# 
