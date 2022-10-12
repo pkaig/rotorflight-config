@@ -143,12 +143,14 @@ timer A09 AF1
 # pin A09: TIM1 CH2 (AF1)
 timer A10 AF1
 # pin A10: TIM1 CH3 (AF1)
+timer A02 AF2
+# pin A02: TIM5 CH3 (AF2)
+timer A03 AF3
+# pin A03: TIM9 CH2 (AF3)
 timer B10 AF1
 # pin B10: TIM2 CH3 (AF1)
 timer B11 AF1
 # pin B11: TIM2 CH4 (AF1)
-timer A02 NONE
-timer A03 NONE
 
 # dma
 dma SPI_TX 1 NONE
@@ -192,11 +194,12 @@ dma pin A09 0
 # pin A09: DMA2 Stream 6 Channel 0
 dma pin A10 0
 # pin A10: DMA2 Stream 6 Channel 0
+dma pin A02 NONE
+dma pin A03 NONE
 dma pin B10 0
 # pin B10: DMA1 Stream 1 Channel 3
 dma pin B11 0
 # pin B11: DMA1 Stream 7 Channel 3
-dma pin A02 NONE
 
 # feature
 feature -RX_PPM
@@ -375,7 +378,7 @@ aux 0 0 0 1600 2100 0 0
 aux 1 1 2 1675 2100 0 0
 aux 2 2 2 1350 1675 0 0
 aux 3 3 1 1525 2050 0 0
-aux 4 26 3 950 2100 0 0
+aux 4 26 3 1325 2100 0 0
 aux 5 0 0 900 900 0 0
 aux 6 0 0 900 900 0 0
 aux 7 0 0 900 900 0 0
@@ -481,8 +484,8 @@ set dterm_notch_cutoff = 0
 set gyro_filter_debug_axis = ROLL
 set acc_hardware = AUTO
 set acc_lpf_hz = 10
-set acc_trim_pitch = 0
-set acc_trim_roll = 0
+set acc_trim_pitch = -27
+set acc_trim_roll = 68
 set acc_calibration = -96,-147,2,1
 set align_mag = DEFAULT
 set mag_align_roll = 0
@@ -793,23 +796,23 @@ set pid_debug_axis = ROLL
 set iterm_rotation = ON
 set iterm_relax = RPY
 set iterm_relax_type = SETPOINT
-set iterm_relax_cutoff = 10,10,10
+set iterm_relax_cutoff = 6,6,6
 set iterm_limit = 400,400,400
 set iterm_decay = 25
 set acro_trainer_angle_limit = 20
 set acro_trainer_lookahead_ms = 50
 set acro_trainer_gain = 50
-set p_pitch = 80
-set i_pitch = 450
-set d_pitch = 50
+set p_pitch = 126
+set i_pitch = 370
+set d_pitch = 103
 set f_pitch = 110
-set p_roll = 80
-set i_roll = 400
-set d_roll = 50
+set p_roll = 112
+set i_roll = 337
+set d_roll = 108
 set f_roll = 90
 set p_yaw = 60
 set i_yaw = 90
-set d_yaw = 45
+set d_yaw = 60
 set f_yaw = 0
 set pitch_error_filter = 0
 set roll_error_filter = 0
@@ -820,8 +823,8 @@ set horizon_level_strength = 50
 set horizon_transition = 75
 set horizon_tilt_effect = 75
 set horizon_tilt_expert_mode = OFF
-set rescue_collective = 100
-set rescue_boost = 400
+set rescue_collective = 150
+set rescue_boost = 710
 set rescue_delay = 8
 set yaw_center_offset = 0
 set yaw_cw_stop_gain = 150

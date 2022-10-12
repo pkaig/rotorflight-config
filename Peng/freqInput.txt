@@ -1,0 +1,47 @@
+##############################################
+## Frequency input to DSM on RX6 
+
+resource serial_RX 6 NONE
+# Resource is freed
+
+resource freq 1 C07
+# Resource is set to C07
+
+# timer c07 list
+# AF2: TIM3 CH2
+# AF3: TIM8 CH2
+
+timer c07 AF3
+# timer C07: changed from NONE to AF3
+
+# dma pin C07 list
+# 0: DMA2 Stream 2 Channel 0
+# 1: DMA2 Stream 3 Channel 7
+
+dma pin C07 1
+# dma pin C07: changed from NONE to 1
+
+# timer show
+# Currently active Timers:
+# -----------------------
+# TIM1:
+#     CH1: DSHOT_BITBANG 2
+#     CH2: DSHOT_BITBANG 3
+# TIM2:
+#     CH3: SERVO 2
+#     CH4: SERVO 3
+# TIM3: FREE
+# TIM4:
+#     CH1: SERVO 1
+# TIM5: FREE
+# TIM6: FREE
+# TIM7: FREE
+# TIM8:
+#     CH1: FREQ 1
+# TIM9: FREE
+# TIM10: FREE
+# TIM11: FREE
+# TIM12: FREE
+# TIM13: FREE
+# TIM14: FREE
+###############################################
