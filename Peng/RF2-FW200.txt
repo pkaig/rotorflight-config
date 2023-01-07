@@ -498,7 +498,7 @@ set acc_hardware = AUTO
 set acc_lpf_hz = 10
 set acc_trim_pitch = 0
 set acc_trim_roll = 0
-set acc_calibration = -3,-9,-153,1
+set acc_calibration = -5,-5,-152,1
 set align_mag = DEFAULT
 set mag_align_roll = 0
 set mag_align_pitch = 0
@@ -810,8 +810,8 @@ profile 0
 
 # profile 0
 set profile_name = -
-set pid_mode = 1
-set pid_dterm_mode = 0
+set pid_mode = 2
+set pid_dterm_mode = 1
 set pitch_p_gain = 126
 set pitch_i_gain = 370
 set pitch_d_gain = 103
@@ -820,9 +820,9 @@ set roll_p_gain = 100
 set roll_i_gain = 337
 set roll_d_gain = 114
 set roll_f_gain = 90
-set yaw_p_gain = 49
+set yaw_p_gain = 60
 set yaw_i_gain = 80
-set yaw_d_gain = 48
+set yaw_d_gain = 60
 set yaw_f_gain = 0
 set way_p_gain = 50
 set way_i_gain = 50
@@ -836,7 +836,7 @@ set roll_d_cutoff = 15
 set roll_f_cutoff = 0
 set roll_gyro_cutoff = 50
 set roll_error_cutoff = 0
-set yaw_d_cutoff = 20
+set yaw_d_cutoff = 30
 set yaw_f_cutoff = 0
 set yaw_gyro_cutoff = 50
 set yaw_error_cutoff = 0
@@ -882,8 +882,8 @@ set gov_p_gain = 40
 set gov_i_gain = 50
 set gov_d_gain = 0
 set gov_f_gain = 22
-set gov_tta_gain = 70
-set gov_tta_limit = 70
+set gov_tta_gain = 120
+set gov_tta_limit = 100
 set gov_cyclic_ff_weight = 40
 set gov_collective_ff_weight = 100
 
@@ -1482,4 +1482,4 @@ set rates_smoothness = 50
 set cyclic_ring = 0
 
 # restore original rateprofile selection
-rateprofile 0
+rateprofile 
