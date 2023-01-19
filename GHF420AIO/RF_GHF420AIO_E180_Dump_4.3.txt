@@ -807,8 +807,8 @@ profile 0
 
 # profile 0
 set profile_name = -
-set pid_mode = 1
-set pid_dterm_mode = 0
+set pid_mode = 9
+set pid_dterm_mode = 1
 set pitch_p_gain = 168
 set pitch_i_gain = 280
 set pitch_d_gain = 98
@@ -817,11 +817,11 @@ set roll_p_gain = 192
 set roll_i_gain = 280
 set roll_d_gain = 99
 set roll_f_gain = 92
-set yaw_p_gain = 64
+set yaw_p_gain = 54
 set yaw_i_gain = 50
-set yaw_d_gain = 26
+set yaw_d_gain = 20
 set yaw_f_gain = 0
-set way_p_gain = 64
+set way_p_gain = 34
 set way_i_gain = 50
 set way_d_gain = 26
 set way_f_gain = 0
