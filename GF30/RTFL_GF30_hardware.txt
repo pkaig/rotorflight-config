@@ -1,3 +1,12 @@
+# dump hardware
+###WARNING: NO CUSTOM DEFAULTS FOUND###
+
+# version
+# Rotorflight / STM32F405 (S405) 4.3.0 Feb 22 2023 / 21:25:15 (519968a91) MSP API: 11.2
+###ERROR IN dump: NO CONFIG FOUND###
+# start the command batch
+batch start
+
 board_name JHEF405PRO
 manufacturer_id JHEF
 
@@ -24,8 +33,6 @@ resource PWM 5 NONE
 resource PWM 6 NONE
 resource PWM 7 NONE
 resource PWM 8 NONE
-resource SONAR_TRIGGER 1 NONE
-resource SONAR_ECHO 1 NONE
 resource LED_STRIP 1 A09
 resource SERIAL_TX 1 B06
 resource SERIAL_TX 2 D05
@@ -101,13 +108,6 @@ resource PINIO 3 NONE
 resource PINIO 4 NONE
 resource USB_MSC_PIN 1 NONE
 resource FLASH_CS 1 B03
-resource RX_SPI_CS 1 NONE
-resource RX_SPI_EXTI 1 NONE
-resource RX_SPI_BIND 1 NONE
-resource RX_SPI_LED 1 NONE
-resource RX_SPI_CC2500_TX_EN 1 NONE
-resource RX_SPI_CC2500_LNA_EN 1 NONE
-resource RX_SPI_CC2500_ANT_SEL 1 NONE
 resource GYRO_EXTI 1 B13
 resource GYRO_EXTI 2 NONE
 resource GYRO_CS 1 B12
@@ -123,6 +123,8 @@ resource PULLDOWN 3 NONE
 resource PULLDOWN 4 NONE
 resource FREQ 1 NONE
 resource FREQ 2 NONE
+resource FREQ 3 NONE
+resource FREQ 4 NONE
 
 # timer
 timer B00 AF1
@@ -155,6 +157,12 @@ timer B07 AF2
 # pin B07: TIM4 CH2 (AF2)
 
 # dma
+dma SPI_MOSI 1 NONE
+dma SPI_MOSI 2 NONE
+dma SPI_MOSI 3 NONE
+dma SPI_MISO 1 NONE
+dma SPI_MISO 2 NONE
+dma SPI_MISO 3 NONE
 dma SPI_TX 1 NONE
 dma SPI_TX 2 NONE
 dma SPI_TX 3 NONE
@@ -223,16 +231,17 @@ set baro_bustype = I2C
 set baro_spi_device = 0
 set baro_i2c_device = 1
 set baro_i2c_address = 0
-set rx_spi_bus = 0
-set rx_spi_led_inversion = OFF
 set adc_device = 1
-set blackbox_device = SERIAL
 set dshot_burst = ON
 set dshot_bitbang = AUTO
 set dshot_bitbang_timer = AUTO
 set current_meter = ADC
 set battery_meter = ADC
+set vbat_scale = 110
+set vbat_divider = 10
+set vbat_multiplier = 1
 set ibata_scale = 170
+set ibata_offset = 0
 set beeper_inversion = ON
 set beeper_od = OFF
 set beeper_frequency = 0
@@ -243,8 +252,11 @@ set sdio_clk_bypass = OFF
 set sdio_use_cache = OFF
 set sdio_use_4bit_width = OFF
 set system_hse_mhz = 8
-set cc2500_spi_chip_detect = ON
 set led_inversion = 0
+set dashboard_i2c_bus = 0
+set dashboard_i2c_addr = 60
+set pinio_config = 1,1,1,1
+set pinio_box = 255,255,255,255
 set usb_msc_pin_pullup = ON
 set flash_spi_bus = 3
 set gyro_1_bustype = SPI
@@ -264,9 +276,14 @@ set gyro_2_align_roll = 0
 set gyro_2_align_pitch = 0
 set gyro_2_align_yaw = 0
 set i2c1_pullup = OFF
-set i2c1_overclock = ON
+set i2c1_clockspeed_khz = 800
 set i2c2_pullup = OFF
-set i2c2_overclock = ON
+set i2c2_clockspeed_khz = 800
 set i2c3_pullup = OFF
-set i2c3_overclock = ON
+set i2c3_clockspeed_khz = 800
 set mco2_on_pc9 = OFF
+
+# end the command batch
+batch end
+
+# 
