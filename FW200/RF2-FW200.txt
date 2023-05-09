@@ -1,7 +1,9 @@
 ############################################################
+# FW200
 # Versions
 # 
-# RF4.3.0 - Apr  5 2023
+# Rotorflight / STM32F405 (S405) 4.3.0 Apr  5 2023
+# Rotorflight / STM32F405 (S405) 4.3.0 Apr  8 2023
 #
 ###########################
 board_name JHEF405
@@ -956,13 +958,13 @@ set rescue_mode = CLIMB
 set rescue_flip = ON
 set rescue_flip_gain = 40
 set rescue_level_gain = 30
-set rescue_pull_up_time = 4
-set rescue_climb_time = 4
+set rescue_pull_up_time = 11
+set rescue_climb_time = 2
 set rescue_flip_time = 20
 set rescue_exit_time = 10
-set rescue_pull_up_collective = 530
-set rescue_climb_collective = 280
-set rescue_hover_collective = 300
+set rescue_pull_up_collective = 1000
+set rescue_climb_collective = 1000
+set rescue_hover_collective = 720
 set rescue_hover_altitude = 500
 set rescue_alt_p_gain = 20
 set rescue_alt_i_gain = 20
