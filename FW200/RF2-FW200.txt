@@ -4,10 +4,16 @@
 # 
 # Rotorflight / STM32F405 (S405) 4.3.0 Apr  5 2023
 # Rotorflight / STM32F405 (S405) 4.3.0 Apr  8 2023
+# Rotorflight / STM32F405 (S405) 4.3.0 May  8 2023
 #
 ###########################
-board_name JHEF405
-board_design 
+# 
+
+# start the command batch
+batch start
+
+board_name JHEF405PRO
+board_design BTFL
 manufacturer_id JHEF
 mcu_id 002f00564247501820303734
 signature 
@@ -131,26 +137,26 @@ resource FREQ 3 NONE
 resource FREQ 4 NONE
 
 # timer
-timer B08 AF3
-# pin B08: TIM10 CH1 (AF3)
 timer B00 AF2
 # pin B00: TIM3 CH3 (AF2)
 timer B01 AF2
 # pin B01: TIM3 CH4 (AF2)
+timer A03 AF3
+# pin A03: TIM9 CH2 (AF3)
+timer A02 AF2
+# pin A02: TIM5 CH3 (AF2)
+timer A09 AF1
+# pin A09: TIM1 CH2 (AF1)
+timer B08 AF3
+# pin B08: TIM10 CH1 (AF3)
 timer C09 AF3
 # pin C09: TIM8 CH4 (AF3)
 timer C08 AF2
 # pin C08: TIM3 CH3 (AF2)
 timer B06 AF2
 # pin B06: TIM4 CH1 (AF2)
-timer A09 AF1
-# pin A09: TIM1 CH2 (AF1)
 timer A10 AF1
 # pin A10: TIM1 CH3 (AF1)
-timer A02 AF2
-# pin A02: TIM5 CH3 (AF2)
-timer A03 AF3
-# pin A03: TIM9 CH2 (AF3)
 timer B10 AF1
 # pin B10: TIM2 CH3 (AF1)
 timer B11 AF1
@@ -189,23 +195,23 @@ dma UART_RX 5 NONE
 dma UART_RX 6 NONE
 dma UART_RX 7 NONE
 dma UART_RX 8 NONE
-dma pin B08 NONE
 dma pin B00 0
 # pin B00: DMA1 Stream 7 Channel 5
 dma pin B01 0
 # pin B01: DMA1 Stream 2 Channel 5
+dma pin A03 NONE
+dma pin A02 NONE
+dma pin A09 0
+# pin A09: DMA2 Stream 6 Channel 0
+dma pin B08 NONE
 dma pin C09 0
 # pin C09: DMA2 Stream 7 Channel 7
 dma pin C08 0
 # pin C08: DMA1 Stream 7 Channel 5
 dma pin B06 0
 # pin B06: DMA1 Stream 0 Channel 2
-dma pin A09 0
-# pin A09: DMA2 Stream 6 Channel 0
 dma pin A10 0
 # pin A10: DMA2 Stream 6 Channel 0
-dma pin A02 NONE
-dma pin A03 NONE
 dma pin B10 0
 # pin B10: DMA1 Stream 1 Channel 3
 dma pin B11 0
@@ -477,14 +483,6 @@ set gyro_notch1_hz = 0
 set gyro_notch1_cutoff = 0
 set gyro_notch2_hz = 0
 set gyro_notch2_cutoff = 0
-set dterm_lpf1_type = PT1
-set dterm_lpf1_static_hz = 20
-set dterm_lpf1_dyn_min_hz = 20
-set dterm_lpf1_dyn_max_hz = 150
-set dterm_lpf2_type = PT1
-set dterm_lpf2_static_hz = 150
-set dterm_notch_hz = 0
-set dterm_notch_cutoff = 0
 set acc_hardware = AUTO
 set acc_lpf_hz = 10
 set acc_trim_pitch = 6
@@ -799,9 +797,9 @@ set name = FW200
 set position_alt_source = DEFAULT
 set position_baro_alt_lpf = 25
 set position_baro_offset_lpf = 10
-set position_baro_drift_lpf = 5
 set position_gps_alt_lpf = 25
 set position_gps_offset_lpf = 10
+set position_gps_min_sats = 12
 set position_vario_lpf = 25
 set box_user_1_name = -
 set box_user_2_name = -
@@ -814,6 +812,7 @@ profile 0
 set profile_name = -
 set pid_mode = 2
 set pid_dterm_mode = 0
+set pid_gyro_filter_type = FIRST_ORDER
 set pitch_p_gain = 169
 set pitch_i_gain = 270
 set pitch_d_gain = 91
@@ -847,10 +846,9 @@ set yaw_cw_stop_gain = 210
 set yaw_ccw_stop_gain = 100
 set yaw_cyclic_ff_gain = 50
 set yaw_collective_ff_gain = 117
-set yaw_collective_ff_impulse_gain = 20
-set yaw_collective_ff_impulse_freq = 100
+set yaw_collective_hf_gain = 0
+set yaw_collective_ff_cutoff = 25
 set pitch_collective_ff_gain = 20
-set pitch_collective_ff_impulse_gain = 0
 set error_rotation = ON
 set error_decay = 3
 set error_limit = 60,60,60
@@ -902,6 +900,7 @@ profile 1
 set profile_name = -
 set pid_mode = 2
 set pid_dterm_mode = 1
+set pid_gyro_filter_type = FIRST_ORDER
 set pitch_p_gain = 169
 set pitch_i_gain = 270
 set pitch_d_gain = 91
@@ -935,10 +934,9 @@ set yaw_cw_stop_gain = 240
 set yaw_ccw_stop_gain = 100
 set yaw_cyclic_ff_gain = 50
 set yaw_collective_ff_gain = 117
-set yaw_collective_ff_impulse_gain = 20
-set yaw_collective_ff_impulse_freq = 100
+set yaw_collective_hf_gain = 0
+set yaw_collective_ff_cutoff = 25
 set pitch_collective_ff_gain = 20
-set pitch_collective_ff_impulse_gain = 0
 set error_rotation = ON
 set error_decay = 3
 set error_limit = 60,60,60
@@ -990,6 +988,7 @@ profile 2
 set profile_name = -
 set pid_mode = 2
 set pid_dterm_mode = 1
+set pid_gyro_filter_type = FIRST_ORDER
 set pitch_p_gain = 169
 set pitch_i_gain = 270
 set pitch_d_gain = 91
@@ -1023,10 +1022,9 @@ set yaw_cw_stop_gain = 180
 set yaw_ccw_stop_gain = 100
 set yaw_cyclic_ff_gain = 50
 set yaw_collective_ff_gain = 117
-set yaw_collective_ff_impulse_gain = 20
-set yaw_collective_ff_impulse_freq = 100
+set yaw_collective_hf_gain = 0
+set yaw_collective_ff_cutoff = 25
 set pitch_collective_ff_gain = 20
-set pitch_collective_ff_impulse_gain = 0
 set error_rotation = ON
 set error_decay = 3
 set error_limit = 60,60,60
@@ -1078,6 +1076,7 @@ profile 3
 set profile_name = -
 set pid_mode = 1
 set pid_dterm_mode = 0
+set pid_gyro_filter_type = FIRST_ORDER
 set pitch_p_gain = 50
 set pitch_i_gain = 100
 set pitch_d_gain = 0
@@ -1111,10 +1110,9 @@ set yaw_cw_stop_gain = 100
 set yaw_ccw_stop_gain = 100
 set yaw_cyclic_ff_gain = 50
 set yaw_collective_ff_gain = 100
-set yaw_collective_ff_impulse_gain = 20
-set yaw_collective_ff_impulse_freq = 100
+set yaw_collective_hf_gain = 0
+set yaw_collective_ff_cutoff = 25
 set pitch_collective_ff_gain = 20
-set pitch_collective_ff_impulse_gain = 0
 set error_rotation = ON
 set error_decay = 25
 set error_limit = 90,90,90
@@ -1166,6 +1164,7 @@ profile 4
 set profile_name = -
 set pid_mode = 1
 set pid_dterm_mode = 0
+set pid_gyro_filter_type = FIRST_ORDER
 set pitch_p_gain = 50
 set pitch_i_gain = 100
 set pitch_d_gain = 0
@@ -1199,10 +1198,9 @@ set yaw_cw_stop_gain = 100
 set yaw_ccw_stop_gain = 100
 set yaw_cyclic_ff_gain = 50
 set yaw_collective_ff_gain = 100
-set yaw_collective_ff_impulse_gain = 20
-set yaw_collective_ff_impulse_freq = 100
+set yaw_collective_hf_gain = 0
+set yaw_collective_ff_cutoff = 25
 set pitch_collective_ff_gain = 20
-set pitch_collective_ff_impulse_gain = 0
 set error_rotation = ON
 set error_decay = 25
 set error_limit = 90,90,90
@@ -1254,6 +1252,7 @@ profile 5
 set profile_name = -
 set pid_mode = 2
 set pid_dterm_mode = 1
+set pid_gyro_filter_type = FIRST_ORDER
 set pitch_p_gain = 169
 set pitch_i_gain = 270
 set pitch_d_gain = 91
@@ -1287,10 +1286,9 @@ set yaw_cw_stop_gain = 210
 set yaw_ccw_stop_gain = 100
 set yaw_cyclic_ff_gain = 50
 set yaw_collective_ff_gain = 117
-set yaw_collective_ff_impulse_gain = 20
-set yaw_collective_ff_impulse_freq = 100
+set yaw_collective_hf_gain = 0
+set yaw_collective_ff_cutoff = 25
 set pitch_collective_ff_gain = 20
-set pitch_collective_ff_impulse_gain = 0
 set error_rotation = ON
 set error_decay = 3
 set error_limit = 60,60,60
