@@ -877,11 +877,11 @@ set pid_mode = 2
 set pid_dterm_mode = 0
 set pid_gyro_filter_type = FIRST_ORDER
 set pitch_p_gain = 110
-set pitch_i_gain = 281
+set pitch_i_gain = 231
 set pitch_d_gain = 303
 set pitch_f_gain = 94
 set roll_p_gain = 110
-set roll_i_gain = 285
+set roll_i_gain = 235
 set roll_d_gain = 30
 set roll_f_gain = 94
 set yaw_p_gain = 57
@@ -952,7 +952,7 @@ set gov_i_gain = 50
 set gov_d_gain = 0
 set gov_f_gain = 10
 set gov_tta_gain = 190
-set gov_tta_limit = 250
+set gov_tta_limit = 50
 set gov_yaw_ff_weight = 0
 set gov_cyclic_ff_weight = 40
 set gov_collective_ff_weight = 100
@@ -964,12 +964,12 @@ set profile_name = -
 set pid_mode = 2
 set pid_dterm_mode = 0
 set pid_gyro_filter_type = FIRST_ORDER
-set pitch_p_gain = 110
-set pitch_i_gain = 281
+set pitch_p_gain = 120
+set pitch_i_gain = 231
 set pitch_d_gain = 303
 set pitch_f_gain = 94
 set roll_p_gain = 110
-set roll_i_gain = 285
+set roll_i_gain = 235
 set roll_d_gain = 30
 set roll_f_gain = 94
 set yaw_p_gain = 58
@@ -1040,7 +1040,7 @@ set gov_i_gain = 50
 set gov_d_gain = 0
 set gov_f_gain = 10
 set gov_tta_gain = 190
-set gov_tta_limit = 250
+set gov_tta_limit = 50
 set gov_yaw_ff_weight = 0
 set gov_cyclic_ff_weight = 40
 set gov_collective_ff_weight = 132
@@ -1310,7 +1310,7 @@ set gov_cyclic_ff_weight = 40
 set gov_collective_ff_weight = 100
 
 # restore original profile selection
-profile 0
+profile 1
 
 rateprofile 0
 
@@ -1500,6 +1500,3 @@ set cyclic_ring = 0
 
 # restore original rateprofile selection
 rateprofile 0
-
-# save configuration
-save
