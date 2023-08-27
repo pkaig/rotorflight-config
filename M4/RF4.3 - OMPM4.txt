@@ -2,8 +2,7 @@
 # OMPHOBBY M4
 # Versions
 # 
-# 4.3.0-20230628 Jun 29 2023
-# 4.3.0-20230724 Jul 23 2023
+# Rotorflight / STM32F7X2 (S7X2) 4.3.0-20230724 Jul 23 2023
 #
 ###########################
 
@@ -815,15 +814,15 @@ set pid_mode = 2
 set pid_dterm_mode = GYRO
 set pid_dterm_mode_yaw = GYRO
 set pid_gyro_filter_type = FIRST_ORDER
-set pitch_p_gain = 87
-set pitch_i_gain = 60
-set pitch_d_gain = 0
+set pitch_p_gain = 100
+set pitch_i_gain = 124
+set pitch_d_gain = 19
 set pitch_f_gain = 100
-set roll_p_gain = 82
-set roll_i_gain = 60
+set roll_p_gain = 101
+set roll_i_gain = 122
 set roll_d_gain = 0
 set roll_f_gain = 100
-set yaw_p_gain = 85
+set yaw_p_gain = 86
 set yaw_i_gain = 84
 set yaw_d_gain = 51
 set yaw_f_gain = 0
@@ -904,11 +903,11 @@ set pid_dterm_mode = GYRO
 set pid_dterm_mode_yaw = GYRO
 set pid_gyro_filter_type = FIRST_ORDER
 set pitch_p_gain = 87
-set pitch_i_gain = 60
-set pitch_d_gain = 0
+set pitch_i_gain = 100
+set pitch_d_gain = 64
 set pitch_f_gain = 100
 set roll_p_gain = 82
-set roll_i_gain = 60
+set roll_i_gain = 100
 set roll_d_gain = 0
 set roll_f_gain = 100
 set yaw_p_gain = 85
