@@ -5,6 +5,7 @@
 # Rotorflight / STM32F405 (S405) 4.3.0-20230417 Apr 17 2023
 # Rotorflight / STM32F405 (S405) 4.3.0-20230508 May  8 2023
 # Rotorflight / STM32F405 (S405) 4.3.0-20230724 Jul 23 2023
+# Rotorflight / STM32F405 (S405) 4.3.0 Aug 22 2023 / 16:38:20 (norevision) MSP API: 11.2
 #
 ###########################
 
@@ -828,8 +829,8 @@ set yaw_cw_stop_gain = 196
 set yaw_ccw_stop_gain = 100
 set yaw_cyclic_ff_gain = 10
 set yaw_collective_ff_gain = 50
-set yaw_collective_dynamic_gain = 0
-set yaw_collective_dynamic_decay = 25
+set yaw_collective_df_gain = 0
+set yaw_collective_df_cutoff = 25
 set pitch_collective_ff_gain = 0
 set error_rotation = ON
 set error_decay_ground = 25
@@ -916,8 +917,8 @@ set yaw_cw_stop_gain = 196
 set yaw_ccw_stop_gain = 100
 set yaw_cyclic_ff_gain = 10
 set yaw_collective_ff_gain = 50
-set yaw_collective_dynamic_gain = 0
-set yaw_collective_dynamic_decay = 25
+set yaw_collective_df_gain = 0
+set yaw_collective_df_cutoff = 25
 set pitch_collective_ff_gain = 0
 set error_rotation = ON
 set error_decay_ground = 25
@@ -1004,8 +1005,8 @@ set yaw_cw_stop_gain = 196
 set yaw_ccw_stop_gain = 100
 set yaw_cyclic_ff_gain = 10
 set yaw_collective_ff_gain = 50
-set yaw_collective_dynamic_gain = 0
-set yaw_collective_dynamic_decay = 25
+set yaw_collective_df_gain = 0
+set yaw_collective_df_cutoff = 25
 set pitch_collective_ff_gain = 0
 set error_rotation = ON
 set error_decay_ground = 25
@@ -1092,8 +1093,8 @@ set yaw_cw_stop_gain = 100
 set yaw_ccw_stop_gain = 100
 set yaw_cyclic_ff_gain = 50
 set yaw_collective_ff_gain = 250
-set yaw_collective_dynamic_gain = 0
-set yaw_collective_dynamic_decay = 25
+set yaw_collective_df_gain = 0
+set yaw_collective_df_cutoff = 25
 set pitch_collective_ff_gain = 0
 set error_rotation = ON
 set error_decay_ground = 25
@@ -1180,8 +1181,8 @@ set yaw_cw_stop_gain = 100
 set yaw_ccw_stop_gain = 100
 set yaw_cyclic_ff_gain = 50
 set yaw_collective_ff_gain = 250
-set yaw_collective_dynamic_gain = 0
-set yaw_collective_dynamic_decay = 25
+set yaw_collective_df_gain = 0
+set yaw_collective_df_cutoff = 25
 set pitch_collective_ff_gain = 0
 set error_rotation = ON
 set error_decay_ground = 25
@@ -1268,8 +1269,8 @@ set yaw_cw_stop_gain = 196
 set yaw_ccw_stop_gain = 100
 set yaw_cyclic_ff_gain = 50
 set yaw_collective_ff_gain = 108
-set yaw_collective_dynamic_gain = 0
-set yaw_collective_dynamic_decay = 25
+set yaw_collective_df_gain = 0
+set yaw_collective_df_cutoff = 25
 set pitch_collective_ff_gain = 0
 set error_rotation = ON
 set error_decay_ground = 25
@@ -1335,7 +1336,7 @@ set roll_expo = 0
 set pitch_expo = 0
 set yaw_expo = 0
 set collective_expo = 0
-set roll_srate = 24
+set roll_srate = 0
 set pitch_srate = 24
 set yaw_srate = 48
 set collective_srate = 100
