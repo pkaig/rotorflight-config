@@ -1,8 +1,18 @@
+############################################################
+# Ahmad Kassem
+# Versions
+# 
+# Rotorflight / STM32F405 (S405) 4.3.0-20230912 Sep 12 2023
+#
+###########################
+
 board_name RF_SYNAPS_F405
 board_design RF-DIY-F405-V
 manufacturer_id AHS
+mcu_id 001a0044503150032034334e
+signature 
 
-# name: -
+# name: HK450
 
 # resources
 resource BEEPER 1 C13
@@ -208,6 +218,9 @@ feature -FREQ_SENSOR
 feature -RPM_FILTER
 feature RX_SERIAL
 feature TELEMETRY
+feature GOVERNOR
+feature FREQ_SENSOR
+feature RPM_FILTER
 
 # serial
 serial 20 1 115200 57600 0 115200
@@ -530,7 +543,7 @@ set dshot_bidir = OFF
 set dshot_bitbang = AUTO
 set dshot_bitbang_timer = AUTO
 set use_unsynced_pwm = OFF
-set motor_pwm_protocol = DISABLED
+set motor_pwm_protocol = DSHOT300
 set motor_pwm_rate = 250
 set motor_control_mode = 0,0,0,0
 set motor_poles = 8,8,8,8
@@ -582,13 +595,13 @@ set main_rotor_dir = CW
 set tail_rotor_mode = VARIABLE
 set tail_motor_idle = 0
 set tail_center_trim = 0
-set swash_type = NONE
+set swash_type = CP120
 set swash_ring = 100
 set swash_phase = 0
 set swash_trim = 0,0,0
 set total_blade_pitch_limit = 0
 set collective_tta_precomp = 0
-set gov_mode = PASSTHROUGH
+set gov_mode = MODE2
 set gov_startup_time = 200
 set gov_spoolup_time = 100
 set gov_tracking_time = 20
@@ -763,7 +776,7 @@ set stats_min_armed_time_s = -1
 set stats_total_flights = 0
 set stats_total_time_s = 0
 set stats_total_dist_m = 0
-set name = -
+set name = HK450
 set position_alt_source = DEFAULT
 set position_baro_alt_lpf = 25
 set position_baro_offset_lpf = 5
@@ -779,6 +792,111 @@ set box_user_4_name = -
 profile 0
 
 # profile 0
+set profile_name = -
+set pid_mode = 3
+set pid_dterm_mode = GYRO
+set pid_dterm_mode_yaw = GYRO
+set pid_gyro_filter_type = FIRST_ORDER
+set pitch_p_gain = 50
+set pitch_i_gain = 100
+set pitch_d_gain = 0
+set pitch_f_gain = 100
+set pitch_b_gain = 0
+set pitch_o_gain = 0
+set roll_p_gain = 50
+set roll_i_gain = 100
+set roll_d_gain = 0
+set roll_f_gain = 100
+set roll_b_gain = 0
+set roll_o_gain = 0
+set yaw_p_gain = 50
+set yaw_i_gain = 50
+set yaw_d_gain = 0
+set yaw_b_gain = 0
+set yaw_f_gain = 0
+set pitch_d_cutoff = 15
+set pitch_b_cutoff = 15
+set pitch_gyro_cutoff = 50
+set pitch_error_cutoff = 0
+set roll_d_cutoff = 15
+set roll_b_cutoff = 15
+set roll_gyro_cutoff = 50
+set roll_error_cutoff = 0
+set yaw_d_cutoff = 20
+set yaw_b_cutoff = 20
+set yaw_gyro_cutoff = 100
+set yaw_error_cutoff = 0
+set yaw_cw_stop_gain = 100
+set yaw_ccw_stop_gain = 100
+set yaw_cyclic_ff_gain = 0
+set yaw_collective_ff_gain = 40
+set yaw_collective_dynamic_gain = 0
+set yaw_collective_dynamic_decay = 25
+set pitch_collective_ff_gain = 0
+set cyclic_cross_coupling_gain = 0
+set cyclic_cross_coupling_ratio = 0
+set cyclic_cross_coupling_cutoff = 15
+set error_rotation = ON
+set error_limit = 15,15,45
+set offset_limit = 45,45
+set error_decay_time_ground = 25
+set error_decay_time_cyclic = 18
+set error_decay_time_yaw = 0
+set error_decay_limit_cyclic = 20
+set error_decay_limit_yaw = 0
+set error_decay_rate_curve = 16,16,18,21,25,31,42,62,125,250,250,250,250,250,250,250
+set error_decay_limit_curve = 12,12,12,12,12,12,12,12,12,12,12,12,13,14,15,16
+set offset_decay_rate_curve = 250,250,250,250,25,3,1,0,0,0,0,0,0,0,0,0
+set offset_decay_limit_curve = 5,5,4,3,2,2,2,2,2,2,2,2,2,2,2,2
+set offset_bleed_rate_curve = 0,0,0,0,0,0,2,4,30,250,250,250,250,250,250,250
+set offset_bleed_limit_curve = 0,0,0,0,0,0,15,40,100,150,200,250,250,250,250,250
+set offset_charge_curve = 0,100,100,100,90,80,68,60,54,49,45,42,39,37,35,33
+set iterm_relax_type = RPY
+set iterm_relax_level = 40,40,40
+set iterm_relax_cutoff = 10,10,15
+set angle_level_strength = 40
+set angle_level_limit = 55
+set horizon_level_strength = 40
+set horizon_transition = 75
+set horizon_tilt_effect = 75
+set horizon_tilt_expert_mode = OFF
+set acro_trainer_angle_limit = 20
+set acro_trainer_lookahead_ms = 50
+set acro_trainer_gain = 75
+set rescue_mode = OFF
+set rescue_flip = OFF
+set rescue_flip_gain = 40
+set rescue_level_gain = 30
+set rescue_pull_up_time = 5
+set rescue_climb_time = 20
+set rescue_flip_time = 10
+set rescue_exit_time = 5
+set rescue_pull_up_collective = 400
+set rescue_climb_collective = 300
+set rescue_hover_collective = 200
+set rescue_hover_altitude = 500
+set rescue_alt_p_gain = 20
+set rescue_alt_i_gain = 20
+set rescue_alt_d_gain = 10
+set rescue_max_sp_rate = 250
+set rescue_max_sp_accel = 2000
+set rescue_max_collective = 500
+set gov_headspeed = 1000
+set gov_gain = 50
+set gov_p_gain = 40
+set gov_i_gain = 50
+set gov_d_gain = 0
+set gov_f_gain = 10
+set gov_tta_gain = 0
+set gov_tta_limit = 20
+set gov_yaw_ff_weight = 0
+set gov_cyclic_ff_weight = 40
+set gov_collective_ff_weight = 100
+set gov_max_throttle = 100
+
+profile 1
+
+# profile 1
 set profile_name = -
 set pid_mode = 2
 set pid_dterm_mode = GYRO
@@ -881,6 +999,429 @@ set gov_cyclic_ff_weight = 40
 set gov_collective_ff_weight = 100
 set gov_max_throttle = 100
 
+profile 2
+
+# profile 2
+set profile_name = -
+set pid_mode = 2
+set pid_dterm_mode = GYRO
+set pid_dterm_mode_yaw = GYRO
+set pid_gyro_filter_type = FIRST_ORDER
+set pitch_p_gain = 50
+set pitch_i_gain = 100
+set pitch_d_gain = 0
+set pitch_f_gain = 100
+set pitch_b_gain = 0
+set pitch_o_gain = 0
+set roll_p_gain = 50
+set roll_i_gain = 100
+set roll_d_gain = 0
+set roll_f_gain = 100
+set roll_b_gain = 0
+set roll_o_gain = 0
+set yaw_p_gain = 50
+set yaw_i_gain = 50
+set yaw_d_gain = 0
+set yaw_b_gain = 0
+set yaw_f_gain = 0
+set pitch_d_cutoff = 15
+set pitch_b_cutoff = 15
+set pitch_gyro_cutoff = 50
+set pitch_error_cutoff = 0
+set roll_d_cutoff = 15
+set roll_b_cutoff = 15
+set roll_gyro_cutoff = 50
+set roll_error_cutoff = 0
+set yaw_d_cutoff = 20
+set yaw_b_cutoff = 20
+set yaw_gyro_cutoff = 100
+set yaw_error_cutoff = 0
+set yaw_cw_stop_gain = 100
+set yaw_ccw_stop_gain = 100
+set yaw_cyclic_ff_gain = 0
+set yaw_collective_ff_gain = 40
+set yaw_collective_dynamic_gain = 0
+set yaw_collective_dynamic_decay = 25
+set pitch_collective_ff_gain = 0
+set cyclic_cross_coupling_gain = 0
+set cyclic_cross_coupling_ratio = 0
+set cyclic_cross_coupling_cutoff = 15
+set error_rotation = ON
+set error_limit = 15,15,45
+set offset_limit = 45,45
+set error_decay_time_ground = 25
+set error_decay_time_cyclic = 18
+set error_decay_time_yaw = 0
+set error_decay_limit_cyclic = 20
+set error_decay_limit_yaw = 0
+set error_decay_rate_curve = 16,16,18,21,25,31,42,62,125,250,250,250,250,250,250,250
+set error_decay_limit_curve = 12,12,12,12,12,12,12,12,12,12,12,12,13,14,15,16
+set offset_decay_rate_curve = 250,250,250,250,25,3,1,0,0,0,0,0,0,0,0,0
+set offset_decay_limit_curve = 5,5,4,3,2,2,2,2,2,2,2,2,2,2,2,2
+set offset_bleed_rate_curve = 0,0,0,0,0,0,2,4,30,250,250,250,250,250,250,250
+set offset_bleed_limit_curve = 0,0,0,0,0,0,15,40,100,150,200,250,250,250,250,250
+set offset_charge_curve = 0,100,100,100,90,80,68,60,54,49,45,42,39,37,35,33
+set iterm_relax_type = RPY
+set iterm_relax_level = 40,40,40
+set iterm_relax_cutoff = 10,10,15
+set angle_level_strength = 40
+set angle_level_limit = 55
+set horizon_level_strength = 40
+set horizon_transition = 75
+set horizon_tilt_effect = 75
+set horizon_tilt_expert_mode = OFF
+set acro_trainer_angle_limit = 20
+set acro_trainer_lookahead_ms = 50
+set acro_trainer_gain = 75
+set rescue_mode = OFF
+set rescue_flip = OFF
+set rescue_flip_gain = 40
+set rescue_level_gain = 30
+set rescue_pull_up_time = 5
+set rescue_climb_time = 20
+set rescue_flip_time = 10
+set rescue_exit_time = 5
+set rescue_pull_up_collective = 400
+set rescue_climb_collective = 300
+set rescue_hover_collective = 200
+set rescue_hover_altitude = 500
+set rescue_alt_p_gain = 20
+set rescue_alt_i_gain = 20
+set rescue_alt_d_gain = 10
+set rescue_max_sp_rate = 250
+set rescue_max_sp_accel = 2000
+set rescue_max_collective = 500
+set gov_headspeed = 1000
+set gov_gain = 50
+set gov_p_gain = 40
+set gov_i_gain = 50
+set gov_d_gain = 0
+set gov_f_gain = 10
+set gov_tta_gain = 0
+set gov_tta_limit = 20
+set gov_yaw_ff_weight = 0
+set gov_cyclic_ff_weight = 40
+set gov_collective_ff_weight = 100
+set gov_max_throttle = 100
+
+profile 3
+
+# profile 3
+set profile_name = -
+set pid_mode = 2
+set pid_dterm_mode = GYRO
+set pid_dterm_mode_yaw = GYRO
+set pid_gyro_filter_type = FIRST_ORDER
+set pitch_p_gain = 50
+set pitch_i_gain = 100
+set pitch_d_gain = 0
+set pitch_f_gain = 100
+set pitch_b_gain = 0
+set pitch_o_gain = 0
+set roll_p_gain = 50
+set roll_i_gain = 100
+set roll_d_gain = 0
+set roll_f_gain = 100
+set roll_b_gain = 0
+set roll_o_gain = 0
+set yaw_p_gain = 50
+set yaw_i_gain = 50
+set yaw_d_gain = 0
+set yaw_b_gain = 0
+set yaw_f_gain = 0
+set pitch_d_cutoff = 15
+set pitch_b_cutoff = 15
+set pitch_gyro_cutoff = 50
+set pitch_error_cutoff = 0
+set roll_d_cutoff = 15
+set roll_b_cutoff = 15
+set roll_gyro_cutoff = 50
+set roll_error_cutoff = 0
+set yaw_d_cutoff = 20
+set yaw_b_cutoff = 20
+set yaw_gyro_cutoff = 100
+set yaw_error_cutoff = 0
+set yaw_cw_stop_gain = 100
+set yaw_ccw_stop_gain = 100
+set yaw_cyclic_ff_gain = 0
+set yaw_collective_ff_gain = 40
+set yaw_collective_dynamic_gain = 0
+set yaw_collective_dynamic_decay = 25
+set pitch_collective_ff_gain = 0
+set cyclic_cross_coupling_gain = 0
+set cyclic_cross_coupling_ratio = 0
+set cyclic_cross_coupling_cutoff = 15
+set error_rotation = ON
+set error_limit = 15,15,45
+set offset_limit = 45,45
+set error_decay_time_ground = 25
+set error_decay_time_cyclic = 18
+set error_decay_time_yaw = 0
+set error_decay_limit_cyclic = 20
+set error_decay_limit_yaw = 0
+set error_decay_rate_curve = 16,16,18,21,25,31,42,62,125,250,250,250,250,250,250,250
+set error_decay_limit_curve = 12,12,12,12,12,12,12,12,12,12,12,12,13,14,15,16
+set offset_decay_rate_curve = 250,250,250,250,25,3,1,0,0,0,0,0,0,0,0,0
+set offset_decay_limit_curve = 5,5,4,3,2,2,2,2,2,2,2,2,2,2,2,2
+set offset_bleed_rate_curve = 0,0,0,0,0,0,2,4,30,250,250,250,250,250,250,250
+set offset_bleed_limit_curve = 0,0,0,0,0,0,15,40,100,150,200,250,250,250,250,250
+set offset_charge_curve = 0,100,100,100,90,80,68,60,54,49,45,42,39,37,35,33
+set iterm_relax_type = RPY
+set iterm_relax_level = 40,40,40
+set iterm_relax_cutoff = 10,10,15
+set angle_level_strength = 40
+set angle_level_limit = 55
+set horizon_level_strength = 40
+set horizon_transition = 75
+set horizon_tilt_effect = 75
+set horizon_tilt_expert_mode = OFF
+set acro_trainer_angle_limit = 20
+set acro_trainer_lookahead_ms = 50
+set acro_trainer_gain = 75
+set rescue_mode = OFF
+set rescue_flip = OFF
+set rescue_flip_gain = 40
+set rescue_level_gain = 30
+set rescue_pull_up_time = 5
+set rescue_climb_time = 20
+set rescue_flip_time = 10
+set rescue_exit_time = 5
+set rescue_pull_up_collective = 400
+set rescue_climb_collective = 300
+set rescue_hover_collective = 200
+set rescue_hover_altitude = 500
+set rescue_alt_p_gain = 20
+set rescue_alt_i_gain = 20
+set rescue_alt_d_gain = 10
+set rescue_max_sp_rate = 250
+set rescue_max_sp_accel = 2000
+set rescue_max_collective = 500
+set gov_headspeed = 1000
+set gov_gain = 50
+set gov_p_gain = 40
+set gov_i_gain = 50
+set gov_d_gain = 0
+set gov_f_gain = 10
+set gov_tta_gain = 0
+set gov_tta_limit = 20
+set gov_yaw_ff_weight = 0
+set gov_cyclic_ff_weight = 40
+set gov_collective_ff_weight = 100
+set gov_max_throttle = 100
+
+profile 4
+
+# profile 4
+set profile_name = -
+set pid_mode = 2
+set pid_dterm_mode = GYRO
+set pid_dterm_mode_yaw = GYRO
+set pid_gyro_filter_type = FIRST_ORDER
+set pitch_p_gain = 50
+set pitch_i_gain = 100
+set pitch_d_gain = 0
+set pitch_f_gain = 100
+set pitch_b_gain = 0
+set pitch_o_gain = 0
+set roll_p_gain = 50
+set roll_i_gain = 100
+set roll_d_gain = 0
+set roll_f_gain = 100
+set roll_b_gain = 0
+set roll_o_gain = 0
+set yaw_p_gain = 50
+set yaw_i_gain = 50
+set yaw_d_gain = 0
+set yaw_b_gain = 0
+set yaw_f_gain = 0
+set pitch_d_cutoff = 15
+set pitch_b_cutoff = 15
+set pitch_gyro_cutoff = 50
+set pitch_error_cutoff = 0
+set roll_d_cutoff = 15
+set roll_b_cutoff = 15
+set roll_gyro_cutoff = 50
+set roll_error_cutoff = 0
+set yaw_d_cutoff = 20
+set yaw_b_cutoff = 20
+set yaw_gyro_cutoff = 100
+set yaw_error_cutoff = 0
+set yaw_cw_stop_gain = 100
+set yaw_ccw_stop_gain = 100
+set yaw_cyclic_ff_gain = 0
+set yaw_collective_ff_gain = 40
+set yaw_collective_dynamic_gain = 0
+set yaw_collective_dynamic_decay = 25
+set pitch_collective_ff_gain = 0
+set cyclic_cross_coupling_gain = 0
+set cyclic_cross_coupling_ratio = 0
+set cyclic_cross_coupling_cutoff = 15
+set error_rotation = ON
+set error_limit = 15,15,45
+set offset_limit = 45,45
+set error_decay_time_ground = 25
+set error_decay_time_cyclic = 18
+set error_decay_time_yaw = 0
+set error_decay_limit_cyclic = 20
+set error_decay_limit_yaw = 0
+set error_decay_rate_curve = 16,16,18,21,25,31,42,62,125,250,250,250,250,250,250,250
+set error_decay_limit_curve = 12,12,12,12,12,12,12,12,12,12,12,12,13,14,15,16
+set offset_decay_rate_curve = 250,250,250,250,25,3,1,0,0,0,0,0,0,0,0,0
+set offset_decay_limit_curve = 5,5,4,3,2,2,2,2,2,2,2,2,2,2,2,2
+set offset_bleed_rate_curve = 0,0,0,0,0,0,2,4,30,250,250,250,250,250,250,250
+set offset_bleed_limit_curve = 0,0,0,0,0,0,15,40,100,150,200,250,250,250,250,250
+set offset_charge_curve = 0,100,100,100,90,80,68,60,54,49,45,42,39,37,35,33
+set iterm_relax_type = RPY
+set iterm_relax_level = 40,40,40
+set iterm_relax_cutoff = 10,10,15
+set angle_level_strength = 40
+set angle_level_limit = 55
+set horizon_level_strength = 40
+set horizon_transition = 75
+set horizon_tilt_effect = 75
+set horizon_tilt_expert_mode = OFF
+set acro_trainer_angle_limit = 20
+set acro_trainer_lookahead_ms = 50
+set acro_trainer_gain = 75
+set rescue_mode = OFF
+set rescue_flip = OFF
+set rescue_flip_gain = 40
+set rescue_level_gain = 30
+set rescue_pull_up_time = 5
+set rescue_climb_time = 20
+set rescue_flip_time = 10
+set rescue_exit_time = 5
+set rescue_pull_up_collective = 400
+set rescue_climb_collective = 300
+set rescue_hover_collective = 200
+set rescue_hover_altitude = 500
+set rescue_alt_p_gain = 20
+set rescue_alt_i_gain = 20
+set rescue_alt_d_gain = 10
+set rescue_max_sp_rate = 250
+set rescue_max_sp_accel = 2000
+set rescue_max_collective = 500
+set gov_headspeed = 1000
+set gov_gain = 50
+set gov_p_gain = 40
+set gov_i_gain = 50
+set gov_d_gain = 0
+set gov_f_gain = 10
+set gov_tta_gain = 0
+set gov_tta_limit = 20
+set gov_yaw_ff_weight = 0
+set gov_cyclic_ff_weight = 40
+set gov_collective_ff_weight = 100
+set gov_max_throttle = 100
+
+profile 5
+
+# profile 5
+set profile_name = -
+set pid_mode = 2
+set pid_dterm_mode = GYRO
+set pid_dterm_mode_yaw = GYRO
+set pid_gyro_filter_type = FIRST_ORDER
+set pitch_p_gain = 50
+set pitch_i_gain = 100
+set pitch_d_gain = 0
+set pitch_f_gain = 100
+set pitch_b_gain = 0
+set pitch_o_gain = 0
+set roll_p_gain = 50
+set roll_i_gain = 100
+set roll_d_gain = 0
+set roll_f_gain = 100
+set roll_b_gain = 0
+set roll_o_gain = 0
+set yaw_p_gain = 50
+set yaw_i_gain = 50
+set yaw_d_gain = 0
+set yaw_b_gain = 0
+set yaw_f_gain = 0
+set pitch_d_cutoff = 15
+set pitch_b_cutoff = 15
+set pitch_gyro_cutoff = 50
+set pitch_error_cutoff = 0
+set roll_d_cutoff = 15
+set roll_b_cutoff = 15
+set roll_gyro_cutoff = 50
+set roll_error_cutoff = 0
+set yaw_d_cutoff = 20
+set yaw_b_cutoff = 20
+set yaw_gyro_cutoff = 100
+set yaw_error_cutoff = 0
+set yaw_cw_stop_gain = 100
+set yaw_ccw_stop_gain = 100
+set yaw_cyclic_ff_gain = 0
+set yaw_collective_ff_gain = 40
+set yaw_collective_dynamic_gain = 0
+set yaw_collective_dynamic_decay = 25
+set pitch_collective_ff_gain = 0
+set cyclic_cross_coupling_gain = 0
+set cyclic_cross_coupling_ratio = 0
+set cyclic_cross_coupling_cutoff = 15
+set error_rotation = ON
+set error_limit = 15,15,45
+set offset_limit = 45,45
+set error_decay_time_ground = 25
+set error_decay_time_cyclic = 18
+set error_decay_time_yaw = 0
+set error_decay_limit_cyclic = 20
+set error_decay_limit_yaw = 0
+set error_decay_rate_curve = 16,16,18,21,25,31,42,62,125,250,250,250,250,250,250,250
+set error_decay_limit_curve = 12,12,12,12,12,12,12,12,12,12,12,12,13,14,15,16
+set offset_decay_rate_curve = 250,250,250,250,25,3,1,0,0,0,0,0,0,0,0,0
+set offset_decay_limit_curve = 5,5,4,3,2,2,2,2,2,2,2,2,2,2,2,2
+set offset_bleed_rate_curve = 0,0,0,0,0,0,2,4,30,250,250,250,250,250,250,250
+set offset_bleed_limit_curve = 0,0,0,0,0,0,15,40,100,150,200,250,250,250,250,250
+set offset_charge_curve = 0,100,100,100,90,80,68,60,54,49,45,42,39,37,35,33
+set iterm_relax_type = RPY
+set iterm_relax_level = 40,40,40
+set iterm_relax_cutoff = 10,10,15
+set angle_level_strength = 40
+set angle_level_limit = 55
+set horizon_level_strength = 40
+set horizon_transition = 75
+set horizon_tilt_effect = 75
+set horizon_tilt_expert_mode = OFF
+set acro_trainer_angle_limit = 20
+set acro_trainer_lookahead_ms = 50
+set acro_trainer_gain = 75
+set rescue_mode = OFF
+set rescue_flip = OFF
+set rescue_flip_gain = 40
+set rescue_level_gain = 30
+set rescue_pull_up_time = 5
+set rescue_climb_time = 20
+set rescue_flip_time = 10
+set rescue_exit_time = 5
+set rescue_pull_up_collective = 400
+set rescue_climb_collective = 300
+set rescue_hover_collective = 200
+set rescue_hover_altitude = 500
+set rescue_alt_p_gain = 20
+set rescue_alt_i_gain = 20
+set rescue_alt_d_gain = 10
+set rescue_max_sp_rate = 250
+set rescue_max_sp_accel = 2000
+set rescue_max_collective = 500
+set gov_headspeed = 1000
+set gov_gain = 50
+set gov_p_gain = 40
+set gov_i_gain = 50
+set gov_d_gain = 0
+set gov_f_gain = 10
+set gov_tta_gain = 0
+set gov_tta_limit = 20
+set gov_yaw_ff_weight = 0
+set gov_cyclic_ff_weight = 40
+set gov_collective_ff_weight = 100
+set gov_max_throttle = 100
+
+# restore original profile selection
+profile 0
+
 rateprofile 0
 
 # rateprofile 0
@@ -911,3 +1452,161 @@ set roll_level_expo = 0
 set pitch_level_expo = 0
 set rates_smoothness = 50
 set cyclic_ring = 0
+
+rateprofile 1
+
+# rateprofile 1
+set rateprofile_name = -
+set rates_type = ACTUAL
+set quickrates_rc_expo = OFF
+set roll_rc_rate = 24
+set pitch_rc_rate = 24
+set yaw_rc_rate = 36
+set collective_rc_rate = 50
+set roll_expo = 0
+set pitch_expo = 0
+set yaw_expo = 0
+set collective_expo = 0
+set roll_srate = 24
+set pitch_srate = 24
+set yaw_srate = 48
+set collective_srate = 50
+set roll_rate_limit = 2000
+set pitch_rate_limit = 2000
+set yaw_rate_limit = 2000
+set collective_limit = 2000
+set roll_accel_limit = 0
+set pitch_accel_limit = 0
+set yaw_accel_limit = 0
+set collective_accel_limit = 0
+set roll_level_expo = 0
+set pitch_level_expo = 0
+set rates_smoothness = 50
+set cyclic_ring = 0
+
+rateprofile 2
+
+# rateprofile 2
+set rateprofile_name = -
+set rates_type = ACTUAL
+set quickrates_rc_expo = OFF
+set roll_rc_rate = 24
+set pitch_rc_rate = 24
+set yaw_rc_rate = 36
+set collective_rc_rate = 50
+set roll_expo = 0
+set pitch_expo = 0
+set yaw_expo = 0
+set collective_expo = 0
+set roll_srate = 24
+set pitch_srate = 24
+set yaw_srate = 48
+set collective_srate = 50
+set roll_rate_limit = 2000
+set pitch_rate_limit = 2000
+set yaw_rate_limit = 2000
+set collective_limit = 2000
+set roll_accel_limit = 0
+set pitch_accel_limit = 0
+set yaw_accel_limit = 0
+set collective_accel_limit = 0
+set roll_level_expo = 0
+set pitch_level_expo = 0
+set rates_smoothness = 50
+set cyclic_ring = 0
+
+rateprofile 3
+
+# rateprofile 3
+set rateprofile_name = -
+set rates_type = ACTUAL
+set quickrates_rc_expo = OFF
+set roll_rc_rate = 24
+set pitch_rc_rate = 24
+set yaw_rc_rate = 36
+set collective_rc_rate = 50
+set roll_expo = 0
+set pitch_expo = 0
+set yaw_expo = 0
+set collective_expo = 0
+set roll_srate = 24
+set pitch_srate = 24
+set yaw_srate = 48
+set collective_srate = 50
+set roll_rate_limit = 2000
+set pitch_rate_limit = 2000
+set yaw_rate_limit = 2000
+set collective_limit = 2000
+set roll_accel_limit = 0
+set pitch_accel_limit = 0
+set yaw_accel_limit = 0
+set collective_accel_limit = 0
+set roll_level_expo = 0
+set pitch_level_expo = 0
+set rates_smoothness = 50
+set cyclic_ring = 0
+
+rateprofile 4
+
+# rateprofile 4
+set rateprofile_name = -
+set rates_type = ACTUAL
+set quickrates_rc_expo = OFF
+set roll_rc_rate = 24
+set pitch_rc_rate = 24
+set yaw_rc_rate = 36
+set collective_rc_rate = 50
+set roll_expo = 0
+set pitch_expo = 0
+set yaw_expo = 0
+set collective_expo = 0
+set roll_srate = 24
+set pitch_srate = 24
+set yaw_srate = 48
+set collective_srate = 50
+set roll_rate_limit = 2000
+set pitch_rate_limit = 2000
+set yaw_rate_limit = 2000
+set collective_limit = 2000
+set roll_accel_limit = 0
+set pitch_accel_limit = 0
+set yaw_accel_limit = 0
+set collective_accel_limit = 0
+set roll_level_expo = 0
+set pitch_level_expo = 0
+set rates_smoothness = 50
+set cyclic_ring = 0
+
+rateprofile 5
+
+# rateprofile 5
+set rateprofile_name = -
+set rates_type = ACTUAL
+set quickrates_rc_expo = OFF
+set roll_rc_rate = 24
+set pitch_rc_rate = 24
+set yaw_rc_rate = 36
+set collective_rc_rate = 50
+set roll_expo = 0
+set pitch_expo = 0
+set yaw_expo = 0
+set collective_expo = 0
+set roll_srate = 24
+set pitch_srate = 24
+set yaw_srate = 48
+set collective_srate = 50
+set roll_rate_limit = 2000
+set pitch_rate_limit = 2000
+set yaw_rate_limit = 2000
+set collective_limit = 2000
+set roll_accel_limit = 0
+set pitch_accel_limit = 0
+set yaw_accel_limit = 0
+set collective_accel_limit = 0
+set roll_level_expo = 0
+set pitch_level_expo = 0
+set rates_smoothness = 50
+set cyclic_ring = 0
+
+# restore original rateprofile selection
+rateprofile 0
