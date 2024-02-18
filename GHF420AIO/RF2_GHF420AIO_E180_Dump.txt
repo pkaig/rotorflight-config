@@ -16,7 +16,7 @@ manufacturer_id FPVM
 mcu_id 0043004a574850112034354b
 signature 
 
-# name: -
+# name: E180
 
 # resources
 resource BEEPER 1 B04
@@ -242,7 +242,7 @@ feature RPM_FILTER
 # serial
 serial 20 1 115200 57600 0 115200
 serial 0 2 115200 57600 0 115200
-serial 1 0 115200 57600 0 115200
+serial 1 128 115200 57600 0 2000000
 serial 5 64 115200 57600 0 115200
 
 # servo
@@ -494,7 +494,7 @@ set mag_bustype = I2C
 set mag_i2c_device = 2
 set mag_i2c_address = 0
 set mag_spi_device = 0
-set mag_hardware = AUTO
+set mag_hardware = NONE
 set mag_calibration = 0,0,0
 set baro_bustype = I2C
 set baro_spi_device = 0
@@ -545,11 +545,11 @@ set blackbox_log_acc = OFF
 set blackbox_log_mag = OFF
 set blackbox_log_alt = OFF
 set blackbox_log_gps = OFF
-set blackbox_log_battery = ON
-set blackbox_log_rssi = ON
-set blackbox_log_rpm = OFF
+set blackbox_log_battery = OFF
+set blackbox_log_rssi = OFF
+set blackbox_log_rpm = ON
 set blackbox_log_motors = ON
-set blackbox_log_servos = ON
+set blackbox_log_servos = OFF
 set min_throttle = 1070
 set max_throttle = 2000
 set min_command = 1000
@@ -583,7 +583,7 @@ set vbat_full_cell_voltage = 410
 set vbat_min_cell_voltage = 330
 set vbat_warning_cell_voltage = 350
 set vbat_hysteresis = 1
-set current_meter = ESC
+set current_meter = ADC
 set battery_meter = ADC
 set vbat_detect_cell_voltage = 300
 set use_vbat_alerts = ON
@@ -783,15 +783,15 @@ set mco2_on_pc9 = OFF
 set scheduler_relax_rx = 25
 set scheduler_relax_osd = 25
 set timezone_offset_minutes = 0
-set gyro_rpm_filter_bank_rpm_source = 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-set gyro_rpm_filter_bank_rpm_ratio = 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-set gyro_rpm_filter_bank_rpm_limit = 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
-set gyro_rpm_filter_bank_notch_q = 0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+set gyro_rpm_filter_bank_rpm_source = 11,11,12,13,14,21,22,0,0,0,0,0,0,0,0,0
+set gyro_rpm_filter_bank_rpm_ratio = 9960,10040,10000,10000,10000,10000,10000,0,0,0,0,0,0,0,0,0
+set gyro_rpm_filter_bank_rpm_limit = 500,500,500,500,500,1000,1000,0,0,0,0,0,0,0,0,0
+set gyro_rpm_filter_bank_notch_q = 25,25,25,25,25,25,25,0,0,0,0,0,0,0,0,0
 set stats_min_armed_time_s = -1
 set stats_total_flights = 0
 set stats_total_time_s = 0
 set stats_total_dist_m = 0
-set name = -
+set name = E180
 set position_alt_source = DEFAULT
 set position_baro_alt_lpf = 25
 set position_baro_offset_lpf = 5
@@ -916,21 +916,21 @@ set pid_mode = 2
 set pid_dterm_mode = GYRO
 set pid_dterm_mode_yaw = GYRO
 set pid_gyro_filter_type = FIRST_ORDER
-set pitch_p_gain = 131
-set pitch_i_gain = 135
-set pitch_d_gain = 60
+set pitch_p_gain = 99
+set pitch_i_gain = 152
+set pitch_d_gain = 9
 set pitch_f_gain = 100
 set pitch_b_gain = 0
 set pitch_o_gain = 0
-set roll_p_gain = 149
-set roll_i_gain = 135
-set roll_d_gain = 78
+set roll_p_gain = 100
+set roll_i_gain = 176
+set roll_d_gain = 99
 set roll_f_gain = 100
 set roll_b_gain = 0
 set roll_o_gain = 0
-set yaw_p_gain = 60
-set yaw_i_gain = 61
-set yaw_d_gain = 91
+set yaw_p_gain = 45
+set yaw_i_gain = 52
+set yaw_d_gain = 59
 set yaw_b_gain = 0
 set yaw_f_gain = 0
 set pitch_d_cutoff = 15
@@ -952,8 +952,8 @@ set yaw_collective_ff_gain = 50
 set yaw_collective_dynamic_gain = 0
 set yaw_collective_dynamic_decay = 25
 set pitch_collective_ff_gain = 0
-set cyclic_crosstalk_mode = GYRO
-set cyclic_crosstalk_gain = 0
+set cyclic_crosstalk_mode = SETPOINT
+set cyclic_crosstalk_gain = 20
 set cyclic_crosstalk_cutoff = 20
 set error_rotation = ON
 set error_limit = 60,60,60
@@ -975,7 +975,7 @@ set iterm_relax_level = 40,40,40
 set iterm_relax_cutoff = 10,10,15
 set angle_level_strength = 40
 set angle_level_limit = 55
-set horizon_level_strength = 40
+set horizon_level_strength = 2
 set horizon_transition = 75
 set horizon_tilt_effect = 75
 set horizon_tilt_expert_mode = OFF
@@ -1440,7 +1440,7 @@ set quickrates_rc_expo = OFF
 set roll_rc_rate = 24
 set pitch_rc_rate = 24
 set yaw_rc_rate = 36
-set collective_rc_rate = 100
+set collective_rc_rate = 48
 set roll_expo = 0
 set pitch_expo = 0
 set yaw_expo = 0
@@ -1448,7 +1448,7 @@ set collective_expo = 0
 set roll_srate = 24
 set pitch_srate = 24
 set yaw_srate = 48
-set collective_srate = 100
+set collective_srate = 48
 set roll_rate_limit = 2000
 set pitch_rate_limit = 2000
 set yaw_rate_limit = 2000
@@ -1459,7 +1459,7 @@ set yaw_accel_limit = 0
 set collective_accel_limit = 0
 set roll_level_expo = 0
 set pitch_level_expo = 0
-set rates_smoothness = 50
+set rates_smoothness = 10
 set cyclic_ring = 0
 
 rateprofile 1
