@@ -1,0 +1,2880 @@
+
+
+
+
+	dma pin A00
+	0: DMA1 Stream 5 Channel 3
+	
+	
+	dma pin A01
+	0: DMA1 Stream 6 Channel 3
+	
+	
+	dma pin A02
+	0: DMA1 Stream 1 Channel 3
+	
+	
+	dma pin A03
+	0: DMA1 Stream 7 Channel 3
+	1: DMA1 Stream 6 Channel 3
+	
+	dma pin A04
+	
+	
+	
+	dma pin A05
+	0: DMA1 Stream 5 Channel 3
+	
+	
+	dma pin A06
+	
+	
+	
+	dma pin A07
+	0: DMA2 Stream 6 Channel 0
+	1: DMA2 Stream 1 Channel 6
+	2: DMA2 Stream 3 Channel 6
+	dma pin A08
+	0: DMA2 Stream 6 Channel 0
+	1: DMA2 Stream 1 Channel 6
+	2: DMA2 Stream 3 Channel 6
+	dma pin A09
+	0: DMA2 Stream 6 Channel 0
+	1: DMA2 Stream 2 Channel 6
+	
+	dma pin A10
+	0: DMA2 Stream 6 Channel 0
+	1: DMA2 Stream 6 Channel 6
+	
+	dma pin A11
+	0: DMA2 Stream 6 Channel 0
+	1: DMA2 Stream 1 Channel 6
+	2: DMA2 Stream 3 Channel 6
+	dma pin A12
+	
+	
+	
+	dma pin A13
+	
+	
+	
+	dma pin A14
+	
+	
+	
+	dma pin A15
+	0: DMA1 Stream 5 Channel 3
+	
+	
+	dma pin B00
+	0: DMA2 Stream 6 Channel 0
+	1: DMA2 Stream 2 Channel 6
+	
+	dma pin B01
+	0: DMA2 Stream 6 Channel 0
+	1: DMA2 Stream 6 Channel 6
+	
+	dma pin B02
+	
+	
+	
+	dma pin B03
+	0: DMA1 Stream 6 Channel 3
+	
+	
+	dma pin B04
+	
+	
+	
+	dma pin B05
+	
+	
+	
+	dma pin B06
+	
+	
+	
+	dma pin B07
+	
+	
+	
+	dma pin B08
+	
+	
+	
+	dma pin B09
+	
+	
+	
+	dma pin B10
+	0: DMA1 Stream 1 Channel 3
+	
+	
+	dma pin B11
+	0: DMA1 Stream 7 Channel 3
+	1: DMA1 Stream 6 Channel 3
+	
+	dma pin B12
+	
+	
+	
+	dma pin B13
+	0: DMA2 Stream 6 Channel 0
+	1: DMA2 Stream 1 Channel 6
+	2: DMA2 Stream 3 Channel 6
+	dma pin B14
+	0: DMA2 Stream 6 Channel 0
+	1: DMA2 Stream 2 Channel 6
+	
+	dma pin B15
+	0: DMA2 Stream 6 Channel 0
+	1: DMA2 Stream 6 Channel 6
+	
+	dma pin C00
+	
+	
+	
+	dma pin C01
+	
+	
+	
+	dma pin C02
+	
+	
+	
+	dma pin C03
+	
+	
+	
+	dma pin C04
+	
+	
+	
+	dma pin C05
+	
+	
+	
+	dma pin C06
+	
+	
+	
+	dma pin C07
+	
+	
+	
+	dma pin C08
+	
+	
+	
+	dma pin C09
+	
+	
+	
+	dma pin C10
+	
+	
+	
+	dma pin C11
+	
+	
+	
+	dma pin C12
+	
+	
+	
+	dma pin C13
+	
+	
+	
+	dma pin C14
+	
+	
+	
+	dma pin C15
+	
+	
+	
+	dma pin D00
+	
+	
+	
+	dma pin D01
+	
+	
+	
+	dma pin D02
+	
+	
+	
+	dma pin D03
+	
+	
+	
+	dma pin D04
+	
+	
+	
+	dma pin D05
+	
+	
+	
+	dma pin D06
+	
+	
+	
+	dma pin D07
+	
+	
+	
+	dma pin D08
+	
+	
+	
+	dma pin D09
+	
+	
+	
+	dma pin D10
+	
+	
+	
+	dma pin D11
+	
+	
+	
+	dma pin D12
+	
+	
+	
+	dma pin D13
+	
+	
+	
+	dma pin D14
+	
+	
+	
+	dma pin D15
+	
+	
+	
+	dma pin E00
+	
+	
+	
+	dma pin E01
+	
+	
+	
+	dma pin E02
+	
+	
+	
+	dma pin E03
+	
+	
+	
+	dma pin E04
+	
+	
+	
+	dma pin E05
+	
+	
+	
+	dma pin E06
+	
+	
+	
+	dma pin E07
+	
+	
+	
+	dma pin E08
+	0: DMA2 Stream 6 Channel 0
+	1: DMA2 Stream 1 Channel 6
+	2: DMA2 Stream 3 Channel 6
+	dma pin E09
+	0: DMA2 Stream 6 Channel 0
+	1: DMA2 Stream 1 Channel 6
+	2: DMA2 Stream 3 Channel 6
+	dma pin E10
+	0: DMA2 Stream 6 Channel 0
+	1: DMA2 Stream 2 Channel 6
+	
+	dma pin E11
+	0: DMA2 Stream 6 Channel 0
+	1: DMA2 Stream 2 Channel 6
+	
+	dma pin E12
+	0: DMA2 Stream 6 Channel 0
+	1: DMA2 Stream 6 Channel 6
+	
+	dma pin E13
+	0: DMA2 Stream 6 Channel 0
+	1: DMA2 Stream 6 Channel 6
+	
+	dma pin E14
+	0: DMA2 Stream 4 Channel 6
+	
+	
+	dma pin E15
+	
+	
+	
+		dma pin A00
+		0: DMA1 Stream 2 Channel 6
+		
+		
+		dma pin A01
+		0: DMA1 Stream 4 Channel 6
+		
+		
+		dma pin A02
+		0: DMA1 Stream 0 Channel 6
+		
+		
+		dma pin A03
+		0: DMA1 Stream 1 Channel 6
+		1: DMA1 Stream 3 Channel 6
+		
+		dma pin A04
+		
+		
+		
+		dma pin A05
+		
+		
+		
+		dma pin A06
+		0: DMA1 Stream 4 Channel 5
+		
+		
+		dma pin A07
+		0: DMA1 Stream 5 Channel 5
+		
+		
+		dma pin A08
+		
+		
+		
+		dma pin A09
+		
+		
+		
+		dma pin A10
+		
+		
+		
+		dma pin A11
+		
+		
+		
+		dma pin A12
+		
+		
+		
+		dma pin A13
+		
+		
+		
+		dma pin A14
+		
+		
+		
+		dma pin A15
+		
+		
+		
+		dma pin B00
+		0: DMA1 Stream 7 Channel 5
+		
+		
+		dma pin B01
+		0: DMA1 Stream 2 Channel 5
+		
+		
+		dma pin B02
+		
+		
+		
+		dma pin B03
+		
+		
+		
+		dma pin B04
+		0: DMA1 Stream 4 Channel 5
+		
+		
+		dma pin B05
+		0: DMA1 Stream 5 Channel 5
+		
+		
+		dma pin B06
+		0: DMA1 Stream 0 Channel 2
+		
+		
+		dma pin B07
+		0: DMA1 Stream 3 Channel 2
+		
+		
+		dma pin B08
+		0: DMA1 Stream 7 Channel 2
+		
+		
+		dma pin B09
+		
+		
+		
+		dma pin B10
+		
+		
+		
+		dma pin B11
+		
+		
+		
+		dma pin B12
+		
+		
+		
+		dma pin B13
+		
+		
+		
+		dma pin B14
+		
+		
+		
+		dma pin B15
+		
+		
+		
+		dma pin C00
+		
+		
+		
+		dma pin C01
+		
+		
+		
+		dma pin C02
+		
+		
+		
+		dma pin C03
+		
+		
+		
+		dma pin C04
+		
+		
+		
+		dma pin C05
+		
+		
+		
+		dma pin C06
+		0: DMA1 Stream 4 Channel 5
+		
+		
+		dma pin C07
+		0: DMA1 Stream 5 Channel 5
+		
+		
+		dma pin C08
+		0: DMA1 Stream 7 Channel 5
+		
+		
+		dma pin C09
+		0: DMA1 Stream 2 Channel 5
+		
+		
+		dma pin C10
+		
+		
+		
+		dma pin C11
+		
+		
+		
+		dma pin C12
+		
+		
+		
+		dma pin C13
+		
+		
+		
+		dma pin C14
+		
+		
+		
+		dma pin C15
+		
+		
+		
+		dma pin D00
+		
+		
+		
+		dma pin D01
+		
+		
+		
+		dma pin D02
+		
+		
+		
+		dma pin D03
+		
+		
+		
+		dma pin D04
+		
+		
+		
+		dma pin D05
+		
+		
+		
+		dma pin D06
+		
+		
+		
+		dma pin D07
+		
+		
+		
+		dma pin D08
+		
+		
+		
+		dma pin D09
+		
+		
+		
+		dma pin D10
+		
+		
+		
+		dma pin D11
+		
+		
+		
+		dma pin D12
+		0: DMA1 Stream 0 Channel 2
+		
+		
+		dma pin D13
+		0: DMA1 Stream 3 Channel 2
+		
+		
+		dma pin D14
+		0: DMA1 Stream 7 Channel 2
+		
+		
+		dma pin D15
+		
+		
+		
+		dma pin E00
+		
+		
+		
+		dma pin E01
+		
+		
+		
+		dma pin E02
+		
+		
+		
+		dma pin E03
+		
+		
+		
+		dma pin E04
+		
+		
+		
+		dma pin E05
+		
+		
+		
+		dma pin E06
+		
+		
+		
+		dma pin E07
+		
+		
+		
+		dma pin E08
+		
+		
+		
+		dma pin E09
+		
+		
+		
+		dma pin E10
+		
+		
+		
+		dma pin E11
+		
+		
+		
+		dma pin E12
+		
+		
+		
+		dma pin E13
+		
+		
+		
+		dma pin E14
+		
+		
+		
+		dma pin E15
+		
+		
+		
+			dma pin A00
+			
+			
+			
+			dma pin A01
+			
+			
+			
+			dma pin A02
+			
+			
+			
+			dma pin A03
+			
+			
+			
+			dma pin A04
+			
+			
+			
+			dma pin A05
+			0: DMA2 Stream 2 Channel 0
+			1: DMA2 Stream 2 Channel 7
+			
+			dma pin A06
+			
+			
+			
+			dma pin A07
+			0: DMA2 Stream 2 Channel 0
+			1: DMA2 Stream 2 Channel 7
+			
+			dma pin A08
+			
+			
+			
+			dma pin A09
+			
+			
+			
+			dma pin A10
+			
+			
+			
+			dma pin A11
+			
+			
+			
+			dma pin A12
+			
+			
+			
+			dma pin A13
+			
+			
+			
+			dma pin A14
+			
+			
+			
+			dma pin A15
+			
+			
+			
+			dma pin B00
+			0: DMA2 Stream 2 Channel 0
+			1: DMA2 Stream 3 Channel 7
+			
+			dma pin B01
+			0: DMA2 Stream 2 Channel 0
+			1: DMA2 Stream 4 Channel 7
+			
+			dma pin B02
+			
+			
+			
+			dma pin B03
+			
+			
+			
+			dma pin B04
+			
+			
+			
+			dma pin B05
+			
+			
+			
+			dma pin B06
+			
+			
+			
+			dma pin B07
+			
+			
+			
+			dma pin B08
+			
+			
+			
+			dma pin B09
+			
+			
+			
+			dma pin B10
+			
+			
+			
+			dma pin B11
+			
+			
+			
+			dma pin B12
+			
+			
+			
+			dma pin B13
+			
+			
+			
+			dma pin B14
+			0: DMA2 Stream 2 Channel 0
+			1: DMA2 Stream 3 Channel 7
+			
+			dma pin B15
+			0: DMA2 Stream 2 Channel 0
+			1: DMA2 Stream 4 Channel 7
+			
+			dma pin C00
+			
+			
+			
+			dma pin C01
+			
+			
+			
+			dma pin C02
+			
+			
+			
+			dma pin C03
+			
+			
+			
+			dma pin C04
+			
+			
+			
+			dma pin C05
+			
+			
+			
+			dma pin C06
+			0: DMA2 Stream 2 Channel 0
+			1: DMA2 Stream 2 Channel 7
+			
+			dma pin C07
+			0: DMA2 Stream 2 Channel 0
+			1: DMA2 Stream 3 Channel 7
+			
+			dma pin C08
+			0: DMA2 Stream 2 Channel 0
+			1: DMA2 Stream 4 Channel 7
+			
+			dma pin C09
+			0: DMA2 Stream 7 Channel 7
+			
+			
+			dma pin C10
+			
+			
+			
+			dma pin C11
+			
+			
+			
+			dma pin C12
+			
+			
+			
+			dma pin C13
+			
+			
+			
+			dma pin C14
+			
+			
+			
+			dma pin C15
+			
+			
+			
+			dma pin D00
+			
+			
+			
+			dma pin D01
+			
+			
+			
+			dma pin D02
+			
+			
+			
+			dma pin D03
+			
+			
+			
+			dma pin D04
+			
+			
+			
+			dma pin D05
+			
+			
+			
+			dma pin D06
+			
+			
+			
+			dma pin D07
+			
+			
+			
+			dma pin D08
+			
+			
+			
+			dma pin D09
+			
+			
+			
+			dma pin D10
+			
+			
+			
+			dma pin D11
+			
+			
+			
+			dma pin D12
+			
+			
+			
+			dma pin D13
+			
+			
+			
+			dma pin D14
+			
+			
+			
+			dma pin D15
+			
+			
+			
+			dma pin E00
+			
+			
+			
+			dma pin E01
+			
+			
+			
+			dma pin E02
+			
+			
+			
+			dma pin E03
+			
+			
+			
+			dma pin E04
+			
+			
+			
+			dma pin E05
+			
+			
+			
+			dma pin E06
+			
+			
+			
+			dma pin E07
+			
+			
+			
+			dma pin E08
+			
+			
+			
+			dma pin E09
+			
+			
+			
+			dma pin E10
+			
+			
+			
+			dma pin E11
+			
+			
+			
+			dma pin E12
+			
+			
+			
+			dma pin E13
+			
+			
+			
+			dma pin E14
+			
+			
+			
+			dma pin E15
+			
+			
+			
+				dma pin A00
+				
+				
+				
+				dma pin A01
+				
+				
+				
+				dma pin A02
+				
+				
+				
+				dma pin A03
+				
+				
+				
+				dma pin A04
+				
+				
+				
+				dma pin A05
+				
+				
+				
+				dma pin A06
+				
+				
+				
+				dma pin A07
+				
+				
+				
+				dma pin A08
+				
+				
+				
+				dma pin A09
+				
+				
+				
+				dma pin A10
+				
+				
+				
+				dma pin A11
+				
+				
+				
+				dma pin A12
+				
+				
+				
+				dma pin A13
+				
+				
+				
+				dma pin A14
+				
+				
+				
+				dma pin A15
+				
+				
+				
+				dma pin B00
+				
+				
+				
+				dma pin B01
+				
+				
+				
+				dma pin B02
+				
+				
+				
+				dma pin B03
+				
+				
+				
+				dma pin B04
+				
+				
+				
+				dma pin B05
+				
+				
+				
+				dma pin B06
+				
+				
+				
+				dma pin B07
+				
+				
+				
+				dma pin B08
+				
+				
+				
+				dma pin B09
+				
+				
+				
+				dma pin B10
+				
+				
+				
+				dma pin B11
+				
+				
+				
+				dma pin B12
+				
+				
+				
+				dma pin B13
+				
+				
+				
+				dma pin B14
+				
+				
+				
+				dma pin B15
+				
+				
+				
+				dma pin C00
+				
+				
+				
+				dma pin C01
+				
+				
+				
+				dma pin C02
+				
+				
+				
+				dma pin C03
+				
+				
+				
+				dma pin C04
+				
+				
+				
+				dma pin C05
+				
+				
+				
+				dma pin C06
+				
+				
+				
+				dma pin C07
+				
+				
+				
+				dma pin C08
+				
+				
+				
+				dma pin C09
+				
+				
+				
+				dma pin C10
+				
+				
+				
+				dma pin C11
+				
+				
+				
+				dma pin C12
+				
+				
+				
+				dma pin C13
+				
+				
+				
+				dma pin C14
+				
+				
+				
+				dma pin C15
+				
+				
+				
+				dma pin D00
+				
+				
+				
+				dma pin D01
+				
+				
+				
+				dma pin D02
+				
+				
+				
+				dma pin D03
+				
+				
+				
+				dma pin D04
+				
+				
+				
+				dma pin D05
+				
+				
+				
+				dma pin D06
+				
+				
+				
+				dma pin D07
+				
+				
+				
+				dma pin D08
+				
+				
+				
+				dma pin D09
+				
+				
+				
+				dma pin D10
+				
+				
+				
+				dma pin D11
+				
+				
+				
+				dma pin D12
+				
+				
+				
+				dma pin D13
+				
+				
+				
+				dma pin D14
+				
+				
+				
+				dma pin D15
+				
+				
+				
+				dma pin E00
+				
+				
+				
+				dma pin E01
+				
+				
+				
+				dma pin E02
+				
+				
+				
+				dma pin E03
+				
+				
+				
+				dma pin E04
+				
+				
+				
+				dma pin E05
+				
+				
+				
+				dma pin E06
+				
+				
+				
+				dma pin E07
+				
+				
+				
+				dma pin E08
+				
+				
+				
+				dma pin E09
+				
+				
+				
+				dma pin E10
+				
+				
+				
+				dma pin E11
+				
+				
+				
+				dma pin E12
+				
+				
+				
+				dma pin E13
+				
+				
+				
+				dma pin E14
+				
+				
+				
+				dma pin E15
+				
+				
+				
+					dma pin A00
+					
+					
+					
+					dma pin A01
+					
+					
+					
+					dma pin A02
+					
+					
+					
+					dma pin A03
+					
+					
+					
+					dma pin A04
+					
+					
+					
+					dma pin A05
+					
+					
+					
+					dma pin A06
+					
+					
+					
+					dma pin A07
+					
+					
+					
+					dma pin A08
+					
+					
+					
+					dma pin A09
+					
+					
+					
+					dma pin A10
+					
+					
+					
+					dma pin A11
+					
+					
+					
+					dma pin A12
+					
+					
+					
+					dma pin A13
+					
+					
+					
+					dma pin A14
+					
+					
+					
+					dma pin A15
+					
+					
+					
+					dma pin B00
+					
+					
+					
+					dma pin B01
+					
+					
+					
+					dma pin B02
+					
+					
+					
+					dma pin B03
+					
+					
+					
+					dma pin B04
+					
+					
+					
+					dma pin B05
+					
+					
+					
+					dma pin B06
+					
+					
+					
+					dma pin B07
+					
+					
+					
+					dma pin B08
+					
+					
+					
+					dma pin B09
+					
+					
+					
+					dma pin B10
+					
+					
+					
+					dma pin B11
+					
+					
+					
+					dma pin B12
+					
+					
+					
+					dma pin B13
+					
+					
+					
+					dma pin B14
+					
+					
+					
+					dma pin B15
+					
+					
+					
+					dma pin C00
+					
+					
+					
+					dma pin C01
+					
+					
+					
+					dma pin C02
+					
+					
+					
+					dma pin C03
+					
+					
+					
+					dma pin C04
+					
+					
+					
+					dma pin C05
+					
+					
+					
+					dma pin C06
+					
+					
+					
+					dma pin C07
+					
+					
+					
+					dma pin C08
+					
+					
+					
+					dma pin C09
+					
+					
+					
+					dma pin C10
+					
+					
+					
+					dma pin C11
+					
+					
+					
+					dma pin C12
+					
+					
+					
+					dma pin C13
+					
+					
+					
+					dma pin C14
+					
+					
+					
+					dma pin C15
+					
+					
+					
+					dma pin D00
+					
+					
+					
+					dma pin D01
+					
+					
+					
+					dma pin D02
+					
+					
+					
+					dma pin D03
+					
+					
+					
+					dma pin D04
+					
+					
+					
+					dma pin D05
+					
+					
+					
+					dma pin D06
+					
+					
+					
+					dma pin D07
+					
+					
+					
+					dma pin D08
+					
+					
+					
+					dma pin D09
+					
+					
+					
+					dma pin D10
+					
+					
+					
+					dma pin D11
+					
+					
+					
+					dma pin D12
+					
+					
+					
+					dma pin D13
+					
+					
+					
+					dma pin D14
+					
+					
+					
+					dma pin D15
+					
+					
+					
+					dma pin E00
+					
+					
+					
+					dma pin E01
+					
+					
+					
+					dma pin E02
+					
+					
+					
+					dma pin E03
+					
+					
+					
+					dma pin E04
+					
+					
+					
+					dma pin E05
+					
+					
+					
+					dma pin E06
+					
+					
+					
+					dma pin E07
+					
+					
+					
+					dma pin E08
+					
+					
+					
+					dma pin E09
+					
+					
+					
+					dma pin E10
+					
+					
+					
+					dma pin E11
+					
+					
+					
+					dma pin E12
+					
+					
+					
+					dma pin E13
+					
+					
+					
+					dma pin E14
+					
+					
+					
+					dma pin E15
+					
+					
+					
+						dma pin A00
+						
+						
+						
+						dma pin A01
+						
+						
+						
+						dma pin A02
+						
+						
+						
+						dma pin A03
+						
+						
+						
+						dma pin A04
+						
+						
+						
+						dma pin A05
+						
+						
+						
+						dma pin A06
+						
+						
+						
+						dma pin A07
+						
+						
+						
+						dma pin A08
+						
+						
+						
+						dma pin A09
+						
+						
+						
+						dma pin A10
+						
+						
+						
+						dma pin A11
+						
+						
+						
+						dma pin A12
+						
+						
+						
+						dma pin A13
+						
+						
+						
+						dma pin A14
+						
+						
+						
+						dma pin A15
+						
+						
+						
+						dma pin B00
+						
+						
+						
+						dma pin B01
+						
+						
+						
+						dma pin B02
+						
+						
+						
+						dma pin B03
+						
+						
+						
+						dma pin B04
+						
+						
+						
+						dma pin B05
+						
+						
+						
+						dma pin B06
+						
+						
+						
+						dma pin B07
+						
+						
+						
+						dma pin B08
+						
+						
+						
+						dma pin B09
+						
+						
+						
+						dma pin B10
+						
+						
+						
+						dma pin B11
+						
+						
+						
+						dma pin B12
+						
+						
+						
+						dma pin B13
+						
+						
+						
+						dma pin B14
+						
+						
+						
+						dma pin B15
+						
+						
+						
+						dma pin C00
+						
+						
+						
+						dma pin C01
+						
+						
+						
+						dma pin C02
+						
+						
+						
+						dma pin C03
+						
+						
+						
+						dma pin C04
+						
+						
+						
+						dma pin C05
+						
+						
+						
+						dma pin C06
+						
+						
+						
+						dma pin C07
+						
+						
+						
+						dma pin C08
+						
+						
+						
+						dma pin C09
+						
+						
+						
+						dma pin C10
+						
+						
+						
+						dma pin C11
+						
+						
+						
+						dma pin C12
+						
+						
+						
+						dma pin C13
+						
+						
+						
+						dma pin C14
+						
+						
+						
+						dma pin C15
+						
+						
+						
+						dma pin D00
+						
+						
+						
+						dma pin D01
+						
+						
+						
+						dma pin D02
+						
+						
+						
+						dma pin D03
+						
+						
+						
+						dma pin D04
+						
+						
+						
+						dma pin D05
+						
+						
+						
+						dma pin D06
+						
+						
+						
+						dma pin D07
+						
+						
+						
+						dma pin D08
+						
+						
+						
+						dma pin D09
+						
+						
+						
+						dma pin D10
+						
+						
+						
+						dma pin D11
+						
+						
+						
+						dma pin D12
+						
+						
+						
+						dma pin D13
+						
+						
+						
+						dma pin D14
+						
+						
+						
+						dma pin D15
+						
+						
+						
+						dma pin E00
+						
+						
+						
+						dma pin E01
+						
+						
+						
+						dma pin E02
+						
+						
+						
+						dma pin E03
+						
+						
+						
+						dma pin E04
+						
+						
+						
+						dma pin E05
+						
+						
+						
+						dma pin E06
+						
+						
+						
+						dma pin E07
+						
+						
+						
+						dma pin E08
+						
+						
+						
+						dma pin E09
+						
+						
+						
+						dma pin E10
+						
+						
+						
+						dma pin E11
+						
+						
+						
+						dma pin E12
+						
+						
+						
+						dma pin E13
+						
+						
+						
+						dma pin E14
+						
+						
+						
+						dma pin E15
+						
+						
+						
+							dma pin A00
+							
+							
+							
+							dma pin A01
+							
+							
+							
+							dma pin A02
+							
+							
+							
+							dma pin A03
+							
+							
+							
+							dma pin A04
+							
+							
+							
+							dma pin A05
+							
+							
+							
+							dma pin A06
+							
+							
+							
+							dma pin A07
+							
+							
+							
+							dma pin A08
+							
+							
+							
+							dma pin A09
+							
+							
+							
+							dma pin A10
+							
+							
+							
+							dma pin A11
+							
+							
+							
+							dma pin A12
+							
+							
+							
+							dma pin A13
+							
+							
+							
+							dma pin A14
+							
+							
+							
+							dma pin A15
+							
+							
+							
+							dma pin B00
+							
+							
+							
+							dma pin B01
+							
+							
+							
+							dma pin B02
+							
+							
+							
+							dma pin B03
+							
+							
+							
+							dma pin B04
+							
+							
+							
+							dma pin B05
+							
+							
+							
+							dma pin B06
+							
+							
+							
+							dma pin B07
+							
+							
+							
+							dma pin B08
+							
+							
+							
+							dma pin B09
+							
+							
+							
+							dma pin B10
+							
+							
+							
+							dma pin B11
+							
+							
+							
+							dma pin B12
+							
+							
+							
+							dma pin B13
+							
+							
+							
+							dma pin B14
+							
+							
+							
+							dma pin B15
+							
+							
+							
+							dma pin C00
+							
+							
+							
+							dma pin C01
+							
+							
+							
+							dma pin C02
+							
+							
+							
+							dma pin C03
+							
+							
+							
+							dma pin C04
+							
+							
+							
+							dma pin C05
+							
+							
+							
+							dma pin C06
+							
+							
+							
+							dma pin C07
+							
+							
+							
+							dma pin C08
+							
+							
+							
+							dma pin C09
+							
+							
+							
+							dma pin C10
+							
+							
+							
+							dma pin C11
+							
+							
+							
+							dma pin C12
+							
+							
+							
+							dma pin C13
+							
+							
+							
+							dma pin C14
+							
+							
+							
+							dma pin C15
+							
+							
+							
+							dma pin D00
+							
+							
+							
+							dma pin D01
+							
+							
+							
+							dma pin D02
+							
+							
+							
+							dma pin D03
+							
+							
+							
+							dma pin D04
+							
+							
+							
+							dma pin D05
+							
+							
+							
+							dma pin D06
+							
+							
+							
+							dma pin D07
+							
+							
+							
+							dma pin D08
+							
+							
+							
+							dma pin D09
+							
+							
+							
+							dma pin D10
+							
+							
+							
+							dma pin D11
+							
+							
+							
+							dma pin D12
+							
+							
+							
+							dma pin D13
+							
+							
+							
+							dma pin D14
+							
+							
+							
+							dma pin D15
+							
+							
+							
+							dma pin E00
+							
+							
+							
+							dma pin E01
+							
+							
+							
+							dma pin E02
+							
+							
+							
+							dma pin E03
+							
+							
+							
+							dma pin E04
+							
+							
+							
+							dma pin E05
+							
+							
+							
+							dma pin E06
+							
+							
+							
+							dma pin E07
+							
+							
+							
+							dma pin E08
+							
+							
+							
+							dma pin E09
+							
+							
+							
+							dma pin E10
+							
+							
+							
+							dma pin E11
+							
+							
+							
+							dma pin E12
+							
+							
+							
+							dma pin E13
+							
+							
+							
+							dma pin E14
+							
+							
+							
+							dma pin E15
+							
+							
+							
+								dma pin A00
+								
+								
+								
+								dma pin A01
+								
+								
+								
+								dma pin A02
+								
+								
+								
+								dma pin A03
+								
+								
+								
+								dma pin A04
+								
+								
+								
+								dma pin A05
+								
+								
+								
+								dma pin A06
+								
+								
+								
+								dma pin A07
+								
+								
+								
+								dma pin A08
+								
+								
+								
+								dma pin A09
+								
+								
+								
+								dma pin A10
+								
+								
+								
+								dma pin A11
+								
+								
+								
+								dma pin A12
+								
+								
+								
+								dma pin A13
+								
+								
+								
+								dma pin A14
+								
+								
+								
+								dma pin A15
+								
+								
+								
+								dma pin B00
+								
+								
+								
+								dma pin B01
+								
+								
+								
+								dma pin B02
+								
+								
+								
+								dma pin B03
+								
+								
+								
+								dma pin B04
+								
+								
+								
+								dma pin B05
+								
+								
+								
+								dma pin B06
+								
+								
+								
+								dma pin B07
+								
+								
+								
+								dma pin B08
+								
+								
+								
+								dma pin B09
+								
+								
+								
+								dma pin B10
+								
+								
+								
+								dma pin B11
+								
+								
+								
+								dma pin B12
+								
+								
+								
+								dma pin B13
+								
+								
+								
+								dma pin B14
+								
+								
+								
+								dma pin B15
+								
+								
+								
+								dma pin C00
+								
+								
+								
+								dma pin C01
+								
+								
+								
+								dma pin C02
+								
+								
+								
+								dma pin C03
+								
+								
+								
+								dma pin C04
+								
+								
+								
+								dma pin C05
+								
+								
+								
+								dma pin C06
+								
+								
+								
+								dma pin C07
+								
+								
+								
+								dma pin C08
+								
+								
+								
+								dma pin C09
+								
+								
+								
+								dma pin C10
+								
+								
+								
+								dma pin C11
+								
+								
+								
+								dma pin C12
+								
+								
+								
+								dma pin C13
+								
+								
+								
+								dma pin C14
+								
+								
+								
+								dma pin C15
+								
+								
+								
+								dma pin D00
+								
+								
+								
+								dma pin D01
+								
+								
+								
+								dma pin D02
+								
+								
+								
+								dma pin D03
+								
+								
+								
+								dma pin D04
+								
+								
+								
+								dma pin D05
+								
+								
+								
+								dma pin D06
+								
+								
+								
+								dma pin D07
+								
+								
+								
+								dma pin D08
+								
+								
+								
+								dma pin D09
+								
+								
+								
+								dma pin D10
+								
+								
+								
+								dma pin D11
+								
+								
+								
+								dma pin D12
+								
+								
+								
+								dma pin D13
+								
+								
+								
+								dma pin D14
+								
+								
+								
+								dma pin D15
+								
+								
+								
+								dma pin E00
+								
+								
+								
+								dma pin E01
+								
+								
+								
+								dma pin E02
+								
+								
+								
+								dma pin E03
+								
+								
+								
+								dma pin E04
+								
+								
+								
+								dma pin E05
+								
+								
+								
+								dma pin E06
+								
+								
+								
+								dma pin E07
+								
+								
+								
+								dma pin E08
+								
+								
+								
+								dma pin E09
+								
+								
+								
+								dma pin E10
+								
+								
+								
+								dma pin E11
+								
+								
+								
+								dma pin E12
+								
+								
+								
+								dma pin E13
+								
+								
+								
+								dma pin E14
+								
+								
+								
+								dma pin E15
+								
+								
+								
+									dma pin A00
+									
+									
+									
+									dma pin A01
+									
+									
+									
+									dma pin A02
+									
+									
+									
+									dma pin A03
+									
+									
+									
+									dma pin A04
+									
+									
+									
+									dma pin A05
+									
+									
+									
+									dma pin A06
+									
+									
+									
+									dma pin A07
+									
+									
+									
+									dma pin A08
+									
+									
+									
+									dma pin A09
+									
+									
+									
+									dma pin A10
+									
+									
+									
+									dma pin A11
+									
+									
+									
+									dma pin A12
+									
+									
+									
+									dma pin A13
+									
+									
+									
+									dma pin A14
+									
+									
+									
+									dma pin A15
+									
+									
+									
+									dma pin B00
+									
+									
+									
+									dma pin B01
+									
+									
+									
+									dma pin B02
+									
+									
+									
+									dma pin B03
+									
+									
+									
+									dma pin B04
+									
+									
+									
+									dma pin B05
+									
+									
+									
+									dma pin B06
+									
+									
+									
+									dma pin B07
+									
+									
+									
+									dma pin B08
+									
+									
+									
+									dma pin B09
+									
+									
+									
+									dma pin B10
+									
+									
+									
+									dma pin B11
+									
+									
+									
+									dma pin B12
+									
+									
+									
+									dma pin B13
+									
+									
+									
+									dma pin B14
+									
+									
+									
+									dma pin B15
+									
+									
+									
+									dma pin C00
+									
+									
+									
+									dma pin C01
+									
+									
+									
+									dma pin C02
+									
+									
+									
+									dma pin C03
+									
+									
+									
+									dma pin C04
+									
+									
+									
+									dma pin C05
+									
+									
+									
+									dma pin C06
+									
+									
+									
+									dma pin C07
+									
+									
+									
+									dma pin C08
+									
+									
+									
+									dma pin C09
+									
+									
+									
+									dma pin C10
+									
+									
+									
+									dma pin C11
+									
+									
+									
+									dma pin C12
+									
+									
+									
+									dma pin C13
+									
+									
+									
+									dma pin C14
+									
+									
+									
+									dma pin C15
+									
+									
+									
+									dma pin D00
+									
+									
+									
+									dma pin D01
+									
+									
+									
+									dma pin D02
+									
+									
+									
+									dma pin D03
+									
+									
+									
+									dma pin D04
+									
+									
+									
+									dma pin D05
+									
+									
+									
+									dma pin D06
+									
+									
+									
+									dma pin D07
+									
+									
+									
+									dma pin D08
+									
+									
+									
+									dma pin D09
+									
+									
+									
+									dma pin D10
+									
+									
+									
+									dma pin D11
+									
+									
+									
+									dma pin D12
+									
+									
+									
+									dma pin D13
+									
+									
+									
+									dma pin D14
+									
+									
+									
+									dma pin D15
+									
+									
+									
+									dma pin E00
+									
+									
+									
+									dma pin E01
+									
+									
+									
+									dma pin E02
+									
+									
+									
+									dma pin E03
+									
+									
+									
+									dma pin E04
+									
+									
+									
+									dma pin E05
+									
+									
+									
+									dma pin E06
+									
+									
+									
+									dma pin E07
+									
+									
+									
+									dma pin E08
+									
+									
+									
+									dma pin E09
+									
+									
+									
+									dma pin E10
+									
+									
+									
+									dma pin E11
+									
+									
+									
+									dma pin E12
+									
+									
+									
+									dma pin E13
+									
+									
+									
+									dma pin E14
+									
+									
+									
