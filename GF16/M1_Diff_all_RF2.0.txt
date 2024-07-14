@@ -1,0 +1,159 @@
+diff all
+
+# version
+# Rotorflight / STM32F405 (S405) 4.3.0-20240128 Jan 28 2024 / 22:13:23 (808fa4b) MSP API: 12.4
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name JHEF405PRO
+board_design BTFL
+manufacturer_id JHEF
+mcu_id 002800364d53501220303932
+signature 
+
+# name: M1
+
+# resources
+resource MOTOR 1 A02
+resource MOTOR 3 NONE
+resource MOTOR 4 NONE
+resource SERVO 1 B07
+resource SERVO 2 B05
+resource SERVO 3 C09
+
+# timer
+timer B01 AF3
+# pin B01: TIM8 CH3N (AF3)
+timer C09 AF2
+# pin C09: TIM3 CH4 (AF2)
+
+# dma
+dma pin B01 0
+# pin B01: DMA2 Stream 2 Channel 0
+dma pin B05 NONE
+dma pin B07 NONE
+dma pin C09 NONE
+
+# feature
+feature RX_SERIAL
+feature TELEMETRY
+feature LED_STRIP
+feature GOVERNOR
+feature DYN_NOTCH
+feature RPM_FILTER
+
+# serial
+serial 0 0 115200 57600 0 2000000
+serial 3 64 115200 57600 0 115200
+
+# servo
+servo 1 1580 -600 600 500 500 333 0 0
+servo 2 1490 -600 600 500 500 333 0 0
+servo 3 1490 -600 600 500 500 333 0 0
+
+# mixer input
+mixer input SR -1000 1000 900
+mixer input SP -1000 1000 -900
+mixer input SC -1167 1167 1000
+
+# map
+map AECR1T23
+
+# led
+led 0 6,6::AB:10:34952:0:2
+led 1 7,6::AB:10:17476:0:2
+led 2 7,7::AB:10:8738:0:2
+led 3 6,7::AB:10:4369:0:2
+
+# aux
+aux 0 0 0 1500 2090 0 0
+aux 1 1 2 1600 2100 0 0
+aux 2 2 2 1300 1700 0 0
+aux 3 53 1 1590 2100 0 0
+aux 4 26 0 1500 2100 0 0
+aux 5 0 0 900 900 0 0
+aux 6 0 0 900 900 0 0
+aux 7 0 0 900 900 0 0
+
+# adjfunc
+adjfunc 0 2 3 995 2010 3 995 2015 1475 1500 0 1 3
+adjfunc 1 0 6 995 2030 5 1605 2005 1010 1410 5 0 100
+adjfunc 2 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 3 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 4 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 5 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 6 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 7 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 8 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 9 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 10 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 11 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 12 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 13 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 14 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 15 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 16 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 17 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 18 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 19 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 20 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 21 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 22 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 23 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 24 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 25 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 26 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 27 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 28 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 29 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 30 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+adjfunc 31 0 0 1500 1500 0 1500 1500 1500 1500 0 0 100
+
+# rxfail
+rxfail 4 s 1000
+rxfail 7 s 1850
+
+# master
+set dyn_notch_count = 2
+set dyn_notch_q = 30
+set dyn_notch_min_hz = 20
+set acc_calibration = -123,131,-94,1
+set serialrx_provider = CRSF
+set blackbox_mode = ARMED
+set blackbox_log_battery = OFF
+set blackbox_log_rssi = OFF
+set blackbox_log_servos = OFF
+set dshot_bidir = ON
+set motor_pwm_protocol = DSHOT300
+set motor_poles = 14,8,0,0
+set tail_rotor_mode = MOTORIZED
+set tail_motor_idle = 35
+set swash_collective_trim = -297
+set gov_mode = MODE1
+set gov_pwr_filter = 15
+set gov_rpm_filter = 15
+set rc_smoothness = 40
+set rc_threshold = 70,70,70,100
+set deadband = 1
+set yaw_deadband = 1
+set pid_process_denom = 4
+set ledstrip_blink_period_ms = 56
+set ledstrip_flicker_rate = 59
+set debug_mode = GYRO_SCALED
+set gyro_1_sensor_align = CW180FLIP
+set gyro_1_align_pitch = 1800
+set gyro_1_align_yaw = 1800
+set gyro_rpm_filter_bank_rpm_source = 11,12,13,14,21,22,0,0,0,0,0,0,0,0,0,0
+set gyro_rpm_filter_bank_rpm_ratio = 10000,10000,10000,10000,10000,10000,0,0,0,0,0,0,0,0,0,0
+set gyro_rpm_filter_bank_rpm_limit = 500,500,500,500,1000,1000,0,0,0,0,0,0,0,0,0,0
+set gyro_rpm_filter_bank_notch_q = 30,30,40,40,25,25,0,0,0,0,0,0,0,0,0,0
+set name = M1
+
+
+# save configuration
+save
+# 

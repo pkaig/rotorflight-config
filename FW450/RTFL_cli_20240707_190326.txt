@@ -1,0 +1,72 @@
+# diff all
+
+# version
+# Rotorflight / STM32F405 (S405) 4.3.0-RC1 Feb 29 2024 / 21:13:55 (19d3380) MSP API: 12.6
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name FLYWING_HELI405M
+board_design RTFL
+manufacturer_id FWRF
+mcu_id 002b00494247501820303734
+signature 
+
+# resources
+resource MOTOR 1 A00
+resource SERVO 4 B01
+resource FREQ 1 NONE
+
+# timer
+timer A00 AF2
+# pin A00: TIM5 CH1 (AF2)
+
+# dma
+dma pin B01 NONE
+dma pin B06 NONE
+dma pin B10 NONE
+dma pin B11 NONE
+dma pin A00 0
+# pin A00: DMA1 Stream 2 Channel 6
+
+# master
+set use_unsynced_pwm = ON
+set gyro_1_align_pitch = 1800
+set gyro_1_align_yaw = 2700
+
+profile 0
+
+profile 1
+
+profile 2
+
+profile 3
+
+profile 4
+
+profile 5
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
+# 

@@ -1,0 +1,332 @@
+diff all
+###WARNING: NO CUSTOM DEFAULTS FOUND###
+
+# version
+# Rotorflight / STM32F7X2 (S7X2) 4.3.0-20240128 Jan 28 2024 / 22:14:11 (808fa4b) MSP API: 12.4
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name NEXUS_F7
+board_design F7A1
+manufacturer_id RDMS
+mcu_id 003900233033510732323536
+signature 
+
+# name: M4
+
+# resources
+resource MOTOR 1 B06
+resource SERVO 1 B04
+resource SERVO 2 B05
+resource SERVO 3 B00
+resource SERVO 4 B03
+resource PPM 1 A03
+resource LED_STRIP 1 A10
+resource SERIAL_TX 1 A09
+resource SERIAL_TX 3 B10
+resource SERIAL_TX 4 A00
+resource SERIAL_TX 6 C06
+resource SERIAL_RX 1 A10
+resource SERIAL_RX 2 A03
+resource SERIAL_RX 3 B11
+resource SERIAL_RX 4 A01
+resource SERIAL_RX 6 C07
+resource I2C_SCL 1 B08
+resource I2C_SDA 1 B09
+resource LED 1 C14
+resource LED 2 C15
+resource SPI_SCK 1 A05
+resource SPI_SCK 2 B13
+resource SPI_MISO 1 A06
+resource SPI_MISO 2 B14
+resource SPI_MOSI 1 A07
+resource SPI_MOSI 2 B15
+resource ADC_BATT 1 C00
+resource ADC_CURR 1 C01
+resource ADC_RSSI 1 C02
+resource ADC_EXT 1 C03
+resource FLASH_CS 1 B12
+resource GYRO_EXTI 1 A15
+resource GYRO_CS 1 A04
+resource FREQ 1 A02
+
+# timer
+timer A00 AF2
+# pin A00: TIM5 CH1 (AF2)
+timer A01 AF2
+# pin A01: TIM5 CH2 (AF2)
+timer A02 AF2
+# pin A02: TIM5 CH3 (AF2)
+timer A03 AF3
+# pin A03: TIM9 CH2 (AF3)
+timer A08 AF1
+# pin A08: TIM1 CH1 (AF1)
+timer A09 AF1
+# pin A09: TIM1 CH2 (AF1)
+timer A10 AF1
+# pin A10: TIM1 CH3 (AF1)
+timer B00 AF2
+# pin B00: TIM3 CH3 (AF2)
+timer B01 AF2
+# pin B01: TIM3 CH4 (AF2)
+timer B03 AF1
+# pin B03: TIM2 CH2 (AF1)
+timer B04 AF2
+# pin B04: TIM3 CH1 (AF2)
+timer B05 AF2
+# pin B05: TIM3 CH2 (AF2)
+timer B06 AF2
+# pin B06: TIM4 CH1 (AF2)
+timer C06 AF3
+# pin C06: TIM8 CH1 (AF3)
+timer C07 AF3
+# pin C07: TIM8 CH2 (AF3)
+
+# dma
+dma ADC 1 0
+# ADC 1: DMA2 Stream 0 Channel 0
+dma pin A02 0
+# pin A02: DMA1 Stream 0 Channel 6
+dma pin A08 0
+# pin A08: DMA2 Stream 6 Channel 0
+dma pin B00 0
+# pin B00: DMA1 Stream 7 Channel 5
+dma pin B01 0
+# pin B01: DMA1 Stream 2 Channel 5
+dma pin B03 0
+# pin B03: DMA1 Stream 6 Channel 3
+dma pin B04 0
+# pin B04: DMA1 Stream 4 Channel 5
+dma pin B05 0
+# pin B05: DMA1 Stream 5 Channel 5
+dma pin B06 0
+# pin B06: DMA1 Stream 0 Channel 2
+
+# feature
+feature RX_SERIAL
+feature TELEMETRY
+feature GOVERNOR
+feature ESC_SENSOR
+feature FREQ_SENSOR
+feature DYN_NOTCH
+feature RPM_FILTER
+
+# serial
+serial 1 1024 115200 57600 0 115200
+serial 3 64 115200 57600 0 115200
+
+# servo
+servo 1 1594 -500 500 500 500 333 0 1
+servo 2 1480 -500 500 500 500 333 0 1
+servo 3 1571 -500 500 500 500 333 0 1
+servo 4 760 -129 129 250 250 333 0 0
+
+# mixer input
+mixer input SP -1000 1000 -1000
+mixer input SY -1000 1000 -450
+mixer input SC -1166 1166 700
+mixer input ST -1000 1000 1000
+
+# map
+map AECR1T23
+
+# aux
+aux 0 0 0 1500 2045 0 0
+aux 1 1 2 1600 2100 0 0
+aux 2 2 2 1300 1700 0 0
+aux 3 53 1 1590 2100 0 0
+aux 4 26 0 1500 2050 0 0
+aux 5 0 0 900 900 0 0
+aux 6 0 0 900 900 0 0
+aux 7 0 0 900 900 0 0
+aux 8 0 0 900 900 0 0
+aux 9 0 0 900 900 0 0
+aux 10 0 0 900 900 0 0
+aux 11 0 0 900 900 0 0
+aux 12 0 0 900 900 0 0
+aux 13 0 0 900 900 0 0
+aux 14 0 0 900 900 0 0
+aux 15 0 0 900 900 0 0
+aux 16 0 0 900 900 0 0
+aux 17 0 0 900 900 0 0
+aux 18 0 0 900 900 0 0
+aux 19 0 0 900 900 0 0
+
+# adjfunc
+adjfunc 0 2 3 995 2010 3 995 2015 1475 1500 0 1 3
+adjfunc 1 14 6 995 2030 5 1605 2005 1010 1410 5 0 0
+
+# rxfail
+rxfail 5 h
+
+# master
+set gyro_lpf2_static_hz = 0
+set dyn_notch_count = 2
+set dyn_notch_q = 25
+set acc_calibration = -96,56,2,1
+set mag_bustype = I2C
+set mag_i2c_device = 2
+set mag_hardware = NONE
+set baro_bustype = I2C
+set baro_i2c_device = 1
+set baro_hardware = AUTO
+set serialrx_provider = CRSF
+set blackbox_mode = SWITCH
+set blackbox_device = SPIFLASH
+set blackbox_rate_denom = 2
+set blackbox_log_setpoint = OFF
+set blackbox_log_mixer = OFF
+set blackbox_log_battery = OFF
+set blackbox_log_rssi = OFF
+set blackbox_log_servos = OFF
+set min_throttle = 1050
+set dshot_bitbang = OFF
+set use_unsynced_pwm = ON
+set motor_pwm_protocol = PWM
+set motor_poles = 42,8,8,8
+set tail_rotor_gear_ratio = 22,99
+set current_meter = ESC
+set battery_meter = ESC
+set gov_mode = MODE1
+set rc_smoothness = 40
+set rc_threshold = 70,70,70,100
+set pid_process_denom = 4
+set crsf_flight_mode_reuse = HEADSPEED
+set crsf_att_pitch_reuse = HEADSPEED
+set crsf_att_roll_reuse = ESC_TEMP
+set crsf_att_yaw_reuse = MCU_TEMP
+set telemetry_enable_acc_x = ON
+set telemetry_enable_acc_y = ON
+set telemetry_enable_acc_z = ON
+set telemetry_enable_vario = ON
+set telemetry_enable_distance = ON
+set telemetry_enable_esc_current = ON
+set telemetry_enable_esc_voltage = ON
+set telemetry_enable_esc_rpm = OFF
+set telemetry_enable_esc_temperature = OFF
+set telemetry_enable_temperature = ON
+set telemetry_enable_cap_used = OFF
+set debug_mode = GYRO_SCALED
+set esc_sensor_protocol = OMPHOBBY
+set esc_sensor_hw4_voltage_gain = 30
+set flash_spi_bus = 2
+set gyro_1_bustype = SPI
+set gyro_1_spibus = 1
+set gyro_1_sensor_align = CW90
+set gyro_1_align_yaw = 900
+set gyro_rpm_filter_bank_rpm_source = 11,12,12,13,14,21,22,0,0,0,0,0,0,0,0,0
+set gyro_rpm_filter_bank_rpm_ratio = 10000,9960,10040,10000,10000,10000,10000,0,0,0,0,0,0,0,0,0
+set gyro_rpm_filter_bank_rpm_limit = 500,500,500,500,500,1000,1000,0,0,0,0,0,0,0,0,0
+set gyro_rpm_filter_bank_notch_q = 25,25,25,50,40,25,25,0,0,0,0,0,0,0,0,0
+set name = M4
+
+profile 0
+
+# profile 0
+set pid_mode = 2
+set pitch_p_gain = 63
+set pitch_d_gain = 57
+set pitch_o_gain = 0
+set roll_p_gain = 76
+set roll_d_gain = 29
+set roll_o_gain = 0
+set yaw_p_gain = 123
+set yaw_cw_stop_gain = 129
+set error_decay_rate_curve = 16,16,18,21,25,31,42,62,125,250,250,250,250,250,250,250
+set offset_charge_curve = 0,100,100,100,90,80,68,60,54,49,45,42,39,37,35,33
+set iterm_relax_cutoff = 9,9,7
+set rescue_mode = CLIMB
+set rescue_flip = ON
+set gov_headspeed = 1800
+
+profile 1
+
+# profile 1
+set pid_mode = 2
+set pitch_o_gain = 0
+set roll_o_gain = 0
+set error_decay_rate_curve = 16,16,18,21,25,31,42,62,125,250,250,250,250,250,250,250
+set offset_charge_curve = 0,100,100,100,90,80,68,60,54,49,45,42,39,37,35,33
+set iterm_relax_cutoff = 9,9,8
+set rescue_mode = CLIMB
+set rescue_flip = ON
+set gov_headspeed = 2200
+
+profile 2
+
+# profile 2
+set pid_mode = 2
+set pitch_o_gain = 0
+set roll_o_gain = 0
+set error_decay_rate_curve = 16,16,18,21,25,31,42,62,125,250,250,250,250,250,250,250
+set offset_charge_curve = 0,100,100,100,90,80,68,60,54,49,45,42,39,37,35,33
+set iterm_relax_cutoff = 9,9,9
+set rescue_mode = CLIMB
+set gov_headspeed = 2500
+
+profile 3
+
+# profile 3
+set pid_mode = 2
+set pitch_o_gain = 0
+set roll_o_gain = 0
+set error_decay_rate_curve = 16,16,18,21,25,31,42,62,125,250,250,250,250,250,250,250
+set offset_charge_curve = 0,100,100,100,90,80,68,60,54,49,45,42,39,37,35,33
+
+profile 4
+
+# profile 4
+set pid_mode = 2
+set pitch_o_gain = 0
+set roll_o_gain = 0
+set error_decay_rate_curve = 16,16,18,21,25,31,42,62,125,250,250,250,250,250,250,250
+set offset_charge_curve = 0,100,100,100,90,80,68,60,54,49,45,42,39,37,35,33
+
+profile 5
+
+# profile 5
+set pid_mode = 2
+set pitch_o_gain = 0
+set roll_o_gain = 0
+set error_decay_rate_curve = 16,16,18,21,25,31,42,62,125,250,250,250,250,250,250,250
+set offset_charge_curve = 0,100,100,100,90,80,68,60,54,49,45,42,39,37,35,33
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set collective_rc_rate = 56
+set collective_srate = 56
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# rateprofile 5
+set roll_rc_rate = 36
+set pitch_rc_rate = 36
+set collective_rc_rate = 48
+set roll_expo = 30
+set roll_srate = 36
+set pitch_srate = 36
+set yaw_srate = 36
+set collective_srate = 48
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
+# 
