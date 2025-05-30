@@ -1,0 +1,163 @@
+# diff all
+
+# version
+# Rotorflight / STM32F7X2 (S7X2) 4.4.0-RC1 Nov  1 2024 / 09:54:30 (4e99616) MSP API: 12.7
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name NEXUS_F7
+board_design F7A1
+manufacturer_id RDMS
+mcu_id 002b003f3532510839323431
+signature 
+
+# name: M4
+
+# resources
+resource LED_STRIP 1 A10
+resource SERIAL_TX 3 B10
+resource SERIAL_TX 4 A00
+resource SERIAL_TX 6 C06
+resource SERIAL_RX 3 B11
+resource SERIAL_RX 4 A01
+resource SERIAL_RX 6 C07
+resource ADC_BATT 1 C00
+resource ADC_CURR 1 C01
+resource ADC_RSSI 1 C02
+resource ADC_EXT 1 C03
+
+# feature
+feature RX_SERIAL
+feature TELEMETRY
+feature GOVERNOR
+feature ESC_SENSOR
+feature FREQ_SENSOR
+feature RPM_FILTER
+
+# serial
+serial 1 1024 115200 57600 0 115200
+serial 3 64 115200 57600 0 115200
+
+# servo
+servo 1 1594 -500 500 500 500 333 0 1
+servo 2 1480 -500 500 500 500 333 0 1
+servo 3 1571 -500 500 500 500 333 0 1
+servo 4 760 -250 250 250 250 500 0 0
+
+# mixer input
+mixer input SR -1192 1192 640
+mixer input SP -1192 1192 -640
+mixer input SY -1833 1625 -200
+mixer input SC -1250 1250 600
+mixer input ST -1000 1000 1000
+
+# map
+map AECR1T23
+
+# aux
+aux 0 0 0 1500 2045 0 0
+aux 1 1 2 1600 2100 0 0
+aux 2 2 2 1300 1700 0 0
+aux 3 53 1 1590 2100 0 0
+aux 4 26 0 1500 2050 0 0
+
+# master
+set gyro_lpf2_static_hz = 0
+set acc_trim_pitch = -21
+set acc_trim_roll = 15
+set acc_calibration = -40,6,13,1
+set serialrx_provider = CRSF
+set motor_poles = 42,8,8,8
+set tail_rotor_gear_ratio = 22,99
+set current_meter = ESC
+set battery_meter = ESC
+set battery_cell_count = 6
+set swash_geo_correction = -37
+set gov_mode = MODE1
+set crsf_telemetry_mode = CUSTOM
+set crsf_telemetry_link_rate = 500
+set crsf_telemetry_link_ratio = 32
+set crsf_telemetry_sensors = 88,91,60,95,3,7,8,50,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+set debug_mode = GYRO_SCALED
+set esc_sensor_protocol = OMPHOBBY
+set gyro_rpm_filter_bank_rpm_source = 11,12,13,14,21,22,0,0,0,0,0,0,0,0,0,0
+set gyro_rpm_filter_bank_rpm_ratio = 10000,10000,10000,10000,10000,10000,0,0,0,0,0,0,0,0,0,0
+set gyro_rpm_filter_bank_rpm_limit = 1000,1000,1000,1000,2000,2000,0,0,0,0,0,0,0,0,0,0
+set gyro_rpm_filter_bank_notch_q = 25,25,25,25,100,100,0,0,0,0,0,0,0,0,0,0
+set name = M4
+
+profile 0
+
+# profile 0
+set pitch_p_gain = 100
+set pitch_i_gain = 130
+set pitch_d_gain = 60
+set pitch_f_gain = 110
+set pitch_b_gain = 10
+set roll_p_gain = 100
+set roll_i_gain = 130
+set roll_d_gain = 30
+set roll_f_gain = 110
+set roll_b_gain = 10
+set yaw_p_gain = 159
+set yaw_i_gain = 140
+set yaw_d_gain = 186
+set yaw_cw_stop_gain = 100
+set yaw_ccw_stop_gain = 131
+set yaw_collective_ff_gain = 74
+set cyclic_cross_coupling_gain = 5
+set cyclic_cross_coupling_cutoff = 150
+set iterm_relax_cutoff = 10,10,15
+set rescue_mode = CLIMB
+set rescue_flip = ON
+set rescue_pull_up_collective = 1000
+set rescue_climb_collective = 900
+set rescue_hover_collective = 850
+set gov_headspeed = 2500
+set gov_cyclic_ff_weight = 40
+
+profile 1
+
+profile 2
+
+profile 3
+
+profile 4
+
+profile 5
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set roll_rc_rate = 19
+set pitch_rc_rate = 19
+set yaw_rc_rate = 19
+set collective_rc_rate = 56
+set roll_srate = 29
+set pitch_srate = 29
+set yaw_srate = 60
+set collective_srate = 56
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
+# 

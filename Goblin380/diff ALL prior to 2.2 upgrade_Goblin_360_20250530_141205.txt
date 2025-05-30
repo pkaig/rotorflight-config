@@ -1,0 +1,136 @@
+diff all
+
+# version
+# Rotorflight / STM32F7X2 (S7X2) 4.4.0-RC1 Nov  1 2024 / 09:54:30 (4e99616) MSP API: 12.7
+
+# start the command batch
+batch start
+
+# reset configuration to default settings
+defaults nosave
+
+board_name FLYDRAGONF722_V2_2
+board_design RTFL
+manufacturer_id FDRC
+mcu_id 0011000e3432500220393650
+signature 
+
+# name: Goblin 360
+
+# feature
+feature TELEMETRY
+feature GOVERNOR
+feature ESC_SENSOR
+feature FREQ_SENSOR
+feature RPM_FILTER
+
+# serial
+serial 1 1024 115200 57600 0 115200
+
+# servo
+servo 1 1500 -700 700 500 500 333 0 2
+servo 2 1500 -700 700 500 500 333 0 2
+servo 3 1500 -700 700 500 500 333 0 2
+servo 4 760 -350 350 250 250 500 0 2
+
+# mixer input
+mixer input SR -1167 1167 -970
+mixer input SP -1167 1167 970
+mixer input SY -1583 1558 580
+mixer input SC -1167 1167 980
+
+# aux
+aux 0 0 0 1500 2090 0 0
+aux 1 2 2 1595 2100 0 0
+aux 2 53 1 1590 2100 0 0
+aux 3 26 0 1500 2100 0 0
+
+# master
+set acc_calibration = 58,58,-9,1
+set blackbox_mode = ARMED
+set blackbox_rate_denom = 3
+set blackbox_log_alt = ON
+set blackbox_log_vbec = ON
+set blackbox_log_vbus = ON
+set use_unsynced_pwm = ON
+set motor_poles = 14,8,8,8
+set main_rotor_gear_ratio = 21,120
+set tail_rotor_gear_ratio = 72,21
+set battery_meter = ESC
+set tail_center_trim = -42
+set swash_collective_trim = 55
+set gov_mode = MODE1
+set gov_spoolup_time = 180
+set pwr_on_arm_grace = 7
+set crsf_telemetry_mode = CUSTOM
+set crsf_telemetry_link_rate = 500
+set crsf_telemetry_link_ratio = 32
+set crsf_telemetry_sensors = 88,91,60,95,3,7,8,50,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0
+set esc_sensor_protocol = HOBBYWINGV4
+set gyro_1_sensor_align = CW90
+set gyro_1_align_yaw = 900
+set gyro_rpm_filter_bank_rpm_source = 10,11,12,12,13,14,21,22,0,0,0,0,0,0,0,0
+set gyro_rpm_filter_bank_rpm_ratio = 10000,10000,9967,10033,10000,10000,10000,10000,0,0,0,0,0,0,0,0
+set gyro_rpm_filter_bank_rpm_limit = 1600,1600,1600,1600,1600,1600,5000,5000,0,0,0,0,0,0,0,0
+set gyro_rpm_filter_bank_notch_q = 40,45,30,30,45,50,40,50,0,0,0,0,0,0,0,0
+set name = Goblin 360
+
+profile 0
+
+# profile 0
+set pitch_p_gain = 128
+set pitch_d_gain = 98
+set pitch_o_gain = 81
+set roll_p_gain = 107
+set roll_d_gain = 88
+set roll_o_gain = 80
+set yaw_p_gain = 143
+set yaw_i_gain = 155
+set yaw_d_gain = 187
+set rescue_mode = CLIMB
+set rescue_flip = ON
+set rescue_pull_up_collective = 990
+set rescue_climb_collective = 880
+set rescue_hover_collective = 770
+set gov_headspeed = 2500
+set gov_cyclic_ff_weight = 40
+
+profile 1
+
+profile 2
+
+profile 3
+
+profile 4
+
+profile 5
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set roll_rc_rate = 24
+set pitch_rc_rate = 24
+set yaw_rc_rate = 36
+set collective_rc_rate = 56
+set yaw_srate = 48
+set collective_srate = 56
+
+rateprofile 1
+
+rateprofile 2
+
+rateprofile 3
+
+rateprofile 4
+
+rateprofile 5
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
+# 

@@ -1,0 +1,134 @@
+# M4 config 
+
+# feature
+feature RX_SERIAL
+feature TELEMETRY
+feature GOVERNOR
+feature ESC_SENSOR
+feature FREQ_SENSOR
+feature RPM_FILTER
+ 
+# servo
+servo 1 1594 -500 500 500 500 333 0 1
+servo 2 1480 -500 500 500 500 333 0 1
+servo 3 1571 -500 500 500 500 333 0 1
+servo 4 760 -250 250 250 250 500 0 0
+
+# mixer input
+mixer input SR -1192 1192 640
+mixer input SP -1192 1192 -640
+mixer input SY -1833 1625 -200
+mixer input SC -1250 1250 600
+mixer input ST -1000 1000 1000
+
+# master
+gov_mode = MODE1
+set esc_sensor_protocol = OMPHOBBY
+set motor_poles = 42,8,8,8
+set tail_rotor_gear_ratio = 22,99
+set current_meter = ESC
+set battery_meter = ESC
+set swash_pitch_limit = 1833
+set swash_geo_correction = -37
+
+set name = M4
+
+profile 0
+
+# profile 0
+set pitch_p_gain = 80
+set pitch_i_gain = 110
+set pitch_d_gain = 60
+set pitch_f_gain = 120
+set pitch_b_gain = 10
+set pitch_o_gain = 40
+set roll_p_gain = 80
+set roll_i_gain = 110
+set roll_d_gain = 30
+set roll_f_gain = 120
+set roll_b_gain = 10
+set roll_o_gain = 40
+set yaw_p_gain = 161
+set yaw_i_gain = 150
+set yaw_d_gain = 85
+set yaw_collective_ff_gain = 40
+set rescue_mode = CLIMB
+set rescue_flip = ON
+set rescue_pull_up_collective = 1000
+set rescue_climb_collective = 890
+set rescue_hover_collective = 860
+set gov_headspeed = 1800
+
+profile 1
+
+# profile 1
+set pitch_p_gain = 100
+set pitch_i_gain = 130
+set pitch_d_gain = 60
+set pitch_f_gain = 110
+set pitch_b_gain = 10
+set pitch_o_gain = 40
+set roll_p_gain = 100
+set roll_i_gain = 130
+set roll_d_gain = 30
+set roll_f_gain = 110
+set roll_b_gain = 10
+set roll_o_gain = 40
+set yaw_p_gain = 159
+set yaw_i_gain = 140
+set yaw_d_gain = 186
+set yaw_ccw_stop_gain = 131
+set yaw_collective_ff_gain = 74
+set rescue_mode = CLIMB
+set rescue_flip = ON
+set rescue_pull_up_collective = 1000
+set rescue_climb_collective = 900
+set rescue_hover_collective = 850
+set gov_headspeed = 2200
+
+profile 2
+
+# profile 2
+set pitch_p_gain = 86
+set pitch_i_gain = 111
+set pitch_d_gain = 83
+set pitch_f_gain = 102
+set pitch_b_gain = 10
+set pitch_o_gain = 40
+set roll_p_gain = 83
+set roll_i_gain = 127
+set roll_d_gain = 84
+set roll_f_gain = 109
+set roll_b_gain = 10
+set roll_o_gain = 40
+set yaw_p_gain = 162
+set yaw_i_gain = 140
+set yaw_d_gain = 186
+set yaw_collective_ff_gain = 40
+set rescue_mode = CLIMB
+set rescue_flip = ON
+set rescue_pull_up_collective = 1000
+set rescue_climb_collective = 950
+set rescue_hover_collective = 820
+set gov_headspeed = 2500
+
+# restore original profile selection
+profile 0
+
+rateprofile 0
+
+# rateprofile 0
+set roll_rc_rate = 19
+set pitch_rc_rate = 19
+set yaw_rc_rate = 19
+set collective_rc_rate = 56
+set roll_srate = 29
+set pitch_srate = 29
+set yaw_srate = 60
+set collective_srate = 56
+
+# restore original rateprofile selection
+rateprofile 0
+
+# save configuration
+save
